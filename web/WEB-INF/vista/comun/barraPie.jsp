@@ -15,7 +15,7 @@
 			<td align="center">
 				Copyright © 2017. UPCHIAPAS    Todos los derechos reservados.
 				<br> Julio C. | Ardrea | Lesli J. | Enrique 
-				<br> 02 De Febrero de 2017
+				<br> Febrero de 2017
 			</td>
 		</tr>						
 	</table>

@@ -29,3 +29,13 @@ create table UsuarioRol (
 );
 alter table UsuarioRol add constraint FK4CA33E15F65AB4 foreign key (idRol) references Roles;
 alter table UsuarioRol add constraint FK4CA33E1BF549993 foreign key (idUsuario) references Usuarios;
+
+
+create table Lugares (
+   idMunicipio bigint not null,
+   nombrePais varchar(255),
+   nombreEstado varchar(255),
+   nombreMunicipio varchar(255),
+   primary key (idMunicipio),
+   unique (nombreMunicipio)
+);

@@ -19,24 +19,7 @@
             </tr>
             <tr height="590px">
                 <td align="center" valign="center" width="100%">
-                    <select>
-                      <option value="volvo">Volvo</option>
-                      <option value="saab">Saab</option>
-                      <option value="mercedes">Mercedes</option>
-                      <option value="audi">Audi</option>
-                    </select>
-                    <select>
-                      <option value="volvo">Volvo</option>
-                      <option value="saab">Saab</option>
-                      <option value="mercedes">Mercedes</option>
-                      <option value="audi">Audi</option>
-                    </select>
-                    <select>
-                      <option value="volvo">Volvo</option>
-                      <option value="saab">Saab</option>
-                      <option value="mercedes">Mercedes</option>
-                      <option value="audi">Audi</option>
-                    </select>
+                    <h1>Bienvenido</h1>
                 </td>
             </tr>
             <tr>

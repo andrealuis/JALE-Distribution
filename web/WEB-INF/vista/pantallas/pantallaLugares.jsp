@@ -19,7 +19,18 @@
             </tr>
             <tr height="590px">
                 <td align="center" valign="center" width="100%">
-                    <h3>Aquí irán mis lugares a como de lugar :3</h3>
+                    <select>
+                      <option>Pais</option>
+                    </select>
+                    <select>
+                      <option>Estado</option>
+                    </select>
+                    <select>
+                      <option>Municipio</option>
+                    </select>
+                    <select>
+                      <option>Categoría</option>
+                    </select>
                 </td>
             </tr>
             <tr>

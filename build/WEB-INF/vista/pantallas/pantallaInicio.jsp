@@ -13,16 +13,10 @@
     </head>
 	
     <body>
-       <div class="container marco">
-        <!--CABEZERA-->
-        <div class="row cabezera">
-            <div class="col-xs-12 ">
-                 <c:import url="/WEB-INF/vista/comun/banner.jsp" />
-                 <c:import url="/WEB-INF/vista/comun/barraMenu01.jsp" />
-            </div>
-        </div>
-        <!--FIN CABEZERA-->
-
+       
+        <c:import url="/WEB-INF/vista/comun/banner.jsp" />
+         <c:import url="/WEB-INF/vista/comun/barraMenu01.jsp" />
+         
         <!--PANTALLA-->
         <div class="row texto" >
             <div class="col-xs-12 ">
@@ -34,15 +28,8 @@
         </div>
         <!--FIN PANTALLA -->
 
-        
-
-        <!--Barra Pie-->
-        <div class="row enlaces ">
-            <div class="col-xs-12">
-               <c:import url="/WEB-INF/vista/comun/barraPie.jsp" />         
-            </div>
-        </div>
-        <!--FIN Barra Pie-->
+        <c:import url="/WEB-INF/vista/comun/barraPie.jsp" />         
+          
     </div>
     </body>
 </html>

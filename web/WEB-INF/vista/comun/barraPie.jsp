@@ -1,14 +1,11 @@
 	<!-- Inicio Sección - Pie de Página -->
 	<!-- Inicio Seccion - Barra Menu Pie de Página -->
 <div class="row barraPie">
-	<div class="col-xs-12" align="center">
-		Acerca de | Ayuda | Hacer Recomendación | Reportar Problema|
-	</div>
-	<div class="col-xs-12" align="center">
-		Copyright © 2017. UPCHIAPAS    Todos los derechos reservados.
-				<br> Julio C. | Ardrea | Lesli J. | Enrique 
-				<br> Febrero de 2017
-	</div>
+	<div class="col-xs-3 center-xs text-footer">Acerca </div>
+	<div class="col-xs-3 center-xs text-footer">Ayuda </div>
+	<div class="col-xs-3 center-xs text-footer">Hacer Recomendación </div>
+	<div class="col-xs-3 center-xs text-footer">Reportar Problema </div>
+	<div class="col-xs-12 center-xs text-footer">Copyright © 2017. UPCHIAPAS    Todos los derechos reservados.</div>
 
 </div>
 	

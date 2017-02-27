@@ -3,25 +3,29 @@
 body {
 	margin:0 0 0 0;
 }
-table.marco {
+.marco {
 	border-collapse:collapse;
 	background-color: #FAF0BD;
 	width:100%;
 }
-table.barraBanner {
+.barraBanner {
 	border-collapse:collapse;
 	background-color:#F7AF1D;
 	color: white;
 	font-family: Helvetica;
-	font-size: 50px;
+	font-size: 50%;
 	height:120px;
 	width:100%;								
+}
+
+.titulo{
+	padding: 20px;
 }
 a{
 	text-decoration: none;
 	color: #535352;
 }
-table.barraMenu {
+.barraMenu {
 	color: #F7AF1D;
 	background-color:#AEAF7A;
 	border-bottom:1px solid #AEAF7A;
@@ -56,15 +60,15 @@ table.barraDerecha {
 	border:0px;
 	width:100%;				
 }
-table.barraPie {
+.barraPie {
 	background-color:#AEAF7A;
 	border-top:1px solid #AEAF7A;
 	font-family:Verdana, Arial;
         font-size:11px;
-	height:25px;
+	height:50px;
 	width:100%;				
 }
-table.barraDerechos {
+.barraDerechos {
 	background-color:#AEAF7A;
 	font-family:Verdana, Arial;
         font-size:9px;

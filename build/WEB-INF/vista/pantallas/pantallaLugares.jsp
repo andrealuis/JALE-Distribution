@@ -15,17 +15,16 @@
     </head>
 	
     <body>
-        <table class="marco" cellpadding="0">
-            <tr>
-                <td colspan="2">
-                    <c:import url="/WEB-INF/vista/comun/banner.jsp" />
-                    <c:import url="/WEB-INF/vista/comun/barraMenu01.jsp" />
-                </td>
-            </tr>
-            <tr height="590px">
-                <td align="center" valign="center" width="100%">
+       
+            <c:import url="/WEB-INF/vista/comun/banner.jsp" />
+            <c:import url="/WEB-INF/vista/comun/barraMenu01.jsp" />
+              
+
+            <!--PANTALLA-->
+            <div class="row texto" >
+                <div class="col-xs-12 ">
                     <select class="selectpicker" data-style="btn-info">
-                      <option>Pais</option>
+                        <option>Pais</option>
                     </select>
                     <select class="selectpicker" data-style="btn-info" data-live-search="true">
                       <option>Estado</option>
@@ -36,13 +35,15 @@
                     <select class="selectpicker" data-style="btn-info" data-live-search="true">
                       <option>Categoria</option>
                     </select>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <c:import url="/WEB-INF/vista/comun/barraPie.jsp" />
-                </td>
-            </tr>
-        </table>
+                </div>
+            </div>
+            <!--FIN PANTALLA -->
+
+            <c:import url="/WEB-INF/vista/comun/barraPie.jsp" />         
+            
+        </div>
+        
     </body>
 </html>
+
+

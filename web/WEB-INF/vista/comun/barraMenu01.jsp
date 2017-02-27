@@ -8,6 +8,8 @@
             <td>|</td>
             <td class="clsMenuBarItem"><a href="solicitarListarLugares.do">Lugares</td>
             <td>|</td>
+            <td class="clsMenuBarItem"><a href="solicitarAtracciones.do">Atracciones</td>
+            <td>|</td>
             <td class="clsMenuBarItem"><a href="solicitarListarRecomendaciones.do">Recomendaciones</td>
             <td width="100%"></td>  
         </tr>

@@ -6,17 +6,9 @@
             <td>|</td>
             <td class="clsMenuBarItem"><a href="irAyuda.do">Help</td>
             <td>|</td>
-<<<<<<< HEAD
-			<td class="clsMenuBarItem"><a href="solicitarListarRoles.do">Roles</td>
-            <td>|</td>
-			<td class="clsMenuBarItem"><a href="solicitarListarPaises.do">Paises</td>
-			<td>|</td>
-			<td class="clsMenuBarItem"><a href="solicitarListarLugares.do">Lugares</td>
-			<td>|</td>
-			<td class="clsMenuBarItem"><a href="solicitarListarEstados.do">Estados</td>
-=======
             <td class="clsMenuBarItem"><a href="solicitarListarLugares.do">Lugares</td>
->>>>>>> 43f73aec2a6eaaf1b73819fb14ad18609aca60dc
+            <td>|</td>
+            <td class="clsMenuBarItem"><a href="solicitarAtracciones.do">Atracciones</td>
             <td>|</td>
             <td class="clsMenuBarItem"><a href="solicitarListarRecomendaciones.do">Recomendaciones</td>
             <td width="100%"></td>  

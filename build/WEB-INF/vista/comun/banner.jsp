@@ -3,11 +3,15 @@
 	<head>
   		<meta charset="UTF-8">
 	</head>
-	<table class="barraBanner">
-		<tr>	<td><img  src="images/logo-upch.png"></td>
-				<td align="center" width="100%">Recomendaciones turisticas</td>
-		</tr>
-	</table>
+	<div class="row barraBanner">
+	    <div class="col-xs-12 col-md-6">
+	       <img  src="images/logo-upch.png">
+	    </div>
+	    <div class="col-xs-12 col-md-6">
+	       
+	       <h1>Recomendaciones turisticas</h1>
+	    </div>
+    </div>
 	<!-- FS: Encabezado de Pagina (Banner) -->					
 
 					

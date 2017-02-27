@@ -15,17 +15,21 @@
     </head>
 	
     <body>
-        <table class="marco" cellpadding="0">
-            <tr>
-                <td colspan="2">
-                    <c:import url="/WEB-INF/vista/comun/banner.jsp" />
-                    <c:import url="/WEB-INF/vista/comun/barraMenu01.jsp" />
-                </td>
-            </tr>
-            <tr height="590px">
-                <td align="center" valign="center" width="100%">
+        <div class="container marco">
+            <!--CABEZERA-->
+            <div class="row cabezera">
+                <div class="col-xs-12 ">
+                     <c:import url="/WEB-INF/vista/comun/banner.jsp" />
+                     <c:import url="/WEB-INF/vista/comun/barraMenu01.jsp" />
+                </div>
+            </div>
+            <!--FIN CABEZERA-->
+
+            <!--PANTALLA-->
+            <div class="row texto" >
+                <div class="col-xs-12 ">
                     <select class="selectpicker" data-style="btn-info">
-                      <option>Pais</option>
+                        <option>Pais</option>
                     </select>
                     <select class="selectpicker" data-style="btn-info" data-live-search="true">
                       <option>Estado</option>
@@ -36,13 +40,22 @@
                     <select class="selectpicker" data-style="btn-info" data-live-search="true">
                       <option>Categoria</option>
                     </select>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <c:import url="/WEB-INF/vista/comun/barraPie.jsp" />
-                </td>
-            </tr>
-        </table>
+                </div>
+            </div>
+            <!--FIN PANTALLA -->
+
+            
+
+            <!--Barra Pie-->
+            <div class="row enlaces ">
+                <div class="col-xs-12 col-md-6 redes">
+                   <c:import url="/WEB-INF/vista/comun/barraPie.jsp" />         
+                </div>
+            </div>
+            <!--FIN Barra Pie-->
+        </div>
+        
     </body>
 </html>
+
+

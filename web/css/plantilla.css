@@ -3,17 +3,17 @@
 body {
 	margin:0 0 0 0;
 }
-table.marco {
+.marco {
 	border-collapse:collapse;
 	background-color: #FAF0BD;
 	width:100%;
 }
-table.barraBanner {
+.barraBanner {
 	border-collapse:collapse;
 	background-color:#F7AF1D;
 	color: white;
 	font-family: Helvetica;
-	font-size: 50px;
+	font-size: 50%;
 	height:120px;
 	width:100%;								
 }
@@ -21,7 +21,7 @@ a{
 	text-decoration: none;
 	color: #535352;
 }
-table.barraMenu {
+.barraMenu {
 	color: #F7AF1D;
 	background-color:#AEAF7A;
 	border-bottom:1px solid #AEAF7A;

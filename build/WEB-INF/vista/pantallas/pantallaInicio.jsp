@@ -7,26 +7,42 @@
         <title>USJ</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         <link rel="stylesheet" type="text/css" href="css/plantilla.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
 	
     <body>
-        <table class="marco" cellpadding="0">
-            <tr>
-                <td colspan="2">
-                    <c:import url="/WEB-INF/vista/comun/banner.jsp" />
-                    <c:import url="/WEB-INF/vista/comun/barraMenu01.jsp" />
-                </td>
-            </tr>
-            <tr height="590px">
-                <td align="center" valign="center" width="100%">
-                    <h1>Bienvenido</h1>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <c:import url="/WEB-INF/vista/comun/barraPie.jsp" />
-                </td>
-            </tr>
-        </table>
+       <div class="container marco">
+        <!--CABEZERA-->
+        <div class="row cabezera">
+            <div class="col-xs-12 ">
+                 <c:import url="/WEB-INF/vista/comun/banner.jsp" />
+                 <c:import url="/WEB-INF/vista/comun/barraMenu01.jsp" />
+            </div>
+        </div>
+        <!--FIN CABEZERA-->
+
+        <!--PANTALLA-->
+        <div class="row texto" >
+            <div class="col-xs-12 ">
+               
+
+            <h1>Bienvenido</h1>
+
+            </div>
+        </div>
+        <!--FIN PANTALLA -->
+
+        
+
+        <!--Barra Pie-->
+        <div class="row enlaces ">
+            <div class="col-xs-12">
+               <c:import url="/WEB-INF/vista/comun/barraPie.jsp" />         
+            </div>
+        </div>
+        <!--FIN Barra Pie-->
+    </div>
     </body>
 </html>

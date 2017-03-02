@@ -78,8 +78,8 @@
                    type="edu.uag.iidis.scec.vista.FormaEliminarEstado">
         </form-bean>
 
-        <form-bean name="formaCalificacion"
-                    type="edu.uag.iidis.scec.vista.FormaCalificacion">
+        <form-bean name="formaNuevaCalificacion"
+                    type="edu.uag.iidis.scec.vista.FormaNuevaCalificacion">
         </form-bean>
     </form-beans>
 
@@ -93,14 +93,21 @@
     <!-- Definición de acciones -->
     <action-mappings>
         <!-- Calificacion -->
+        <action path="/solicitarCalificacion"
+                type="edu.uag.iidis.scec.control.MCUCalificacion"
+                parameter="solicitarCalificacion"
+                name="formaNuevaCalificacion"
+                scope="request"
+                validate="false">
+                <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaCalificacion.jsp"/>
+        </action>
         <action path="/procesarCalificacion"
                 type="edu.uag.iidis.scec.control.MCUCalificacion"
                 parameter="procesarCalificacion"
-                name="formaCalificacion"
+                name="formaNuevaCalificacion"
                 scope="request"
                 validate="false">
-                <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaTotalCalificacion.jsp"/>
-                <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaCalificacion.jsp"/>
+                <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaCalificacion.jsp"/>
         </action>
         <action path="/irLogin"
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLogin.jsp" />

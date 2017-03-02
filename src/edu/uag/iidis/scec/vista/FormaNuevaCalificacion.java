@@ -7,12 +7,6 @@ import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.validator.ValidatorForm;
 
-
-/**
- * Form bean para el registro de una nueva persona.
- *
- * @author Victor Ramos
- */
 public final class FormaNuevaCalificacion
         extends ValidatorForm {
 

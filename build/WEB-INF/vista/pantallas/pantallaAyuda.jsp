@@ -24,6 +24,7 @@
                
 
             <h1>holi esta es una prueba de responsive</h1>
+            <a href="solicitarCalificacion.do">Pantalla calificacion</>
 
             </div>
         </div>

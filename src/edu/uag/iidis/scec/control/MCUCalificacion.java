@@ -22,6 +22,21 @@ import org.apache.struts.actions.MappingDispatchAction;
 public final class MCUCalificacion extends MappingDispatchAction {
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
+
+    public ActionForward solicitarCalificacion(
+                ActionMapping mapping,
+                ActionForm form,
+                HttpServletRequest request,
+                HttpServletResponse response)
+            throws Exception {
+
+        if (log.isDebugEnabled()) {
+            log.debug(">solicitarCalificacion");
+        }
+
+        return (mapping.findForward("exito"));
+    }
+
     public ActionForward procesarCalificacion(
                 ActionMapping mapping,
                 ActionForm form,

@@ -17,9 +17,14 @@ public class Lugar extends ClaseBase
         implements Serializable {
 
     private Long id;
-    private String municipio;
+    private String nombre;
+    private String descripcion;
+	private Long poblacion;
+	private String coordenadas;
 	private String estado;
+    private String imagen;
     private String pais;
+    private String moneda;
 
     public Lugar() {
     }
@@ -28,10 +33,15 @@ public class Lugar extends ClaseBase
         this.id = id;
     }
 
-    public Lugar(String nombre, String estado, String pais){
-        this.municipio=nombre;
+    public Lugar(String nombre, String descripcion,Long poblacion,String coordenadas,String estado, String imagen, String pais, String moneda){
+        this.nombre=nombre;
+        this.descripcion=descripcion;
+		this.poblacion=poblacion;
+		this.coordenadas=coordenadas;
 		this.estado=estado;
+        this.imagen=imagen;
         this.pais = pais;
+        this.moneda = moneda;
     }
 
     /**
@@ -56,26 +66,56 @@ public class Lugar extends ClaseBase
      * @return String
      */
     public String getNombre() {
-        return this.municipio;
+        return this.nombre;
+    }
+	public String getDescripcion() {
+        return this.descripcion;
+    }
+	public Long getPoblacion() {
+        return this.poblacion;
+    }
+	public String getCoordenadas() {
+        return this.coordenadas;
     }
 	public String getEstado() {
         return this.estado;
     }
+     public String getImagen() {
+        return this.imagen;
+    }
          public String getPais() {
         return this.pais;
+    }
+         public String getMoneda() {
+        return this.moneda;
     }
     /**
      * Establece el nombre del Lugar.
      * @return void
      */
     public void setNombre(String nombre) {
-        this.municipio = nombre;
+        this.nombre = nombre;
+    }
+	public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+	public void setPoblacion(Long poblacion) {
+        this.poblacion = poblacion;
+    }
+	public void setCoordenadas(String coordenadas) {
+        this.coordenadas = coordenadas;
     }
 	public void setEstado(String estado) {
         this.estado = estado;
     }
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
     public void setPais(String pais) {
         this.pais = pais;
+    }
+    public void setMoneda(String moneda) {
+        this.moneda = moneda;
     }
     /**
      * Regresa la descripción del Lugar.

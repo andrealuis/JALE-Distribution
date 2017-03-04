@@ -21,7 +21,6 @@ public final class FormaListadoLugares
     private int contador;
 	private String nombre;
     private String pais;
-    private String estado;
 
     public void setLugares(Collection lugares) {
         this.lugares = lugares;
@@ -52,14 +51,6 @@ public final class FormaListadoLugares
 
     public void setPais(String pais){
          this.pais = pais;
-    }
-
-    public String getEstado(){
-        return(this.nombre);
-    }
-
-    public void setEstado(String estado){
-         this.estado = estado;
     }
 
     public void reset(ActionMapping mapping,

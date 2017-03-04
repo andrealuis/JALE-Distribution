@@ -1,8 +1,5 @@
 
 	<!-- IS: Encabezado de Pagina (Banner) -->
-	<head>
-  		<meta charset="UTF-8">
-	</head>
 	<div class="row barraBanner">
 	    <div class="col-xs-12 col-md-6">
 	       <img  src="images/logo-upch.png">

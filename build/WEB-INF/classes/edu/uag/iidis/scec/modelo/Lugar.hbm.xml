@@ -7,26 +7,45 @@
            dynamic-insert="false">
 
         <id name="id"
-            column="idMunicipio"
+            column="id"
             type="java.lang.Long"
             unsaved-value="null" >
             <generator class="increment">
             </generator>
         </id>
 
-        <property name="municipio"
-            column="nombreMunicipio"
+        <property name="nombre"
+            column="Nombre"
 			type="java.lang.String"
             not-null="true"
             unique="true" />
+
+        <property name="descripcion"
+			column="Descripcion"
+            type="java.lang.String" />
+			
+		<property name="poblacion"
+			column="Poblacion"
+            type="java.lang.Long" />
+			
+		<property name="coordenadas"
+			column="Coordenadas"
+            type="java.lang.String"/>
 			
 		<property name="estado"
-			column="nombreEstado"
+			column="Estado"
             type="java.lang.String"/>
+             <!--cambios-->
+        <property name="imagen"
+        column="Imagen"
+        type="java.lang.String"/>
 
         <property name="pais"
-        column="nombrePais"
+        column="Pais"
         type="java.lang.String"/>
+		<property name="moneda"
+        column="Moneda"
+        type="java.lang.String"/>	
     </class>
 
 </hibernate-mapping>

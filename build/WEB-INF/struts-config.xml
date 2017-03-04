@@ -81,6 +81,10 @@
         <form-bean name="formaNuevaCalificacion"
                     type="edu.uag.iidis.scec.vista.FormaNuevaCalificacion">
         </form-bean>
+        <form-bean name="formaListadoCalificaciones"
+                    type="edu.uag.iidis.scec.vista.FormaListadoCalificaciones">
+        </form-bean>
+
     </form-beans>
 
 
@@ -109,6 +113,15 @@
                 validate="false">
                 <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaCalificacion.jsp"/>
         </action>
+        <action path="/solicitarListadoCalificaciones"
+                type="edu.uag.iidis.scec.control.MCUListarCalificaciones"
+                parameter="solicitarListarCalificaciones"
+                name="formaListadoCalificaciones"
+                scope="request"
+                validate="false">
+                <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoCalificaciones.jsp"/>
+        </action>
+
         <action path="/irLogin"
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLogin.jsp" />
         <action path="/procesarLogin"

@@ -14,9 +14,9 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="css/plantilla.css">
         <link rel="stylesheet" type="text/css" href="css/estrellas.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
     </head>
     
     <body>
@@ -26,10 +26,7 @@
       
 
         <!--PANTALLA-->
-        <div class="row texto" width="500px">
-            <div class="col-xs-12 ">
-               
-
+        <div id="divCalificaciones">             
             <form id="form" action="procesarCalificacion.do" method="post">
                 <textarea id="textComent" name="comentario" value="${formaNuevaCalificacion.comentario}"></textarea>
                 <p class="clasificacion">
@@ -45,15 +42,12 @@
                 --><label for="radio5">&#9733;</label>
                 </p>
                 <input type="submit" name="submit" value="Calificar"/>
-
-                <!--<a href="solicitarRegistroRol.do" class="HipervinculoAdmon">Ver calificaciones de otros usuarios...</a> -->
+                <a href="solicitarListadoCalificaciones.do" class="HipervinculoAdmon">Ver calificaciones de otros usuarios...</a> -->
             </form>
-            </div>
         </div>
         <!--FIN PANTALLA -->
-        <footer>
-            <c:import url="/WEB-INF/vista/comun/barraPie.jsp" />         
-        </footer>
+        <c:import url="/WEB-INF/vista/comun/barraPie.jsp" />         
+
   
     </body>
 </html>

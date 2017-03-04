@@ -58,7 +58,7 @@ public final class FormaListadoLugares
         return(this.nombre);
     }
 
-    public void setPais(String pais){
+    public void setEstado(String estado){
          this.estado = estado;
     }
 

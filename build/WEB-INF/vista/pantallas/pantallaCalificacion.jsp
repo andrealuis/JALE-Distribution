@@ -34,15 +34,15 @@
                 <textarea id="textComent" name="comentario" value="${formaNuevaCalificacion.comentario}"></textarea>
                 <p class="clasificacion">
                 <input id="radio1" type="radio" name="puntaje" value="5"><!--
-                --><label for="radio1">★</label><!--
+                --><label for="radio1">&#9733;</label><!--
                 --><input id="radio2" type="radio" name="puntaje" value="4"><!--
-                --><label for="radio2">★</label><!--
+                --><label for="radio2">&#9733;</label><!--
                 --><input id="radio3" type="radio" name="puntaje" value="3"><!--
-                --><label for="radio3">★</label><!--
+                --><label for="radio3">&#9733;</label><!--
                 --><input id="radio4" type="radio" name="puntaje" value="2"><!--
-                --><label for="radio4">★</label><!--
+                --><label for="radio4">&#9733;</label><!--
                 --><input id="radio5" type="radio" name="puntaje" value="1"><!--
-                --><label for="radio5">★</label>
+                --><label for="radio5">&#9733;</label>
                 </p>
                 <input type="submit" name="submit" value="Calificar"/>
 

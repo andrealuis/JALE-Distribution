@@ -2,12 +2,7 @@
     <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
     <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
 
-
-
-<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+<!DOCTYPE html>
 <html>
     <head>
         <title>USJ</title>
@@ -19,35 +14,32 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
     </head>
     
-    <body>
-     
-        <c:import url="/WEB-INF/vista/comun/banner.jsp" />
-        <c:import url="/WEB-INF/vista/comun/barraMenu01.jsp" />
-      
-
+    <body>  
+        <%
+            Object obj = request.getParameter("atractionName");
+        %>
         <!--PANTALLA-->
         <div id="divCalificaciones">             
             <form id="form" action="procesarCalificacion.do" method="post">
-                <textarea id="textComent" name="comentario" value="${formaNuevaCalificacion.comentario}"></textarea>
+                <br><textarea id="textComent" name="comentario" style="margin: 0px; width: 240px; height: 100px; resize: none;"><%= obj.toString()%> </textarea>
                 <p class="clasificacion">
-                <input id="radio1" type="radio" name="puntaje" value="5"><!--
-                --><label for="radio1">&#9733;</label><!--
-                --><input id="radio2" type="radio" name="puntaje" value="4"><!--
-                --><label for="radio2">&#9733;</label><!--
-                --><input id="radio3" type="radio" name="puntaje" value="3"><!--
-                --><label for="radio3">&#9733;</label><!--
-                --><input id="radio4" type="radio" name="puntaje" value="2"><!--
-                --><label for="radio4">&#9733;</label><!--
-                --><input id="radio5" type="radio" name="puntaje" value="1"><!--
-                --><label for="radio5">&#9733;</label>
+                    <input id="radio1" type="radio" name="puntaje" value="5"><!--
+                --> <label for="radio1">&#9733;</label><!--
+                --> <input id="radio2" type="radio" name="puntaje" value="4"><!--
+                --> <label for="radio2">&#9733;</label><!--
+                --> <input id="radio3" type="radio" name="puntaje" value="3"><!--
+                --> <label for="radio3">&#9733;</label><!--
+                --> <input id="radio4" type="radio" name="puntaje" value="2"><!--
+                --> <label for="radio4">&#9733;</label><!--
+                --> <input id="radio5" type="radio" name="puntaje" value="1"><!--
+                --> <label for="radio5">&#9733;</label>
                 </p>
-                <input type="submit" name="submit" value="Calificar"/>
-                <a href="solicitarListadoCalificaciones.do" class="HipervinculoAdmon">Ver calificaciones de otros usuarios...</a> -->
+                <center>
+                    <input type="submit" name="submit" value="Calificar"/><br>
+                    <a href="solicitarListadoCalificaciones.do" class="HipervinculoAdmon">Ver calificaciones de otros usuarios...</a>
+                </center>
             </form>
         </div>
         <!--FIN PANTALLA -->
-        <c:import url="/WEB-INF/vista/comun/barraPie.jsp" />         
-
-  
     </body>
 </html>

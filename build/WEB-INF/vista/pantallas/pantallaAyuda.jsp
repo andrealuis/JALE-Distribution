@@ -24,7 +24,7 @@
                
 
             <h1>holi esta es una prueba de responsive</h1>
-            <a href="solicitarCalificacion.do">Pantalla calificacion</>
+            <a href="solicitarCalificacion.do?atractionName=cafecafe">Pantalla calificacion</>
 
             </div>
         </div>

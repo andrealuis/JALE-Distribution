@@ -13,3 +13,5 @@ function ListaEstado(){
 	xhttp.open("GET", "ListarEstados.do?nombre="+src, true);
 	xhttp.send();
 }
+
+ 

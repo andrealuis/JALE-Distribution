@@ -130,15 +130,17 @@
             name="formaLogin"
             scope="request"
             validate="false">
-            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaInicio.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLogin.jsp"/>
         </action>
         <action path="/irInicio"
-                forward="/WEB-INF/vista/pantallas/pantallaInicio.jsp" />
+                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaInicio.jsp" />
         <action path="/irBienvenida"
-                forward="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp" />
+                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaBienvenida.jsp" />
         <action path="/irAyuda"
-                forward="/WEB-INF/vista/pantallas/pantallaAyuda.jsp" />
+                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaAyuda.jsp" />
+         <action path="/irAtracciones"
+                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaAtracciones.jsp" />
         <action path="/solicitarRegistro"
                 type="edu.uag.iidis.scec.control.MCURegistrarUsuario"
                 parameter="solicitarRegistro"
@@ -154,7 +156,7 @@
                 scope="request"
                 validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoRoles.jsp"/>
-            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaInicio.jsp"/>
         </action>
         <action path="/solicitarListarPaises"
                 type="edu.uag.iidis.scec.control.MCUListarPaises"
@@ -200,8 +202,8 @@
                 name="formaListadoLugares"
                 scope="request"
                 validate="false">
-            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoLugares.jsp"/>
-            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaLugares.jsp"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLugares.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLugares.jsp"/>
         </action>
 		<action path="/solicitarRegistroLugar"
                 type="edu.uag.iidis.scec.control.MCURegistrarLugar"
@@ -321,7 +323,7 @@
                 scope="request"
                 validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoRecomendaciones.jsp"/>
-            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaInicio.jsp"/>
         </action>
 
         <action path="/solicitarRegistroRecomendacion"

@@ -6,28 +6,10 @@
     <head>
         <title>Titulo del documento</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-        <link rel="stylesheet" type="text/css" href="css/plantilla.css">
     </head>
 	
     <body>
-        <table class="marco" cellpadding="0">
-            <tr>
-                <td colspan="2">
-                    <c:import url="/WEB-INF/vista/comun/banner.jsp" />
-                    <c:import url="/WEB-INF/vista/comun/barraMenu01.jsp" />
-                </td>
-            </tr>
-            <tr height="490px">
-                <td align="center" valign="center" width="100%">
-                    <h3>Pantalla de Bienvenida</h3>
-                    <a href="solicitarListarRoles.do">Administración de roles</a>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <c:import url="/WEB-INF/vista/comun/barraPie.jsp" />
-                </td>
-            </tr>
-        </table>
+
+        <h1>hey</h1>
     </body>
 </html>

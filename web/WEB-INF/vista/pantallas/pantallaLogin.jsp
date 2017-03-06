@@ -1,8 +1,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
     <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
-    
-    <br>
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Document</title>
+    <body>
+      <br>
     <font size='5'><fmt:message key="formaLogin.titulo" /></font>
 
     <form id="forma" action="procesarLogin.dd" method="post">
@@ -47,3 +52,5 @@
             </tr>
         </table>
     </form>
+    </body>
+    </html>

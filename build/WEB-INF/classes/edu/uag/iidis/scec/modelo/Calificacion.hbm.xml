@@ -19,11 +19,14 @@
             type="java.lang.Integer"
             not-null="true"
             unique="true" />
+        
+        <property name="nombreAtraccion"
+            column="nombreAtraccion"
+            type="java.lang.String" />
 
         <property name="comentario"
 			column="comentario"
             type="java.lang.String" />
-
     </class>
 
 </hibernate-mapping>

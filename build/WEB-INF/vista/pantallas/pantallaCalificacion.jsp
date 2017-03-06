@@ -19,9 +19,10 @@
             Object obj = request.getParameter("atractionName");
         %>
         <!--PANTALLA-->
+        <h1><%= obj.toString()%> </h1>
         <div id="divCalificaciones">             
-            <form id="form" action="procesarCalificacion.do" method="post">
-                <br><textarea id="textComent" name="comentario" style="margin: 0px; width: 240px; height: 100px; resize: none;"><%= obj.toString()%> </textarea>
+            <form id="form" action="procesarCalificacion.do?atractionName=<%= obj.toString()%>" method="post">
+                <br><textarea id="textComent" name="comentario" style="margin: 0px; width: 240px; height: 100px; resize: none;"></textarea>
                 <p class="clasificacion">
                     <input id="radio1" type="radio" name="puntaje" value="5"><!--
                 --> <label for="radio1">&#9733;</label><!--
@@ -35,8 +36,9 @@
                 --> <label for="radio5">&#9733;</label>
                 </p>
                 <center>
-                    <input type="submit" name="submit" value="Calificar"/><br>
-                    <a href="solicitarListadoCalificaciones.do" class="HipervinculoAdmon">Ver calificaciones de otros usuarios...</a>
+                <input type="hidden" name="nombreAtraccion" value="<%= obj.toString()%>">
+                <input type="submit" name="submit" value="Calificar"/><br>
+                <a href="solicitarListadoCalificaciones.do?atractionName=<%= obj.toString()%>" class="HipervinculoAdmon">Ver calificaciones de otros usuarios...</a>
                 </center>
             </form>
         </div>

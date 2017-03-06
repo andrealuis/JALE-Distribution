@@ -5,6 +5,7 @@
 	int var=0;
 %>
 <link rel="stylesheet" type="text/css" href="css/estrellas.css">
+<h1 id="nombreAtraccion"></h1>
 <table>
 	<c:forEach var="cal" items="${formaListadoCalificaciones.calificaciones}">
 	    <tr>
@@ -30,6 +31,7 @@
                  	
                 	<input type="hidden" id="puntajeValue" value="${cal.puntaje}">
                 	<input type="hidden" id="loopValue" value="<%= var%>">
+                    <input type="hidden" id="atraccion" value="${cal.nombreAtraccion}">
                 	<%
 						var++;
 					%>
@@ -43,14 +45,19 @@
                 		loop.remove();
                 		document.getElementById("radio"+loopVal+puntajeVal).checked = true;
 
-                		var radios = document.getElementsByTagName("puntaje"+loop);
-						for (var i=0;i<radios.length;i++) {
-							radios[i].disabled = true;
-						}
-
+                		document.getElementById("radio"+loopVal+"1").disabled = true;
+                        document.getElementById("radio"+loopVal+"2").disabled = true;
+                        document.getElementById("radio"+loopVal+"3").disabled = true;
+                        document.getElementById("radio"+loopVal+"4").disabled = true;
+                        document.getElementById("radio"+loopVal+"5").disabled = true;
+						
                 	</script>
                 </p> 
             </td>
 	    </tr>
 	</c:forEach>
+    <script>
+        //alert(document.getElementById("atraccion").value);
+        document.getElementById("nombreAtraccion").innerHTML = document.getElementById("atraccion").value;
+    </script>
 </table>

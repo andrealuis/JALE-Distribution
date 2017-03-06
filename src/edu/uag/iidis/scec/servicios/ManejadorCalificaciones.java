@@ -18,12 +18,31 @@ public class ManejadorCalificaciones {
         dao = new CalificacionDAO();
     }
 
+    public Collection listarCalificacionesPorAtraccion(String nombreAtraccion) {
+        Collection resultado;
+
+        if (log.isDebugEnabled()) {
+            log.debug(">ListarCalificacionPorAtraccion(calificacion)");
+        }
+
+        try {
+            HibernateUtil.beginTransaction();
+            resultado = dao.buscarPorAtraccion(nombreAtraccion);
+            HibernateUtil.commitTransaction();
+            return resultado;         
+        } catch (ExcepcionInfraestructura e) {
+            HibernateUtil.rollbackTransaction();
+            return null;
+        } finally {
+            HibernateUtil.closeSession();
+        }
+    }
 
     public Collection listarCalificaciones() {
         Collection resultado;
 
         if (log.isDebugEnabled()) {
-            log.debug(">guardarCalificacion(calificacion)");
+            log.debug(">ListarCalificacion(calificacion)");
         }
 
         try {

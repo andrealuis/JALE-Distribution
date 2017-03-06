@@ -10,8 +10,18 @@ import org.apache.struts.validator.ValidatorForm;
 public final class FormaNuevaCalificacion
         extends ValidatorForm {
 
+    private String nombreAtraccion;
     private int puntaje;
     private String comentario;
+
+    public void setNombreAtraccion(String nombreAtraccion) {
+        this.nombreAtraccion = nombreAtraccion;
+    }
+
+    public String getNombreAtraccion() {
+        return (this.nombreAtraccion);
+    }
+
 
     public void setPuntaje(int puntaje) {
         this.puntaje = puntaje;

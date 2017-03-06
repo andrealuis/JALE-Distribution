@@ -48,7 +48,8 @@ public final class MCUListarCalificaciones
         FormaListadoCalificaciones forma = (FormaListadoCalificaciones)form;
 
         ManejadorCalificaciones mr = new ManejadorCalificaciones();
-        Collection resultado = mr.listarCalificaciones();
+        Object obj = request.getParameter("atractionName");
+        Collection resultado = mr.listarCalificacionesPorAtraccion(obj.toString());
 
         ActionMessages errores = new ActionMessages();
         if (resultado != null) {

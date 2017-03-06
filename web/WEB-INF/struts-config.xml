@@ -77,7 +77,16 @@
         <form-bean name="formaEliminarEstado"
                    type="edu.uag.iidis.scec.vista.FormaEliminarEstado">
         </form-bean>
+
+        <form-bean name="formaNuevaCalificacion"
+                    type="edu.uag.iidis.scec.vista.FormaNuevaCalificacion">
+        </form-bean>
+        <form-bean name="formaListadoCalificaciones"
+                    type="edu.uag.iidis.scec.vista.FormaListadoCalificaciones">
+        </form-bean>
+
     </form-beans>
+
 
 
     <!-- Definición de Global Forward -->
@@ -87,6 +96,32 @@
 
     <!-- Definición de acciones -->
     <action-mappings>
+        <!-- Calificacion -->
+        <action path="/solicitarCalificacion"
+                type="edu.uag.iidis.scec.control.MCUCalificacion"
+                parameter="solicitarCalificacion"
+                name="formaNuevaCalificacion"
+                scope="request"
+                validate="false">
+                <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaCalificacion.jsp"/>
+        </action>
+        <action path="/procesarCalificacion"
+                type="edu.uag.iidis.scec.control.MCUCalificacion"
+                parameter="procesarCalificacion"
+                name="formaNuevaCalificacion"
+                scope="request"
+                validate="false">
+                <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaCalificacion.jsp"/>
+        </action>
+        <action path="/solicitarListadoCalificaciones"
+                type="edu.uag.iidis.scec.control.MCUListarCalificaciones"
+                parameter="solicitarListarCalificaciones"
+                name="formaListadoCalificaciones"
+                scope="request"
+                validate="false">
+                <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoCalificaciones.jsp"/>
+        </action>
+
         <action path="/irLogin"
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLogin.jsp" />
         <action path="/procesarLogin"
@@ -351,6 +386,7 @@
                 validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/servicios.jsp"/>
         </action>
+
     </action-mappings>
 
 

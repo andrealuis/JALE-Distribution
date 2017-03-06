@@ -15,7 +15,7 @@
     </head>
 	
     <body>
-       
+        <div class="container marco">
             <c:import url="/WEB-INF/vista/comun/banner.jsp" />
             <c:import url="/WEB-INF/vista/comun/barraMenu01.jsp" />
               
@@ -39,7 +39,8 @@
             </div>
             <!--FIN PANTALLA -->
 
-            <c:import url="/WEB-INF/vista/comun/barraPie.jsp" />         
+            <c:import url="/WEB-INF/vista/comun/barraPie.jsp" /> 
+        </div>           
             
         </div>
         

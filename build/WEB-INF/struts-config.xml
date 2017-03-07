@@ -111,7 +111,7 @@
                 name="formaNuevaCalificacion"
                 scope="request"
                 validate="false">
-                <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaCalificacion.jsp"/>
+                <forward name="exito" path="/solicitarListadoCalificaciones.do"/>
         </action>
         <action path="/solicitarListadoCalificaciones"
                 type="edu.uag.iidis.scec.control.MCUListarCalificaciones"

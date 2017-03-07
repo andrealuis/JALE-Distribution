@@ -9,6 +9,7 @@ public class Calificacion  extends ClaseBase
     private Long id;
     private int puntaje;
     private String comentario;
+    private String nombreAtraccion;
 
     public Calificacion() {
     }
@@ -17,9 +18,10 @@ public class Calificacion  extends ClaseBase
         this.id = id;
     }
 
-    public Calificacion(int puntaje, String comentario){
+    public Calificacion(int puntaje, String comentario, String nombreAtraccion){
         this.puntaje=puntaje;
         this.comentario=comentario;
+        this.nombreAtraccion = nombreAtraccion;
     }
 
     /**
@@ -36,6 +38,14 @@ public class Calificacion  extends ClaseBase
      */
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getNombreAtraccion(){
+        return this.nombreAtraccion;
+    }
+
+    public void setNombreAtraccion(String nombreAtraccion){
+        this.nombreAtraccion = nombreAtraccion;
     }
 
 

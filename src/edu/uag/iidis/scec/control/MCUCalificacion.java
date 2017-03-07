@@ -51,7 +51,7 @@ public final class MCUCalificacion extends MappingDispatchAction {
         // Se obtienen los datos para procesar el registro
         FormaNuevaCalificacion forma = (FormaNuevaCalificacion)form;
 
-        Calificacion calificacion = new Calificacion(forma.getPuntaje(), forma.getComentario());
+        Calificacion calificacion = new Calificacion(forma.getPuntaje(), forma.getComentario(), forma.getNombreAtraccion());
 
         ManejadorCalificaciones mr = new ManejadorCalificaciones();
 

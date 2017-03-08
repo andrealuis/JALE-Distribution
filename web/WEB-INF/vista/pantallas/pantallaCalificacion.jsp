@@ -14,38 +14,11 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
     </head>
     
-    <body>  
-
-         
+    <body>           
         <%
             Object obj = request.getParameter("atractionName");
         %>
         <!--PANTALLA-->
-<<<<<<< HEAD
-         <div class="row texto" >
-            <div id="divCalificaciones">             
-                <form id="form" action="procesarCalificacion.do" method="post">
-                    <br><textarea id="textComent" name="comentario" style="margin: 0px; width: 240px; height: 100px; resize: none;"><%= obj.toString()%> </textarea>
-                    <p class="clasificacion">
-                        <input id="radio1" type="radio" name="puntaje" value="5"><!--
-                    --> <label for="radio1">&#9733;</label><!--
-                    --> <input id="radio2" type="radio" name="puntaje" value="4"><!--
-                    --> <label for="radio2">&#9733;</label><!--
-                    --> <input id="radio3" type="radio" name="puntaje" value="3"><!--
-                    --> <label for="radio3">&#9733;</label><!--
-                    --> <input id="radio4" type="radio" name="puntaje" value="2"><!--
-                    --> <label for="radio4">&#9733;</label><!--
-                    --> <input id="radio5" type="radio" name="puntaje" value="1"><!--
-                    --> <label for="radio5">&#9733;</label>
-                    </p>
-                    <center>
-                        <input type="submit" name="submit" value="Calificar"/><br>
-                        <a href="solicitarListadoCalificaciones.do" class="HipervinculoAdmon">Ver calificaciones de otros usuarios...</a>
-                    </center>
-                </form>
-            </div>
-          </div>
-=======
         <h1><%= obj.toString()%> </h1>
         <div id="divCalificaciones">             
             <form id="form" action="procesarCalificacion.do?atractionName=<%= obj.toString()%>" method="post">
@@ -69,7 +42,6 @@
                 </center>
             </form>
         </div>
->>>>>>> 8609744e630034f6e5f87aef324334a8ad2857ff
         <!--FIN PANTALLA -->
        
     </body>

@@ -26,7 +26,7 @@
                       <option>Categoria</option>
                     </select>
              
-     
+                    <input type="submit" id="btn_NomAtrac" />
         
     </body>
 </html>

@@ -2,7 +2,7 @@
 
 <hibernate-mapping>
     <class name="edu.uag.iidis.scec.modelo.Lugar"
-           table="Lugares"
+           table="lugares"
            dynamic-update="false"
            dynamic-insert="false">
 

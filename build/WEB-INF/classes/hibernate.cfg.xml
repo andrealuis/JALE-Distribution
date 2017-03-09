@@ -53,6 +53,8 @@
 		<mapping resource="edu/uag/iidis/scec/modelo/Lugar.hbm.xml"/>
         <mapping resource="edu/uag/iidis/scec/modelo/Recomendacion.hbm.xml"/>
         <mapping resource="edu/uag/iidis/scec/modelo/Calificacion.hbm.xml"/>
+        <mapping resource="edu/uag/iidis/scec/modelo/Atraccion.hbm.xml"/>
+
     </session-factory>
 
 </hibernate-configuration>

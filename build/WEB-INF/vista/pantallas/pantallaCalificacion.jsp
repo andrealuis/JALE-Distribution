@@ -22,9 +22,9 @@
         <h1><%= obj.toString()%> </h1>
         <div id="divCalificaciones">             
             <form id="form" action="procesarCalificacion.do?atractionName=<%= obj.toString()%>" method="post">
-                <br><textarea id="textComent" name="comentario" style="margin: 0px; width: 240px; height: 100px; resize: none;"></textarea>
+                <br><textarea id="textComent" name="comentario" style="margin: 0px; width: 240px; height: 100px; resize: none;" required=""></textarea>
                 <p class="clasificacion">
-                    <input id="radio1" type="radio" name="puntaje" value="5"><!--
+                    <input id="radio1" type="radio" name="puntaje" value="5" required><!--
                 --> <label for="radio1">&#9733;</label><!--
                 --> <input id="radio2" type="radio" name="puntaje" value="4"><!--
                 --> <label for="radio2">&#9733;</label><!--
@@ -36,7 +36,7 @@
                 --> <label for="radio5">&#9733;</label>
                 </p>
                 <center>
-                <input type="hidden" name="nombreAtraccion" value="<%= obj.toString()%>">
+                <input type="hidden" name="nombreAtraccion" value="<%= obj.toString()%>" required="">
                 <input type="submit" name="submit" value="Calificar"/><br>
                 <a href="solicitarListadoCalificaciones.do?atractionName=<%= obj.toString()%>" class="HipervinculoAdmon">Ver calificaciones de otros usuarios...</a>
                 </center>

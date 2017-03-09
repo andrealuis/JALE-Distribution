@@ -121,6 +121,14 @@
                 validate="false">
                 <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoCalificaciones.jsp"/>
         </action>
+         <action path="/solicitarAtraccion"
+                type="edu.uag.iidis.scec.control.MCUAtraccion"
+                parameter="solicitarAtraccion"
+                name="formaAtraccion"
+                scope="request"
+                validate="false">
+                <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaAtraccion.jsp"/>
+        </action>
 
         <action path="/irLogin"
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLogin.jsp" />

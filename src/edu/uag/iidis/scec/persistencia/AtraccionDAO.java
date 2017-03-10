@@ -33,9 +33,7 @@ public class AtraccionDAO {
 
         try {
  
-            //String hql = "from Lugar as l INNER join l.Atraccion as result INNER join result.Imagen WHERE Atraccion.nombreAtraccion = '"+nombreAtraccion+"'";
-            ///String hql = "from Atraccion as at INNER join at.Imagen as result WHERE at.nombreAtraccion = '"+nombreAtraccion+"'";
-            String hql = "select nombreAtraccion from Atraccion where nombreAtraccion= '"+nombreAtraccion+"'";
+            String hql = "from VistaAtraccion where nombreAtraccion= '"+nombreAtraccion+"'";
 
              if (log.isDebugEnabled()) {
                  log.debug(hql + nombreAtraccion);

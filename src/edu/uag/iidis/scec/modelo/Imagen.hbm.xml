@@ -2,7 +2,7 @@
 
 <hibernate-mapping>
     <class name="edu.uag.iidis.scec.modelo.Imagen"
-           table="Imagenes"
+           table="Imagen"
            dynamic-update="false"
            dynamic-insert="false">
 

@@ -6,6 +6,7 @@
     <head>
         <title>Administrador de Roles - UPCHIAPAS</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <meta charset="UTF-8">
 		<script type="text/javascript" src="js/Ajax.js"></script>
         <link rel="stylesheet" type="text/css" href="css/plantilla.css">
         <link rel="stylesheet" type="text/css" href="css/mensajes.css">

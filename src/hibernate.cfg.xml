@@ -54,6 +54,7 @@
         <mapping resource="edu/uag/iidis/scec/modelo/Recomendacion.hbm.xml"/>
         <mapping resource="edu/uag/iidis/scec/modelo/Calificacion.hbm.xml"/>
         <mapping resource="edu/uag/iidis/scec/modelo/Atraccion.hbm.xml"/>
+        <mapping resource="edu/uag/iidis/scec/modelo/VistaAtraccion.hbm.xml"/>
 
     </session-factory>
 

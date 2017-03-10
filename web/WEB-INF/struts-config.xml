@@ -84,6 +84,9 @@
         <form-bean name="formaListadoCalificaciones"
                     type="edu.uag.iidis.scec.vista.FormaListadoCalificaciones">
         </form-bean>
+        <form-bean name="formaAtraccion"
+                    type="edu.uag.iidis.scec.vista.FormaAtraccion">
+        </form-bean>
 
     </form-beans>
 

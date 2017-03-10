@@ -32,8 +32,7 @@ public final class MCUAtraccion
                 HttpServletRequest request,
                 HttpServletResponse response)
             throws Exception {
-		ActionMessages errores = new ActionMessages();
-		//String username = loginForm.getUsername();
+		
         if (log.isDebugEnabled()) {
             log.debug(">solicitarAtraccion");
         }
@@ -43,13 +42,16 @@ public final class MCUAtraccion
 
         Object obj = request.getParameter("atractionName");
         Collection resultado = mr.buscarAtraccion(obj.toString());
+
+        ActionMessages errores = new ActionMessages();
         if (resultado != null) {
             if ( resultado.isEmpty() ) {
                 errores.add(ActionMessages.GLOBAL_MESSAGE,
                     new ActionMessage("errors.registroVacio"));
                 saveErrors(request, errores);
             } else {
-                forma.setAtraccion( resultado );
+                forma.setAtraccion(resultado);
+                log.debug("forma.setAtraccion(resultado)");
             }
             return (mapping.findForward("exito"));
         } else {
@@ -61,6 +63,4 @@ public final class MCUAtraccion
         }
   
     }
-
-    
 }

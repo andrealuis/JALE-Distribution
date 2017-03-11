@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-03-2017 a las 05:18:46
+-- Tiempo de generación: 11-03-2017 a las 18:47:47
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 7.1.1
 
@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `atraccion` (
   `idMunicipio` int(11) NOT NULL,
   `idAtraccion` int(11) NOT NULL,
-  `idImagen` int(11) NOT NULL,
   `nombreAtraccion` varchar(50) NOT NULL,
   `descripcion` varchar(500) NOT NULL,
   `direccion` varchar(200) NOT NULL
@@ -39,9 +38,9 @@ CREATE TABLE `atraccion` (
 -- Volcado de datos para la tabla `atraccion`
 --
 
-INSERT INTO `atraccion` (`idMunicipio`, `idAtraccion`, `idImagen`, `nombreAtraccion`, `descripcion`, `direccion`) VALUES
-(1, 1, 1, 'Parque de la Marimba', 'great place', 'evergreen terrace'),
-(2, 2, 2, 'Agua Azul', 'great place', 'evergreen terrace');
+INSERT INTO `atraccion` (`idMunicipio`, `idAtraccion`, `nombreAtraccion`, `descripcion`, `direccion`) VALUES
+(1, 1, 'Parque de la Marimba', 'great place', 'evergreen terrace'),
+(2, 2, 'Agua Azul', 'great place', 'evergreen terrace');
 
 -- --------------------------------------------------------
 
@@ -92,7 +91,7 @@ INSERT INTO `calificacion` (`id`, `puntaje`, `comentario`, `nombreAtraccion`) VA
 
 CREATE TABLE `imagen` (
   `id` int(11) NOT NULL,
-  `idImagen` int(11) NOT NULL,
+  `idAtraccion` int(11) NOT NULL,
   `path` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -100,7 +99,7 @@ CREATE TABLE `imagen` (
 -- Volcado de datos para la tabla `imagen`
 --
 
-INSERT INTO `imagen` (`id`, `idImagen`, `path`) VALUES
+INSERT INTO `imagen` (`id`, `idAtraccion`, `path`) VALUES
 (1, 1, 'parque-de-la-marimba-1'),
 (2, 1, 'parque-de-la-marimba-2'),
 (3, 2, 'agua-azul-2'),
@@ -196,11 +195,17 @@ CREATE TABLE `vista_atraccion` (
 --
 DROP TABLE IF EXISTS `vista_atraccion`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_atraccion`  AS  select `imagen`.`id` AS `id`,`atraccion`.`nombreAtraccion` AS `nombreAtraccion`,`atraccion`.`descripcion` AS `descripcion`,`atraccion`.`direccion` AS `direccion`,`imagen`.`path` AS `path` from ((`lugares` join `atraccion` on((`lugares`.`idMunicipio` = `atraccion`.`idMunicipio`))) join `imagen` on((`imagen`.`idImagen` = `atraccion`.`idImagen`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_atraccion`  AS  select `imagen`.`id` AS `id`,`atraccion`.`nombreAtraccion` AS `nombreAtraccion`,`atraccion`.`descripcion` AS `descripcion`,`atraccion`.`direccion` AS `direccion`,`imagen`.`path` AS `path` from ((`lugares` join `atraccion` on((`lugares`.`idMunicipio` = `atraccion`.`idMunicipio`))) join `imagen` on((`imagen`.`idAtraccion` = `atraccion`.`idAtraccion`))) ;
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `atraccion`
+--
+ALTER TABLE `atraccion`
+  ADD PRIMARY KEY (`idAtraccion`);
 
 --
 -- Indices de la tabla `calificacion`

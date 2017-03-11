@@ -14,8 +14,8 @@
             </generator>
         </id>
 
-        <property name="idImagen"
-            column="id"
+        <property name="idAtraccion"
+            column="idAtraccion"
             type="java.lang.Integer"/>
         
         <property name="path"

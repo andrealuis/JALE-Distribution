@@ -8,7 +8,6 @@ public class Atraccion extends ClaseBase
 	
 	private int idMunicipio;
 	private int idAtraccion;
-	private int idImagen;
 	private String nombreAtraccion;
 
 	public Atraccion() {
@@ -19,10 +18,9 @@ public class Atraccion extends ClaseBase
 		this.nombreAtraccion = nombreAtraccion;
 	}
 
-	public Atraccion(int idMunicipio, int idAtraccion, int idImagen, String nombreAtraccion) {
+	public Atraccion(int idMunicipio, int idAtraccion, String nombreAtraccion) {
 		this.idMunicipio = idMunicipio;
 		this.idAtraccion = idAtraccion;
-		this.idImagen = idImagen;
 		this.nombreAtraccion = nombreAtraccion;
 	}
 	
@@ -50,14 +48,5 @@ public class Atraccion extends ClaseBase
 	public void setIdAtraccion(int idAtraccion) {
 		this.idAtraccion = idAtraccion;
 	}
-
-	public int getIdImagen() {
-		return this.idImagen;
-	}
-
-	public void setIdImagen(int idImagen) {
-		this.idImagen = idImagen;
-	}
-
 
 }

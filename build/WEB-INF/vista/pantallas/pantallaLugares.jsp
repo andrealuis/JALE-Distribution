@@ -12,7 +12,7 @@
 	
     <body>
 
-        <h1>que paso</h1>
+        <h1 id="textoRandom">que paso</h1>
                     <select class="selectpicker" data-style="btn-info">
                         <option>Pais</option>
                     </select>

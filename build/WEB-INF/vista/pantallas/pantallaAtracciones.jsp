@@ -7,3 +7,4 @@
 
 <a href="solicitarCalificacion.do?atractionName=cafecafe">Pantalla calificacion</a>
 <a href="solicitarAtraccion.do?atractionName=Agua Azul">Pantalla Atraccion</a>
+<a href="solicitarNuevaAtraccion.do">Pantalla Nueva Atraccion</a>

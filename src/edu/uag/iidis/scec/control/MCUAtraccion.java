@@ -25,6 +25,20 @@ public final class MCUAtraccion
 
     private Log log = LogFactory.getLog(MCUAtraccion.class);
 
+    public ActionForward solicitarNuevaAtraccion(
+                ActionMapping mapping,
+                ActionForm form,
+                HttpServletRequest request,
+                HttpServletResponse response)
+            throws Exception {
+
+        if (log.isDebugEnabled()) {
+            log.debug(">solicitarNuevaAtraccion");
+        }
+
+        return (mapping.findForward("exito"));
+    }
+
 
     public ActionForward solicitarAtraccion(
                 ActionMapping mapping,

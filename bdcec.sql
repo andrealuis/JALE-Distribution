@@ -112,12 +112,12 @@ INSERT INTO `imagen` (`id`, `idImagen`, `path`) VALUES
 -- Estructura de tabla para la tabla `lugares`
 --
 
-CREATE TABLE `lugares` (
-  `idMunicipio` bigint(20) NOT NULL,
-  `nombrePais` varchar(255) DEFAULT NULL,
-  `nombreEstado` varchar(255) DEFAULT NULL,
-  `nombreMunicipio` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  CREATE TABLE `lugares` (
+    `idMunicipio` bigint(20) NOT NULL,
+    `nombrePais` varchar(255) DEFAULT NULL,
+    `nombreEstado` varchar(255) DEFAULT NULL,
+    `nombreMunicipio` varchar(255) DEFAULT NULL
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `lugares`
@@ -219,7 +219,6 @@ ALTER TABLE `imagen`
 --
 ALTER TABLE `lugares`
   ADD PRIMARY KEY (`idMunicipio`),
-  ADD UNIQUE KEY `nombreMunicipio` (`nombreMunicipio`);
 
 --
 -- Indices de la tabla `roles`

@@ -162,7 +162,7 @@ public class LugarDAO {
  //                          .next()).intValue();
 // de acuerdo al nuevo formato
  
-            String hql = "select nombre from Lugar where nombre = :nombre";
+            String hql = "select nombreMunicipio from Lugares where nombreMunicipio = :nombre";
             
              if (log.isDebugEnabled()) {
                  log.debug(hql + nombreLugar);
@@ -174,7 +174,7 @@ public class LugarDAO {
                  log.debug("<<<<<<<<< create query ok " );
             }
 
-            query.setParameter("nombre", nombreLugar);
+            query.setParameter("nombreMunicipio", nombreLugar);
             if (log.isDebugEnabled()) {
                  log.debug("<<<<<<<<< set Parameter ok antes del query list >>>>>");
             }
@@ -207,7 +207,7 @@ public class LugarDAO {
 
         try {
  
-            String hql = "from Lugar where nombre = '"+nombreLugar+"'";
+            String hql = "from Lugares where nombreMunicipio = '"+nombreLugar+"'";
             
              if (log.isDebugEnabled()) {
                  log.debug(hql + nombreLugar);
@@ -249,7 +249,7 @@ public class LugarDAO {
 
         try {
  
-            String hql = "from Lugar where nombre like '"+nombreLugar+"%'";
+            String hql = "from Lugares where nombreMunicipio like '"+nombreLugar+"%'";
             
              if (log.isDebugEnabled()) {
                  log.debug(hql + nombreLugar);
@@ -291,7 +291,7 @@ public class LugarDAO {
 
         try {
  
-            String hql = "from Lugar where nombre = '"+nombreLugar+"'";
+            String hql = "from Lugares where nombreMunicipio = '"+nombreLugar+"'";
             
              if (log.isDebugEnabled()) {
                  log.debug(hql + nombreLugar);

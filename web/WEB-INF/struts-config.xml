@@ -214,7 +214,7 @@
                 scope="request"
                 validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLugares.jsp"/>
-            <forward name="fracaso" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLugares.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaBienvenida.jsp"/>
         </action>
 		<action path="/solicitarRegistroLugar"
                 type="edu.uag.iidis.scec.control.MCURegistrarLugar"

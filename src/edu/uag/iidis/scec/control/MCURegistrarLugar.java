@@ -108,7 +108,7 @@ public final class MCURegistrarLugar
             }
         }
         Lugar lugar = new Lugar(forma.getNombre(),
-                          forma.getDescripcion(),forma.getPoblacion(),forma.getCoordenadas(),forma.getEstado(),"upload\\"+fileName,forma.getPais(),forma.getMoneda());
+                          forma.getEstado(),forma.getPais());
 
         ManejadorLugares mr = new ManejadorLugares();
         int resultado = mr.crearLugar(lugar);

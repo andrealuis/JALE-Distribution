@@ -19,8 +19,9 @@ public final class FormaListadoLugares
 
     private Collection lugares;
     private int contador;
-	private String nombre;
+    private String nombre;
     private String pais;
+    private String estado;
 
     public void setLugares(Collection lugares) {
         this.lugares = lugares;
@@ -46,12 +47,22 @@ public final class FormaListadoLugares
     }
 
     public String getPais(){
-        return(this.nombre);
+        return(this.pais);
     }
 
     public void setPais(String pais){
          this.pais = pais;
     }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
+    
 
     public void reset(ActionMapping mapping,
                       HttpServletRequest request) {

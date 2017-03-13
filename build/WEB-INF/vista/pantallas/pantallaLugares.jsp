@@ -12,19 +12,18 @@
 	
     <body>
 
+
         <h1>que paso</h1>
-                    <select class="selectpicker" data-style="btn-info">
+                    <select id="pais" class="selectpicker" data-style="btn-info">
                         <option>Pais</option>
                     </select>
-                    <select class="selectpicker" data-style="btn-info" data-live-search="true">
+                    <select id="estado" class="selectpicker" data-style="btn-info" data-live-search="true">
                       <option>Estado</option>
                     </select>
-                    <select class="selectpicker" data-style="btn-info" data-live-search="true">
+                    <select id="municipio" class="selectpicker" data-style="btn-info" data-live-search="true">
                       <option>Municipio</option>
                     </select>
-                    <select class="selectpicker" data-style="btn-info" data-live-search="true">
-                      <option>Categoria</option>
-                    </select>
+                   
              
                     <input type="submit" id="btn_NomAtrac" />
         

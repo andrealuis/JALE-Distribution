@@ -99,6 +99,15 @@
 
     <!-- Definición de acciones -->
     <action-mappings>
+        <!-- Atraccion -->
+        <action path="/solicitarNuevaAtraccion"
+                type="edu.uag.iidis.scec.control.MCUAtraccion"
+                parameter="solicitarNuevaAtraccion"
+                name="formaNuevaCalificacion"
+                scope="request"
+                validate="false">
+                <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaAtraccion.jsp"/>
+        </action>
         <!-- Calificacion -->
         <action path="/solicitarCalificacion"
                 type="edu.uag.iidis.scec.control.MCUCalificacion"

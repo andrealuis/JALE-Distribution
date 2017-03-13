@@ -12,9 +12,14 @@
 	
     <body>
 
+<<<<<<< HEAD
 
         <h1>que paso</h1>
                     <select id="pais" class="selectpicker" data-style="btn-info">
+=======
+        <h1 id="textoRandom">que paso</h1>
+                    <select class="selectpicker" data-style="btn-info">
+>>>>>>> 7dc8408272dfa987dc10c319565ae1207ea38a05
                         <option>Pais</option>
                     </select>
                     <select id="estado" class="selectpicker" data-style="btn-info" data-live-search="true">

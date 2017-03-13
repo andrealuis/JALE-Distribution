@@ -6,7 +6,6 @@ import java.util.*;
 public class VistaAtraccion extends ClaseBase 
         implements Serializable {
 	
-	//private int idMunicipio;	
 	private String nombreAtraccion;
 	private String descripcion;
 	private String direccion;
@@ -21,14 +20,6 @@ public class VistaAtraccion extends ClaseBase
 		this.nombreAtraccion = nombreAtraccion;
 	}
 
-/*	public VistaAtraccion(int idMunicipio, String nombreAtraccion, String descripcion, String direccion, String path) {
-		this.idMunicipio = idMunicipio;
-		this.nombreAtraccion = nombreAtraccion;
-		this.descripcion = descripcion;
-		this.direccion = direccion;
-		this.path = path;
-	}
-*/
 	public VistaAtraccion(String nombreAtraccion, String descripcion, String direccion, String path) {
 		this.nombreAtraccion = nombreAtraccion;
 		this.descripcion = descripcion;

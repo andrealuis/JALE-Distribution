@@ -6,7 +6,7 @@ import java.util.*;
 public class Imagen extends ClaseBase 
         implements Serializable {
     private int id;
-	private int idImagen;
+	private int idAtraccion;
 	private String path;
 
 	public Imagen() {
@@ -17,8 +17,8 @@ public class Imagen extends ClaseBase
 		this.path = path;
 	}
 
-	public Imagen(int idImagen, String path) {
-		this.idImagen = idImagen;
+	public Imagen(int idAtraccion, String path) {
+		this.idAtraccion = idAtraccion;
 		this.path = path;
 	}
 	
@@ -31,12 +31,12 @@ public class Imagen extends ClaseBase
 		this.path = path;
 	}
 
-	public int getIdImagen() {
-		return this.idImagen;
+	public int getIdAtraccion() {
+		return this.idAtraccion;
 	}
 
-	public void setIdImagen(int idImagen) {
-		this.idImagen = idImagen;
+	public void setIdAtraccion(int idAtraccion) {
+		this.idAtraccion = idAtraccion;
 	}
 
 	public int getId() {

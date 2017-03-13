@@ -13,10 +13,6 @@
             <generator class="increment">
             </generator>
         </id>
-
-    <!--    <property name="idMunicipio"
-            column="idMunicipio "
-            type="java.lang.Integer"/> -->
         
         <property name="nombreAtraccion"
             column="nombreAtraccion"

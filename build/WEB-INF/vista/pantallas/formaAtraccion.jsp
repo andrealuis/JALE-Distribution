@@ -1,7 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>	
-<meta charset="UTF-8">
 <h1 id="titulo"></h1>
 <table>
   <c:forEach var="atraccion" items="${formaAtraccion.atraccion}">

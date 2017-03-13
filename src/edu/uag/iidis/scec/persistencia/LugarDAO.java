@@ -291,7 +291,7 @@ public class LugarDAO {
 
         try {
  
-            String hql = "from Lugares where nombreMunicipio = '"+nombreLugar+"'";
+            String hql = "from Lugar where estado = '"+nombreLugar+"'";
             
              if (log.isDebugEnabled()) {
                  log.debug(hql + nombreLugar);

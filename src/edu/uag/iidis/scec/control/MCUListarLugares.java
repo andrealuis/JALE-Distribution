@@ -27,6 +27,44 @@ public final class MCUListarLugares
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
 
+
+    public ActionForward solicitarListarEstados(
+                ActionMapping mapping,
+                ActionForm form,
+                HttpServletRequest request,
+                HttpServletResponse response)
+            throws Exception {
+
+        if (log.isDebugEnabled()) {
+            log.debug(">solicitarListarLugares");
+        }
+
+        FormaListadoLugares forma = (FormaListadoLugares)form;
+
+        ManejadorLugares mr = new ManejadorLugares();
+        Object obj = request.getParameter("nombrePais");
+        Collection resultado = mr.buscaEstado(obj.toString());
+
+        ActionMessages errores = new ActionMessages();
+        if (resultado != null) {
+            if ( resultado.isEmpty() ) {
+                errores.add(ActionMessages.GLOBAL_MESSAGE,
+                    new ActionMessage("errors.registroVacio"));
+                saveErrors(request, errores);
+            } else {
+                forma.setLugares(resultado);
+            }
+            return (mapping.findForward("exito"));
+        } else {
+            log.error("Ocurrió un error de infraestructura");
+            errores.add(ActionMessages.GLOBAL_MESSAGE,
+                        new ActionMessage("errors.infraestructura"));                
+            saveErrors(request, errores);
+            return ( mapping.findForward("fracaso") );
+        }
+
+    }
+
     public ActionForward solicitarListarLugares(
                 ActionMapping mapping,
                 ActionForm form,
@@ -93,141 +131,6 @@ public final class MCUListarLugares
 
         ManejadorLugares mr = new ManejadorLugares();
         Collection resultado = mr.listarLugaresPorNombre(forma.getNombre());
-
-        ActionMessages errores = new ActionMessages();
-        if (resultado != null) {
-            if ( resultado.isEmpty() ) {
-                errores.add(ActionMessages.GLOBAL_MESSAGE,
-                    new ActionMessage("errors.registroVacio"));
-                saveErrors(request, errores);
-            } else {
-                forma.setLugares(resultado);
-            }
-            return (mapping.findForward("exito"));
-        } else {
-            log.error("Ocurrió un error de infraestructura");
-            errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.infraestructura"));                
-            saveErrors(request, errores);
-            return ( mapping.findForward("fracaso") );
-        }
-
-    }
-
-    //cambios
-    public ActionForward buscarImagen(
-                ActionMapping mapping,
-                ActionForm form,
-                HttpServletRequest request,
-                HttpServletResponse response)
-            throws Exception {
-
-        if (log.isDebugEnabled()) {
-            log.debug(">solicitarListarLugares");
-        }
-
-        // Verifica si la acción fue cancelada por el usuario
-        if (isCancelled(request)) {
-            if (log.isDebugEnabled()) {
-                log.debug("<La acción fue cancelada");
-            }
-            return (mapping.findForward("cancelar"));
-        }
-
-        FormaListadoLugares forma = (FormaListadoLugares)form;
-
-        ManejadorLugares mr = new ManejadorLugares();
-        Collection resultado = mr.buscaImagen(forma.getNombre());
-
-        ActionMessages errores = new ActionMessages();
-        if (resultado != null) {
-            if ( resultado.isEmpty() ) {
-                errores.add(ActionMessages.GLOBAL_MESSAGE,
-                    new ActionMessage("errors.registroVacio"));
-                saveErrors(request, errores);
-            } else {
-                forma.setLugares(resultado);
-            }
-            return (mapping.findForward("exito"));
-        } else {
-            log.error("Ocurrió un error de infraestructura");
-            errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.infraestructura"));                
-            saveErrors(request, errores);
-            return ( mapping.findForward("fracaso") );
-        }
-
-    }
-    
-    public ActionForward buscarEstado(
-                ActionMapping mapping,
-                ActionForm form,
-                HttpServletRequest request,
-                HttpServletResponse response)
-            throws Exception {
-
-        if (log.isDebugEnabled()) {
-            log.debug(">solicitarListarLugares");
-        }
-
-        // Verifica si la acción fue cancelada por el usuario
-        if (isCancelled(request)) {
-            if (log.isDebugEnabled()) {
-                log.debug("<La acción fue cancelada");
-            }
-            return (mapping.findForward("cancelar"));
-        }
-
-        FormaListadoLugares forma = (FormaListadoLugares)form;
-
-        ManejadorLugares mr = new ManejadorLugares();
-        Collection resultado = mr.buscaEstado(forma.getNombre());
-
-        ActionMessages errores = new ActionMessages();
-        if (resultado != null) {
-            if ( resultado.isEmpty() ) {
-                errores.add(ActionMessages.GLOBAL_MESSAGE,
-                    new ActionMessage("errors.registroVacio"));
-                saveErrors(request, errores);
-            } else {
-                forma.setLugares(resultado);
-            }
-            return (mapping.findForward("exito"));
-        } else {
-            log.error("Ocurrió un error de infraestructura");
-            errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.infraestructura"));                
-            saveErrors(request, errores);
-            return ( mapping.findForward("fracaso") );
-        }
-
-    }
-
-    public ActionForward getService(
-                ActionMapping mapping,
-                ActionForm form,
-                HttpServletRequest request,
-                HttpServletResponse response)
-            throws Exception {
-
-        if (log.isDebugEnabled()) {
-            log.debug(">solicitarListarLugares");
-        }
-
-        // Verifica si la acción fue cancelada por el usuario
-        if (isCancelled(request)) {
-            if (log.isDebugEnabled()) {
-                log.debug("<La acción fue cancelada");
-            }
-            return (mapping.findForward("cancelar"));
-        }
-
-        FormaListadoLugares forma = (FormaListadoLugares)form;
-        ManejadorLugares mr = new ManejadorLugares();
-        log.debug(forma.getPais());
-        String path = getServlet().getServletContext().getRealPath("/");
-        Collection resultado=mr.getService(forma.getPais(),path);
-
 
         ActionMessages errores = new ActionMessages();
         if (resultado != null) {

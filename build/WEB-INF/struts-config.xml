@@ -90,6 +90,9 @@
         <form-bean name="formaAtraccion"
                     type="edu.uag.iidis.scec.vista.FormaAtraccion">
         </form-bean>
+        <form-bean name="formaListadoLugares"
+                    type="edu.uag.iidis.scec.vista.FormaListadoLugares">
+        </form-bean>
 
     </form-beans>
 
@@ -102,6 +105,15 @@
 
     <!-- Definición de acciones -->
     <action-mappings>
+        <!-- Lugares -->
+        <action path="/solicitarListadoLugares"
+                type="edu.uag.iidis.scec.control.MCUListarLugares"
+                parameter="solicitarListarEstados"
+                name="formaListadoLugares"
+                scope="request"
+                validate="false">
+                <forward name="exito" path="/WEB-INF/vista/pantallas/formaListadoLugares.jsp"/>
+        </action>
         <!-- Atraccion -->
         <action path="/solicitarNuevaAtraccion"
                 type="edu.uag.iidis.scec.control.MCUAtraccion"

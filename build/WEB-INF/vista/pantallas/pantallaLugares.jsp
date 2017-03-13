@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     </head>	
     <body>
-        <form action="formaListadoAtracciones.do" method="post">
+        <form action="solicitarListarAtracciones.do" method="post">
         <select class="selectpicker" data-style="btn-info" name = "pais">
             <c:forEach var="lugar" items="${formaListadoLugares.lugares}">
                 <option><c:out value="${lugar.pais}"/></option>

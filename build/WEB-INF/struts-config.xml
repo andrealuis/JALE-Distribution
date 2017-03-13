@@ -50,6 +50,9 @@
 		<form-bean name="formaListadoLugares"
                    type="edu.uag.iidis.scec.vista.FormaListadoLugares">
         </form-bean>
+        <form-bean name="formaListadoAtracciones"
+                   type="edu.uag.iidis.scec.vista.FormaListadoAtracciones">
+        </form-bean>
     </form-beans>
 
 	<form-beans>
@@ -223,6 +226,15 @@
                 scope="request"
                 validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLugares.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaBienvenida.jsp"/>
+        </action>
+        <action path="/solicitarListarAtracciones"
+                type="edu.uag.iidis.scec.control.MCUListarAtracciones"
+                parameter="solicitarListarAtracciones"
+                name="formaListadoAtracciones"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoAtracciones.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaBienvenida.jsp"/>
         </action>
 		<action path="/solicitarRegistroLugar"

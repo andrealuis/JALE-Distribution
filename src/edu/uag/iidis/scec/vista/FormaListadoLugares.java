@@ -22,6 +22,7 @@ public final class FormaListadoLugares
     private String nombre;
     private String pais;
     private String estado;
+    private int id;
 
     public void setLugares(Collection lugares) {
         this.lugares = lugares;
@@ -62,7 +63,13 @@ public final class FormaListadoLugares
         this.estado = estado;
     }
     
-    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public void reset(ActionMapping mapping,
                       HttpServletRequest request) {

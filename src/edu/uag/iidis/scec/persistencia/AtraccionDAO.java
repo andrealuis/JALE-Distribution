@@ -7,7 +7,7 @@ import org.hibernate.criterion.Example;
 
 
 import edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura;
-
+import edu.uag.iidis.scec.modelo.Atraccion;
 import edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -64,5 +64,60 @@ public class AtraccionDAO {
             }
             throw new ExcepcionInfraestructura(ex);
         }
+    }
+
+    public Atraccion buscarPorId(Long idAtraccion, boolean bloquear)
+            throws ExcepcionInfraestructura {
+
+        Atraccion atraccion = null;
+
+        if (log.isDebugEnabled()) {
+            log.debug(">buscarPorID(" + idAtraccion + ", " + bloquear + ")");
+        }
+
+        try {
+            if (bloquear) {
+                atraccion = (Atraccion)HibernateUtil.getSession()
+                                                .load(Atraccion.class, 
+                                                      idAtraccion, 
+                                                      LockMode.UPGRADE);
+            } else {
+                atraccion = (Atraccion)HibernateUtil.getSession()
+                                                .load(Atraccion.class,
+                                                      idAtraccion);
+            }
+        } catch (HibernateException ex) {
+            if (log.isWarnEnabled()) {
+                log.warn("<HibernateException");
+            }
+
+            throw new ExcepcionInfraestructura(ex);
+        }
+        return atraccion;
+    }
+
+    public Collection buscarTodos()
+            throws ExcepcionInfraestructura {
+
+        Collection atracciones;
+
+        if (log.isDebugEnabled()) {
+            log.debug(">buscarTodos()");
+        }
+
+        try {
+            atracciones = HibernateUtil.getSession()
+                                    .createCriteria(Atraccion.class)
+                                    .list();
+                                    
+              log.debug(">buscarTodos() ---- list   " + atracciones.size());
+            log.debug(">buscarTodos() ---- contenido   " + atracciones);
+        } catch (HibernateException e) {
+            if (log.isWarnEnabled()) {
+                log.warn("<HibernateException");
+            }
+            throw new ExcepcionInfraestructura(e);
+        }
+        return atracciones;
     }
 }

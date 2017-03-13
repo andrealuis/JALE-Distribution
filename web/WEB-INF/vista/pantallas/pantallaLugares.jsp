@@ -8,30 +8,31 @@
     <head>
         <title>USJ</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    </head>
-	
+    </head>	
     <body>
-
-<<<<<<< HEAD
-
-        <h1>que paso</h1>
-                    <select id="pais" class="selectpicker" data-style="btn-info">
-=======
-        <h1 id="textoRandom">que paso</h1>
-                    <select class="selectpicker" data-style="btn-info">
->>>>>>> 7dc8408272dfa987dc10c319565ae1207ea38a05
-                        <option>Pais</option>
-                    </select>
-                    <select id="estado" class="selectpicker" data-style="btn-info">
-                      <option>Estado</option>
-                    </select>
-                    <select id="municipio" class="selectpicker" data-style="btn-info"s>
-                      <option>Municipio</option>
-                    </select>
-                   
-             
-                    <input type="submit" id="btn_NomAtrac" />
+        <form action="" method="post">
         
+        <select class="selectpicker" data-style="btn-info" name = "pais">
+            <c:forEach var="lugar" items="${formaListadoLugares.lugares}">
+                <option><c:out value="${lugar.pais}"/></option>
+            </c:forEach>
+        </select>
+
+        <select class="selectpicker" data-style="btn-info">
+            <c:forEach var="lugar" items="${formaListadoLugares.lugares}">
+                <option><c:out value="${lugar.estado}"/></option>
+            </c:forEach>
+        </select>
+
+        <select class="selectpicker" data-style="btn-info">
+            <c:forEach var="lugar" items="${formaListadoLugares.lugares}">
+                <option><c:out value="${lugar.nombre}"/></option>
+            </c:forEach>
+        </select>       
+             
+        <input type="submit" id="btn_NomAtrac" />
+        
+        </form>
     </body>
 </html>
 

@@ -8,5 +8,5 @@
 	<c:import url="/WEB-INF/vista/pantallas/pantallaLugares.jsp" />
 </form>
 <script>
-	alert(document.getElementById("textoRandom").innerHTML);
+	//alert(document.getElementById("textoRandom").innerHTML);
 </script>

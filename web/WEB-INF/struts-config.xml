@@ -90,10 +90,6 @@
         <form-bean name="formaAtraccion"
                     type="edu.uag.iidis.scec.vista.FormaAtraccion">
         </form-bean>
-        <form-bean name="formaListadoLugares"
-                    type="edu.uag.iidis.scec.vista.FormaListadoLugares">
-        </form-bean>
-
     </form-beans>
 
 
@@ -105,14 +101,22 @@
 
     <!-- Definición de acciones -->
     <action-mappings>
-        <!-- Lugares -->
-        <action path="/solicitarListadoLugares"
+        <!-- Lugares --> 
+        <action path="/solicitarListarEstados"
                 type="edu.uag.iidis.scec.control.MCUListarLugares"
                 parameter="solicitarListarEstados"
                 name="formaListadoLugares"
                 scope="request"
                 validate="false">
                 <forward name="exito" path="/WEB-INF/vista/pantallas/formaListadoLugares.jsp"/>
+        </action>
+        <action path="/solicitarListarMunicipios"
+                type="edu.uag.iidis.scec.control.MCUListarLugares"
+                parameter="solicitarListarMunicipios"
+                name="formaListadoLugares"
+                scope="request"
+                validate="false">
+                <forward name="exito" path="/WEB-INF/vista/pantallas/formaListadoMunicipios.jsp"/>
         </action>
         <!-- Atraccion -->
         <action path="/solicitarNuevaAtraccion"
@@ -184,7 +188,7 @@
                 validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPersona.jsp"/>
         </action>
-        <action path="/solicitarListarRoles"
+       <!-- <action path="/solicitarListarRoles"
                 type="edu.uag.iidis.scec.control.MCUListarRoles"
                 parameter="solicitarListarRoles"
                 name="formaListadoRoles"
@@ -210,7 +214,7 @@
                 validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoEstados.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
-        </action>
+        </action> -->
 		
 		<action path="/ListarEstados"
                 type="edu.uag.iidis.scec.control.MCUListarEstados"

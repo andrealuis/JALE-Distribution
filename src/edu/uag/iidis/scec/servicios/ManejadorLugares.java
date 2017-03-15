@@ -80,12 +80,32 @@ public class ManejadorLugares {
         Collection resultado;
 
         if (log.isDebugEnabled()) {
-            log.debug(">guardarUsuario(usuario)");
+            log.debug(">BuscaEstado(nombre)");
         }
 
         try {
             HibernateUtil.beginTransaction();
             resultado = dao.buscarEstado(nombre);
+            HibernateUtil.commitTransaction();
+            return resultado;         
+        } catch (ExcepcionInfraestructura e) {
+            HibernateUtil.rollbackTransaction();
+            return null;
+        } finally {
+            HibernateUtil.closeSession();
+        }
+    }
+
+    public Collection buscaMunicipio(String nombre) {
+        Collection resultado;
+
+        if (log.isDebugEnabled()) {
+            log.debug(">BuscaMunicipio(nombre)");
+        }
+
+        try {
+            HibernateUtil.beginTransaction();
+            resultado = dao.buscarMunicipio(nombre);
             HibernateUtil.commitTransaction();
             return resultado;         
         } catch (ExcepcionInfraestructura e) {
@@ -165,7 +185,7 @@ public class ManejadorLugares {
         try {
             HibernateUtil.beginTransaction();           
             
-            if (dao.existeLugar(lugar.getNombre())) {
+            if (dao.existeLugar(lugar.getMunicipio())) {
                resultado = 1; // Excepción. El nombre de ciudad ya existe
             } else {
 

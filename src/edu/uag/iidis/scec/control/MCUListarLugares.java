@@ -36,7 +36,7 @@ public final class MCUListarLugares
             throws Exception {
 
         if (log.isDebugEnabled()) {
-            log.debug(">solicitarListarLugares");
+            log.debug(">solicitarListarEstados");
         }
 
         FormaListadoLugares forma = (FormaListadoLugares)form;
@@ -44,6 +44,43 @@ public final class MCUListarLugares
         ManejadorLugares mr = new ManejadorLugares();
         Object obj = request.getParameter("nombrePais");
         Collection resultado = mr.buscaEstado(obj.toString());
+
+        ActionMessages errores = new ActionMessages();
+        if (resultado != null) {
+            if ( resultado.isEmpty() ) {
+                errores.add(ActionMessages.GLOBAL_MESSAGE,
+                    new ActionMessage("errors.registroVacio"));
+                saveErrors(request, errores);
+            } else {
+                forma.setLugares(resultado);
+            }
+            return (mapping.findForward("exito"));
+        } else {
+            log.error("Ocurrió un error de infraestructura");
+            errores.add(ActionMessages.GLOBAL_MESSAGE,
+                        new ActionMessage("errors.infraestructura"));                
+            saveErrors(request, errores);
+            return ( mapping.findForward("fracaso") );
+        }
+
+    }
+
+    public ActionForward solicitarListarMunicipios(
+                ActionMapping mapping,
+                ActionForm form,
+                HttpServletRequest request,
+                HttpServletResponse response)
+            throws Exception {
+
+        if (log.isDebugEnabled()) {
+            log.debug(">solicitarListarMunicipios");
+        }
+
+        FormaListadoLugares forma = (FormaListadoLugares)form;
+
+        ManejadorLugares mr = new ManejadorLugares();
+        Object obj = request.getParameter("nombreEstado");
+        Collection resultado = mr.buscaMunicipio(obj.toString());
 
         ActionMessages errores = new ActionMessages();
         if (resultado != null) {

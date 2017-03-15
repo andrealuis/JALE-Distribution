@@ -83,8 +83,6 @@ public class LugarDAO {
 
     public Collection buscarPorEjemplo(Lugar lugar)
             throws ExcepcionInfraestructura {
-
-
         Collection lugares;
  
         if (log.isDebugEnabled()) {
@@ -286,12 +284,54 @@ public class LugarDAO {
             throws ExcepcionInfraestructura {
 
         if (log.isDebugEnabled()) {
-            log.debug(">existeRol(nombreRol)");
+            log.debug(">buscarEstado(nombreLugar)");
         }
 
         try {
  
-            String hql = "from Lugar where estado = '"+nombreLugar+"'";
+            String hql = "from Lugar where pais= '"+nombreLugar+"'";
+            
+             if (log.isDebugEnabled()) {
+                 log.debug(hql + nombreLugar);
+            }
+        
+            Query query = HibernateUtil.getSession()
+                                        .createQuery(hql);
+            if (log.isDebugEnabled()) {
+                 log.debug("<<<<<<<<< create query ok " );
+            }
+            if (log.isDebugEnabled()) {
+                 log.debug("<<<<<<<<< set Parameter ok antes del query list >>>>>");
+            }
+            List results = query.list();
+            int resultado = results.size();
+            if (log.isDebugEnabled()) {
+                 log.debug("<<<<<<<<< Result size " + resultado);
+            }
+            if (resultado == 0) {
+               return results;
+            }
+            
+            return results;
+
+        } catch (HibernateException ex) {
+            if (log.isWarnEnabled()) {
+                log.warn("<HibernateException *******************");
+            }
+            throw new ExcepcionInfraestructura(ex);
+        }
+    }
+
+    public Collection buscarMunicipio(String nombreLugar)
+            throws ExcepcionInfraestructura {
+
+        if (log.isDebugEnabled()) {
+            log.debug(">buscarMunicipio(nombreLugar)");
+        }
+
+        try {
+ 
+            String hql = "from Lugar where estado= '"+nombreLugar+"'";
             
              if (log.isDebugEnabled()) {
                  log.debug(hql + nombreLugar);

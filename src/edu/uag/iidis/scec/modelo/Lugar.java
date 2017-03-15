@@ -17,7 +17,7 @@ public class Lugar extends ClaseBase
         implements Serializable {
 
     private Long id;
-    private String nombre;
+    private String municipio;
 	private String estado;
     private String pais;
 
@@ -28,8 +28,8 @@ public class Lugar extends ClaseBase
         this.id = id;
     }
 
-    public Lugar(String nombre, String estado, String pais) {
-        this.nombre = nombre;
+    public Lugar(String municipio, String estado, String pais) {
+        this.municipio = municipio;
         this.estado = estado;
         this.pais = pais;
     }
@@ -57,8 +57,8 @@ public class Lugar extends ClaseBase
      * Regresa el nombre del Lugar.
      * @return String
      */
-    public String getNombre() {
-        return this.nombre;
+    public String getMunicipio() {
+        return this.municipio;
     }
 	public String getEstado() {
         return this.estado;
@@ -70,8 +70,8 @@ public class Lugar extends ClaseBase
      * Establece el nombre del Lugar.
      * @return void
      */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setMunicipio(String municipio) {
+        this.municipio = municipio;
     }
 	public void setEstado(String estado) {
         this.estado = estado;

@@ -2,26 +2,26 @@
 
 <hibernate-mapping>
     <class name="edu.uag.iidis.scec.modelo.Estado"
-           table="Estados"
+           table="Estado"
            dynamic-update="false"
            dynamic-insert="false">
 
-        <id name="id"
-            column="id"
-            type="java.lang.Long"
+        <id name="idEstado"
+            column="idEstado"
+            type="java.lang.Integer"
             unsaved-value="null" >
             <generator class="increment">
             </generator>
         </id>
 
-        <property name="nombre"
-			column="Nombre"
-            type="java.lang.String"
+        <property name="idPais"
+			column="idPais"
+            type="java.lang.Integer"
             not-null="true"
             unique="true" />
 
-        <property name="descripcion"
-			column="Descripcion"
+        <property name="nombreEstado"
+			column="nombreEstado"
             type="java.lang.String" />
 
     </class>

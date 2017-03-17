@@ -7,7 +7,7 @@ import org.hibernate.criterion.Example;
 
 
 import edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura;
-import edu.uag.iidis.scec.modelo.Lugar;
+import edu.uag.iidis.scec.modelo.*;
 import edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -80,7 +80,6 @@ public class LugarDAO {
         return lugares;
     }
 
-
     public Collection buscarPorEjemplo(Lugar lugar)
             throws ExcepcionInfraestructura {
         Collection lugares;
@@ -147,19 +146,6 @@ public class LugarDAO {
 
         try {
             
-            
-//            String consultaCuentaRoles =
-//            "select count(*) from Ciudad r where r.nombre=?";
-//
- //           int resultado =
- //           ((Integer) HibernateUtil.getSession()
- //                          .find(consultaCuentaRoles, 
- //                                nombreRol,
- //                                StringType.INSTANCE)
- //                          .iterator()
- //                          .next()).intValue();
-// de acuerdo al nuevo formato
- 
             String hql = "select nombreMunicipio from Lugares where nombreMunicipio = :nombre";
             
              if (log.isDebugEnabled()) {
@@ -280,19 +266,43 @@ public class LugarDAO {
         }
     }
 
-    public Collection buscarEstado(String nombreLugar)
+     public Collection buscarPaises()
             throws ExcepcionInfraestructura {
 
+        Collection paises;
+
         if (log.isDebugEnabled()) {
-            log.debug(">buscarEstado(nombreLugar)");
+            log.debug(">buscarTodos()");
         }
 
         try {
- 
-            String hql = "from Lugar where pais= '"+nombreLugar+"'";
+            paises = HibernateUtil.getSession()
+                                    .createCriteria(Pais.class)
+                                    .list();
+                                    
+              log.debug(">buscarTodos() ---- list   " + paises.size());
+            log.debug(">buscarTodos() ---- contenido   " + paises);
+        } catch (HibernateException e) {
+            if (log.isWarnEnabled()) {
+                log.warn("<HibernateException");
+            }
+            throw new ExcepcionInfraestructura(e);
+        }
+        return paises;
+    }
+
+    public Collection buscarEstado(String id)
+            throws ExcepcionInfraestructura {
+
+        if (log.isDebugEnabled()) {
+            log.debug(">buscarEstado(id)");
+        }
+
+        try {
+            String hql = "from Estado where idPais= "+id;
             
              if (log.isDebugEnabled()) {
-                 log.debug(hql + nombreLugar);
+                 log.debug(hql);
             }
         
             Query query = HibernateUtil.getSession()
@@ -322,19 +332,19 @@ public class LugarDAO {
         }
     }
 
-    public Collection buscarMunicipio(String nombreLugar)
+    public Collection buscarMunicipio(String id)
             throws ExcepcionInfraestructura {
 
         if (log.isDebugEnabled()) {
-            log.debug(">buscarMunicipio(nombreLugar)");
+            log.debug(">buscarMunicipio(id)");
         }
 
         try {
  
-            String hql = "from Lugar where estado= '"+nombreLugar+"'";
+            String hql = "from Municipio where idEstado= "+id;
             
              if (log.isDebugEnabled()) {
-                 log.debug(hql + nombreLugar);
+                 log.debug(hql);
             }
         
             Query query = HibernateUtil.getSession()

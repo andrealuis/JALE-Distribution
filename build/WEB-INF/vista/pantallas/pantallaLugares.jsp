@@ -10,89 +10,63 @@
     <head>
         <title>USJ</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-        <script>
-            Array.prototype.contains = function(v) {
-                for(var i = 0; i < this.length; i++) {
-                    if(this[i] === v) return true;
-                }
-                return false;
-            };
-
-            Array.prototype.unique = function() {
-                var arr = [];
-                for(var i = 0; i < this.length; i++) {
-                    if(!arr.contains(this[i])) {
-                        arr.push(this[i]);
-                    }
-                }
-                return arr; 
-            }
-        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </head>	
     <body>
         <form id="form" method="post">
             <select id="selectPais" class="selectpicker" data-style="btn-info" name = "pais">
-                <c:forEach var="lugar" items="${formaListadoLugares.lugares}">
-                    <option value="${lugar.pais}"><c:out value="${lugar.pais}"/></option>
+                <c:forEach var="pais" items="${formaListadoPaises.paises}">
+                    <option><c:out value="${pais.nombrePais}"/></option>
+                    <input type="hidden" id="${pais.nombrePais}" value="${pais.idPais}"/>
                 </c:forEach>
             </select>
 
             <select id="selectEstado" class="selectpicker" data-style="btn-info">
+                <option>Selecciona un Estado</option>
             </select>
 
-            <select id="selectMunipio" class="selectpicker" data-style="btn-info">
+            <select id="selectMunicipio" class="selectpicker" data-style="btn-info">
+                <option>Selecciona un Municipio</option>
             </select>       
                  
             <button onclick="callAction()" id="btn_NomAtrac">Buscar</button>
             
         </form>
         <script>
-            //Elimina valores repetidos en el pais 
-            var sPais = document.getElementById("selectPais").options;
-            var array= [];
-            for (var i = 0; i < sPais.length; i++) {
-                array[i] = sPais[i].value;
-            }
-            array = array.unique();
-            var sPaisLen = sPais.length;
-            for(i = 0; i < sPaisLen; i++){
-                document.getElementById("selectPais").remove(0);
-            }
-            for(i = 0; i < array.length; i++){
-                var option = document.createElement("option");
-                option.text = array[i];
-                document.getElementById("selectPais").add(option);
-            }
-            if(array.length == 1) //Si solo existe un pais manda a listar los estados inmediatamente
-                getEstados();
             var selectPais = document.getElementById("selectPais"); //Instancia de selects
             var selectEstado = document.getElementById("selectEstado");
-
-                //Funcion ajax para obtener los munipios
+            if(selectPais.length == 1) //Si solo existe un pais manda a listar los estados inmediatamente
+                getEstados();
+            //Funcion ajax para obtener los munipios
             function getMunicipios(){
-                var val = document.getElementById("selectEstado").value; //Obtiene el valor del select
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                    if(xhttp.status == 400){}
-                    if (xhttp.readyState == 4 && xhttp.status == 200) {
-                        document.getElementById("selectMunipio").innerHTML = xhttp.responseText;
-                    }
-                };
-                xhttp.open("GET", "solicitarListarMunicipios.do?nombreEstado="+val, true);
-                xhttp.send();
+                var val = document.getElementById("selectEstado").value;
+                if(val!="Selecciona un Estado"){
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if(xhttp.status == 400){}
+                        if (xhttp.readyState == 4 && xhttp.status == 200) {
+                            document.getElementById("selectMunicipio").innerHTML = "<option>Selecciona un Municipio</option>"+ xhttp.responseText;
+                        }
+                    };
+                    xhttp.open("GET", "solicitarListarMunicipios.do?idEstado="+val, true);
+                    xhttp.send();
+                }else{
+                    alert("Selecciona un estado");  
+                }
             }
 
             //funcion ajax para obteer los estados
             function getEstados(){
-                var val = document.getElementById("selectPais").value; //Obtiene el valor del select
+                var sValue = document.getElementById("selectPais").value; //Obtiene el valor del select
+                var val = document.getElementById(sValue).value;
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
                     if(xhttp.status == 400){}
                     if (xhttp.readyState == 4 && xhttp.status == 200) {
-                        document.getElementById("selectEstado").innerHTML = xhttp.responseText;
+                        document.getElementById("selectEstado").innerHTML = "<option>Selecciona un Estado</option>"+xhttp.responseText;
                     }
                 };
-                xhttp.open("GET", "solicitarListarEstados.do?nombrePais="+val, true);
+                xhttp.open("GET", "solicitarListarEstados.do?idPais="+val, true);
                 xhttp.send();
             }
 
@@ -105,9 +79,8 @@
             });
 
             function callAction(){
-                //var val = document.getElementById("selectMunipio").value;
-                //document.getElementById("form").action = "/solicitarAtraccion.do?atractionName="+val+".do";   
-                document.getElementById("form").action = "/solicitarListarAtracciones.do";
+                var idMunicipio = document.getElementById("selectMunicipio").value;
+                document.getElementById("form").action = "/solicitarListarAtracciones.do?idMunicipio="+idMunicipio;
             }
         </script>
     </body>

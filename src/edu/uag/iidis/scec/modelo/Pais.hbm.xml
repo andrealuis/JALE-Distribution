@@ -6,23 +6,17 @@
            dynamic-update="false"
            dynamic-insert="false">
 
-        <id name="id"
-            column="id"
-            type="java.lang.Long"
+        <id name="idPais"
+            column="idPais"
+            type="java.lang.Integer"
             unsaved-value="null" >
             <generator class="increment">
             </generator>
         </id>
 
-        <property name="nombre"
-            column="Nombre"
-			type="java.lang.String"
-            not-null="true"
-            unique="true" />
-
-        <property name="descripcion"
-			column="Descripcion"
-            type="java.lang.String" />
+        <property name="nombrePais"
+            column="nombrePais"
+			type="java.lang.String"/>
 
     </class>
 

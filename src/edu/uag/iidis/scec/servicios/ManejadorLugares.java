@@ -76,16 +76,36 @@ public class ManejadorLugares {
         }
     }
 
-    public Collection buscaEstado(String nombre) {
+    public Collection buscaPaises() {
         Collection resultado;
 
         if (log.isDebugEnabled()) {
-            log.debug(">BuscaEstado(nombre)");
+            log.debug(">buscaPaises()");
         }
 
         try {
             HibernateUtil.beginTransaction();
-            resultado = dao.buscarEstado(nombre);
+            resultado = dao.buscarPaises();
+            HibernateUtil.commitTransaction();
+            return resultado;         
+        } catch (ExcepcionInfraestructura e) {
+            HibernateUtil.rollbackTransaction();
+            return null;
+        } finally {
+            HibernateUtil.closeSession();
+        }
+    }
+
+    public Collection buscaEstado(String id) {
+        Collection resultado;
+
+        if (log.isDebugEnabled()) {
+            log.debug(">BuscaEstado(id)");
+        }
+
+        try {
+            HibernateUtil.beginTransaction();
+            resultado = dao.buscarEstado(id);
             HibernateUtil.commitTransaction();
             return resultado;         
         } catch (ExcepcionInfraestructura e) {

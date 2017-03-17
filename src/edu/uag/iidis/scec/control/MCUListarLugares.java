@@ -39,10 +39,10 @@ public final class MCUListarLugares
             log.debug(">solicitarListarEstados");
         }
 
-        FormaListadoLugares forma = (FormaListadoLugares)form;
+        FormaListadoEstados forma = (FormaListadoEstados)form;
 
         ManejadorLugares mr = new ManejadorLugares();
-        Object obj = request.getParameter("nombrePais");
+        Object obj = request.getParameter("idPais");
         Collection resultado = mr.buscaEstado(obj.toString());
 
         ActionMessages errores = new ActionMessages();
@@ -52,7 +52,7 @@ public final class MCUListarLugares
                     new ActionMessage("errors.registroVacio"));
                 saveErrors(request, errores);
             } else {
-                forma.setLugares(resultado);
+                forma.setEstados(resultado);
             }
             return (mapping.findForward("exito"));
         } else {
@@ -76,10 +76,10 @@ public final class MCUListarLugares
             log.debug(">solicitarListarMunicipios");
         }
 
-        FormaListadoLugares forma = (FormaListadoLugares)form;
+        FormaListadoMunicipios forma = (FormaListadoMunicipios)form;
 
         ManejadorLugares mr = new ManejadorLugares();
-        Object obj = request.getParameter("nombreEstado");
+        Object obj = request.getParameter("idEstado");
         Collection resultado = mr.buscaMunicipio(obj.toString());
 
         ActionMessages errores = new ActionMessages();
@@ -89,7 +89,7 @@ public final class MCUListarLugares
                     new ActionMessage("errors.registroVacio"));
                 saveErrors(request, errores);
             } else {
-                forma.setLugares(resultado);
+                forma.setMunicipios(resultado);
             }
             return (mapping.findForward("exito"));
         } else {
@@ -121,11 +121,10 @@ public final class MCUListarLugares
             return (mapping.findForward("cancelar"));
         }
 
-        FormaListadoLugares forma = (FormaListadoLugares)form;
+        FormaListadoPaises forma = (FormaListadoPaises)form;
 
         ManejadorLugares mr = new ManejadorLugares();
-        Collection resultado = mr.listarLugares();
-
+        Collection resultado = mr.buscaPaises();
         ActionMessages errores = new ActionMessages();
         if (resultado != null) {
             if ( resultado.isEmpty() ) {
@@ -133,7 +132,8 @@ public final class MCUListarLugares
                     new ActionMessage("errors.registroVacio"));
                 saveErrors(request, errores);
             } else {
-                forma.setLugares(resultado);
+                forma.setPaises(resultado);
+               // log.debug(forma.getPaises());
             }
             return (mapping.findForward("exito"));
         } else {

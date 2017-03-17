@@ -2,6 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
 
-<c:forEach var="lugar" items="${formaListadoLugares.lugares}">
-    <option><c:out value="${lugar.municipio}"/></option>
+<c:forEach var="municipio" items="${formaListadoMunicipios.municipios}">
+    <option value="${municipio.idMunicipio}"><c:out value="${municipio.nombreMunicipio}"/></option>
 </c:forEach>

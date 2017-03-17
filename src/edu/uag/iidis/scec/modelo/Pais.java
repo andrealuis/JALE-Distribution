@@ -4,84 +4,38 @@ import java.io.Serializable;
 import java.util.*;
 
 
-/**
- * Esta clase es usada para representar un rol de un
- * usuario. 
- *
- * <p><a href="Estado.java.html"><i>Ver código fuente</i></a></p>
- *
- * @author <a href="mailto:vramos@uag.mx">Victor Ramos</a>
- * @version 1.0
- */
 public class Pais extends ClaseBase 
         implements Serializable {
 
-    private Long id;
-    private String nombre;
-    private String descripcion;
+    private int idPais;
+    private String nombrePais;
 
 
     public Pais() {
     }
 
-    public Pais(Long id){
-        this.id = id;
+    public Pais(int idPais){
+        this.idPais = idPais;
     }
 
-    public Pais(String nombre, String descripcion){
-        this.nombre=nombre;
-        this.descripcion=descripcion;
+    public Pais(String nombrePais){
+        this.nombrePais=nombrePais;
     }
 
-    /**
-     * Regresa el id del Pais.
-     * @return Long
-     */
-    public Long getId() {
-        return this.id;
+    public int getidPais() {
+        return this.idPais;
     }
 
-    /**
-     * Establece el id del Pais.
-     * @return void
-     */
-    public void setId(Long id) {
-        this.id = id;
+    public void setidPais(int idPais) {
+        this.idPais = idPais;
     }
 
 
-    /**
-     * Regresa el nombre del Pais.
-     * @return String
-     */
-    public String getNombre() {
-        return this.nombre;
+    public String getNombrePais() {
+        return this.nombrePais;
     }
 
-    /**
-     * Establece el nombre del Pais.
-     * @return void
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombrePais(String nombrePais) {
+        this.nombrePais = nombrePais;
     }
-
-    
-    /**
-     * Regresa la descripción del Pais.
-     * @return String
-     */
-    public String getDescripcion() {
-        return this.descripcion;
-    }
-
-    /**
-     * Establece la descripción del Pais.
-     * @return void
-     */
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-
 }

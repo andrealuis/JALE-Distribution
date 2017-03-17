@@ -4,84 +4,47 @@ import java.io.Serializable;
 import java.util.*;
 
 
-/**
- * Esta clase es usada para representar un rol de un
- * usuario. 
- *
- * <p><a href="Estado.java.html"><i>Ver código fuente</i></a></p>
- *
- * @author <a href="mailto:vramos@uag.mx">Victor Ramos</a>
- * @version 1.0
- */
 public class Estado extends ClaseBase 
         implements Serializable {
 
-    private Long id;
-    private String nombre;
-    private String descripcion;
+    private int idPais;
+    private int idEstado;
+    private String nombreEstado;
 
 
     public Estado() {
     }
 
-    public Estado(Long id){
-        this.id = id;
+    public Estado(int idPais){
+        this.idPais = idPais;
     }
 
-    public Estado(String nombre, String descripcion){
-        this.nombre=nombre;
-        this.descripcion=descripcion;
+    public Estado(int idEstado, String nombreEstado){
+        this.idEstado=idEstado;
+        this.nombreEstado=nombreEstado;
     }
 
-    /**
-     * Regresa el id del rol.
-     * @return Long
-     */
-    public Long getId() {
-        return this.id;
+    public int getIdPais(){
+        return this.idPais;
     }
 
-    /**
-     * Establece el id del rol.
-     * @return void
-     */
-    public void setId(Long id) {
-        this.id = id;
+    public int getIdEstado(){
+        return this.idEstado;
     }
 
-
-    /**
-     * Regresa el nombre del rol.
-     * @return String
-     */
-    public String getNombre() {
-        return this.nombre;
+    public String getNombreEstado(){
+        return this.nombreEstado;
     }
 
-    /**
-     * Establece el nombre del rol.
-     * @return void
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setIdPais(int idPais){
+        this.idPais = idPais;
     }
 
-    
-    /**
-     * Regresa la descripción del rol.
-     * @return String
-     */
-    public String getDescripcion() {
-        return this.descripcion;
+    public void setIdEstado(int idEstado){
+        this.idEstado = idEstado;
     }
 
-    /**
-     * Establece la descripción del rol.
-     * @return void
-     */
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setNombreEstado(String nombreEstado){
+        this.nombreEstado = nombreEstado;
     }
-
-
 }

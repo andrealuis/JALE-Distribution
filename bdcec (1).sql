@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-03-2017 a las 18:47:47
+-- Tiempo de generación: 18-03-2017 a las 21:53:26
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 7.1.1
 
@@ -81,7 +81,28 @@ INSERT INTO `calificacion` (`id`, `puntaje`, `comentario`, `nombreAtraccion`) VA
 (23, 5, 'Señor, Erick esta bien chida su secre le pongo 5 estrellitas :*', 'cafecafe'),
 (24, 0, '', 'cafecafe'),
 (25, 4, '', 'cafecafe'),
-(26, 3, 'Muy buenas', 'cafecafe');
+(26, 3, 'Muy buenas', 'cafecafe'),
+(27, 5, 'calificando ando', 'cafecafe');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `estado`
+--
+
+CREATE TABLE `estado` (
+  `idPais` int(11) NOT NULL,
+  `idEstado` int(11) NOT NULL,
+  `nombreEstado` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `estado`
+--
+
+INSERT INTO `estado` (`idPais`, `idEstado`, `nombreEstado`) VALUES
+(1, 1, 'Chiapas'),
+(1, 2, 'Jalisco');
 
 -- --------------------------------------------------------
 
@@ -108,23 +129,40 @@ INSERT INTO `imagen` (`id`, `idAtraccion`, `path`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `lugares`
+-- Estructura de tabla para la tabla `municipio`
 --
 
-  CREATE TABLE `lugares` (
-    `idMunicipio` bigint(20) NOT NULL,
-    `nombrePais` varchar(255) DEFAULT NULL,
-    `nombreEstado` varchar(255) DEFAULT NULL,
-    `nombreMunicipio` varchar(255) DEFAULT NULL
-  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `municipio` (
+  `idEstado` int(11) NOT NULL,
+  `idMunicipio` int(11) NOT NULL,
+  `nombreMunicipio` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `lugares`
+-- Volcado de datos para la tabla `municipio`
 --
 
-INSERT INTO `lugares` (`idMunicipio`, `nombrePais`, `nombreEstado`, `nombreMunicipio`) VALUES
-(1, 'Mexico', 'Chiapas', 'Tuxtla Gutierrez'),
-(2, 'Mexico', 'Jalisco', 'Guadalajara');
+INSERT INTO `municipio` (`idEstado`, `idMunicipio`, `nombreMunicipio`) VALUES
+(1, 1, 'Tuxtla Gutierrez'),
+(2, 2, 'Guadalajara');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pais`
+--
+
+CREATE TABLE `pais` (
+  `idPais` int(11) NOT NULL,
+  `nombrePais` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `pais`
+--
+
+INSERT INTO `pais` (`idPais`, `nombrePais`) VALUES
+(1, 'México');
 
 -- --------------------------------------------------------
 
@@ -195,7 +233,7 @@ CREATE TABLE `vista_atraccion` (
 --
 DROP TABLE IF EXISTS `vista_atraccion`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_atraccion`  AS  select `imagen`.`id` AS `id`,`atraccion`.`nombreAtraccion` AS `nombreAtraccion`,`atraccion`.`descripcion` AS `descripcion`,`atraccion`.`direccion` AS `direccion`,`imagen`.`path` AS `path` from ((`lugares` join `atraccion` on((`lugares`.`idMunicipio` = `atraccion`.`idMunicipio`))) join `imagen` on((`imagen`.`idAtraccion` = `atraccion`.`idAtraccion`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_atraccion`  AS  select `imagen`.`id` AS `id`,`atraccion`.`nombreAtraccion` AS `nombreAtraccion`,`atraccion`.`descripcion` AS `descripcion`,`atraccion`.`direccion` AS `direccion`,`imagen`.`path` AS `path` from ((`municipio` join `atraccion` on((`municipio`.`idMunicipio` = `atraccion`.`idMunicipio`))) join `imagen` on((`imagen`.`idAtraccion` = `atraccion`.`idAtraccion`))) ;
 
 --
 -- Índices para tablas volcadas
@@ -214,16 +252,28 @@ ALTER TABLE `calificacion`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `estado`
+--
+ALTER TABLE `estado`
+  ADD PRIMARY KEY (`idEstado`);
+
+--
 -- Indices de la tabla `imagen`
 --
 ALTER TABLE `imagen`
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- Indices de la tabla `lugares`
+-- Indices de la tabla `municipio`
 --
-ALTER TABLE `lugares`
-  ADD PRIMARY KEY (`idMunicipio`),
+ALTER TABLE `municipio`
+  ADD PRIMARY KEY (`idMunicipio`);
+
+--
+-- Indices de la tabla `pais`
+--
+ALTER TABLE `pais`
+  ADD PRIMARY KEY (`idPais`);
 
 --
 -- Indices de la tabla `roles`
@@ -247,12 +297,27 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `calificacion`
 --
 ALTER TABLE `calificacion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+--
+-- AUTO_INCREMENT de la tabla `estado`
+--
+ALTER TABLE `estado`
+  MODIFY `idEstado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `imagen`
 --
 ALTER TABLE `imagen`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT de la tabla `municipio`
+--
+ALTER TABLE `municipio`
+  MODIFY `idMunicipio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `pais`
+--
+ALTER TABLE `pais`
+  MODIFY `idPais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

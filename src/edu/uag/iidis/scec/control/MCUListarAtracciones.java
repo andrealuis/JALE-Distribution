@@ -49,7 +49,8 @@ public final class MCUListarAtracciones
         FormaListadoAtracciones forma = (FormaListadoAtracciones)form;
 
         ManejadorAtraccion mr = new ManejadorAtraccion();
-        Collection resultado = mr.listarAtracciones();
+        Object obj = request.getParameter("idMunicipio");
+        Collection resultado = mr.listarAtraccionesporMunicipio(obj.toString());
 
         ActionMessages errores = new ActionMessages();
         if (resultado != null) {

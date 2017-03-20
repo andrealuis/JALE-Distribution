@@ -37,16 +37,16 @@ public class ManejadorAtraccion {
         }
     }
 
-    public Collection listarAtracciones() {
+    public Collection listarAtraccionesporMunicipio(String id) {
         Collection resultado;
 
         if (log.isDebugEnabled()) {
-            log.debug(">guardarUsuario(usuario)");
+            log.debug(">listarAtraccionesporMunicipio(id)");
         }
 
         try {
             HibernateUtil.beginTransaction();
-            resultado = dao.buscarTodos();
+            resultado = dao.buscarAtraccionPorMunicipio(id);
             HibernateUtil.commitTransaction();
             return resultado;         
         } catch (ExcepcionInfraestructura e) {

@@ -120,4 +120,45 @@ public class AtraccionDAO {
         }
         return atracciones;
     }
+
+    public Collection buscarAtraccionPorMunicipio(String id)
+            throws ExcepcionInfraestructura {
+
+        if (log.isDebugEnabled()) {
+            log.debug(">buscarAtraccion(id)");
+        }
+
+        try {
+            String hql = "from Atraccion where idMunicipio= "+id;
+            
+             if (log.isDebugEnabled()) {
+                 log.debug(hql);
+            }
+        
+            Query query = HibernateUtil.getSession()
+                                        .createQuery(hql);
+            if (log.isDebugEnabled()) {
+                 log.debug("<<<<<<<<< create query ok " );
+            }
+            if (log.isDebugEnabled()) {
+                 log.debug("<<<<<<<<< set Parameter ok antes del query list >>>>>");
+            }
+            List results = query.list();
+            int resultado = results.size();
+            if (log.isDebugEnabled()) {
+                 log.debug("<<<<<<<<< Result size " + resultado);
+            }
+            if (resultado == 0) {
+               return results;
+            }
+            
+            return results;
+
+        } catch (HibernateException ex) {
+            if (log.isWarnEnabled()) {
+                log.warn("<HibernateException *******************");
+            }
+            throw new ExcepcionInfraestructura(ex);
+        }
+    }
 }

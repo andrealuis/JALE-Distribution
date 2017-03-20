@@ -15,6 +15,7 @@
     <body>
         <form id="form" method="post">
             <select id="selectPais" class="selectpicker" data-style="btn-info" name = "pais">
+                <option> Selecciona un Pais </option>
                 <c:forEach var="pais" items="${formaListadoPaises.paises}">
                     <option value="${pais.idPais}"><c:out value="${pais.nombrePais}"/></option>
                 </c:forEach>

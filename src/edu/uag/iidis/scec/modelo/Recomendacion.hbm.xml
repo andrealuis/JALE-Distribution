@@ -2,43 +2,46 @@
 
 <hibernate-mapping>
     <class name="edu.uag.iidis.scec.modelo.Recomendacion"
-           table="Recomendaciones"
+           table="vista_recomendacion"
            dynamic-update="false"
            dynamic-insert="false">
 
         <id name="id"
             column="id"
-            type="java.lang.Long"
+            type="java.lang.Integer"
             unsaved-value="null" >
             <generator class="increment">
             </generator>
         </id>
 
-        <property name="nombre"
-            column="Nombre"
+        <property name="nombrePais"
+            column="nombrePais"
 			type="java.lang.String"
             not-null="true"/>
 
-        <property name="estado"
-        column="Estado"
-        type="java.lang.String" />
+        <property name="nombreEstado"
+            column="nombreEstado"
+            type="java.lang.String" />
 
-        <property name="usuario"
-			column="Usuario"
+        <property name="nombreMunicipio"
+			column="nombreMunicipio"
             type="java.lang.String" />
 			
-		<property name="fecha"
-			column="Fecha"
-            type="java.lang.String" />
+		<property name="idAtraccion"
+			column="idAtraccion"
+            type="java.lang.Integer" />
 			
-		<property name="comentario"
-			column="Comentario"
+		<property name="nombreAtraccion"
+			column="nombreAtraccion"
             type="java.lang.String"/>
 			
-		<property name="calificacion"
-			column="Calificacion"
-            type="java.lang.Long"/>
-			
+		<property name="path"
+			column="path"
+            type="java.lang.String"/>
+
+        <property name="puntaje"
+            column="puntaje"
+            type="java.lang.Integer"/>
     </class>
 
 </hibernate-mapping>

@@ -16,105 +16,67 @@ import java.util.Date;
 public class Recomendacion extends ClaseBase 
         implements Serializable {
 
-    private Long id;
-    private String nombre;
-    private String estado;
-    private String usuario;
-	private String fecha;
-	private String comentario;
-	private Long calificacion;
+    int id; 
+    String nombrePais;
+    String nombreEstado;
+    String nombreMunicipio;
+    int idAtraccion;
+    String nombreAtraccion;
+    String path;
+    int puntaje;
 
 
     public Recomendacion() {
     }
-
-    public Recomendacion(Long id){
-        this.id = id;
-    }
-
-    public Recomendacion(String nombre,String estado, String usuario,String fecha,String comentario,Long calificacion){
-        this.nombre=nombre;
-        this.estado=estado;
-        this.usuario=usuario;
-		this.fecha=fecha;
-		this.comentario=comentario;
-		this.calificacion=calificacion;
-    }
-
-    /**
-     * Regresa el id del Recomendacion.
-     * @return Long
-     */
-    public Long getId() {
+  
+    public int getId() {
         return this.id;
     }
+    public String getNombrePais() {
+        return this.nombrePais;
+    }
+	public String getNombreEstado() {
+        return this.nombreEstado;
+    }
+	public String getNombreMunicipio() {
+        return this.nombreMunicipio;
+    }
+	public int getIdAtraccion() {
+        return this.idAtraccion;
+    }
+    public String getNombreAtraccion() {
+        return this.nombreAtraccion;
+    }public String getPath() {
+        return this.path;
+    }
+	public int getPuntaje() {
+        return this.puntaje;
+    }
 
-    /**
-     * Establece el id del Recomendacion.
-     * @return void
-     */
-    public void setId(Long id) {
+
+    public void setId(int id) {
         this.id = id;
     }
-
-
-    /**
-     * Regresa el nombre del Recomendacion.
-     * @return String
-     */
-    public String getNombre() {
-        return this.nombre;
+    public void setNombrePais(String nombrePais) {
+        this.nombrePais = nombrePais;
     }
-    public String getEstado() {
-        return this.estado;
+	public void setNombreEstado(String nombreEstado) {
+        this.nombreEstado = nombreEstado;
     }
-	public String getUsuario() {
-        return this.usuario;
+	public void setNombreMunicipio(String nombreMunicipio) {
+        this.nombreMunicipio = nombreMunicipio;
     }
-	public String getFecha() {
-        return this.fecha;
+	public void setIdAtraccion(int idAtraccion) {
+        this.idAtraccion = idAtraccion;
     }
-	public String getComentario() {
-        return this.comentario;
+	public void setNombreAtraccion(String nombreAtraccion) {
+        this.nombreAtraccion = nombreAtraccion;
     }
-	public Long getCalificacion() {
-        return this.calificacion;
+    public void setPath(String path) {
+        this.path = path;
     }
-
-    /**
-     * Establece el nombre del Recomendacion.
-     * @return void
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setPuntaje(int puntaje) {
+        this.puntaje = puntaje;
     }
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-	public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-	public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-	public void setComentario(String comentario) {
-        this.comentario = comentario;
-    }
-	public void setCalificacion(Long calificacion) {
-        this.calificacion = calificacion;
-    }
-    
-    /**
-     * Regresa la descripción del Recomendacion.
-     * @return String
-     */
-    
-
-    /**
-     * Establece la descripción del Recomendacion.
-     * @return void
-     */
-    
-
 
 }

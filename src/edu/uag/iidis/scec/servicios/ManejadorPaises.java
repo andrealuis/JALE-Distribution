@@ -60,7 +60,7 @@ public class ManejadorPaises {
         }
 
     }
-
+/*
     public int crearPais(Pais pais) {
 
         int resultado;
@@ -94,5 +94,5 @@ public class ManejadorPaises {
             HibernateUtil.closeSession();
         }
         return resultado;
-    }    
+    }    */
 }

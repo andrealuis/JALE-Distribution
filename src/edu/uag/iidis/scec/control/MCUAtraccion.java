@@ -55,7 +55,7 @@ public final class MCUAtraccion
         ManejadorAtraccion mr = new ManejadorAtraccion();
 
         Object obj = request.getParameter("atractionName");
-        Collection resultado = mr.buscarAtraccion(obj.toString());
+        Collection resultado = mr.buscarAtraccion(obj.toString().trim());
 
         ActionMessages errores = new ActionMessages();
         if (resultado != null) {

@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+  -- phpMyAdmin SQL Dump
 -- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
@@ -225,6 +225,14 @@ CREATE TABLE `vista_atraccion` (
 ,`direccion` varchar(200)
 ,`path` varchar(500)
 );
+
+--
+-- Volcado de datos para la tabla `vista_atraccion`
+--
+
+INSERT INTO `vista_atraccion`(`id`, `nombreAtraccion`, `descripcion`, `direccion`, `path`) VALUES (1,'Parque de la Marimba
+','great place','evergreen terrace','parque-de-la-marimba-1'),
+(2,'Agua Azul','great place','evergreen terrace','agua-azul-2');
 
 -- --------------------------------------------------------
 

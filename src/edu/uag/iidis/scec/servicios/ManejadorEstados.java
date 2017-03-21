@@ -82,7 +82,7 @@ public class ManejadorEstados {
         }
 
     }
-
+/*
     public int crearEstado(Estado estado) {
 
         int resultado;
@@ -116,5 +116,5 @@ public class ManejadorEstados {
             HibernateUtil.closeSession();
         }
         return resultado;
-    }    
+    }    */
 }

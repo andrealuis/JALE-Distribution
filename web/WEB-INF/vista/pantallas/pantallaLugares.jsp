@@ -76,10 +76,15 @@
             selectEstado.addEventListener("change", function() {
                 getMunicipios();
             });
-
+            
             function callAction(){
-                var idMunicipio = document.getElementById("selectMunicipio").value;
-                document.getElementById("form").action = "solicitarListarAtracciones.do?idMunicipio="+idMunicipio;
+                var selectMunicipio = document.getElementById("selectMunicipio");
+                if(selectPais.value >= 1 && selectEstado.value >= 1 && selectMunicipio.value >= 1){
+                    var idMunicipio = document.getElementById("selectMunicipio").value;
+                    document.getElementById("form").action = "solicitarListarAtracciones.do?idMunicipio="+idMunicipio;
+                }else{
+                    alert("Asegurese de llenar todos los campos");
+                }
             }
         </script>
     </body>

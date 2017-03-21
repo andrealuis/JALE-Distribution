@@ -4,5 +4,5 @@
 
         <c:forEach var="atraccion" items="${formaListadoAtracciones.atracciones}">
 	        	<br>
-	        	<a href="solicitarAtraccion.do?atractionName= ${atraccion.nombreAtraccion}"><c:out value="${atraccion.nombreAtraccion}"/></a>   				
+	        	<a href="solicitarAtraccion.do?atractionName=${atraccion.nombreAtraccion}"><c:out value="${atraccion.nombreAtraccion}"/></a>   				
         </c:forEach>

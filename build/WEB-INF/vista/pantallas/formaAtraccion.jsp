@@ -1,23 +1,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>	
+
 <h1 id="titulo"></h1>
-<table>
   <c:forEach var="atraccion" items="${formaAtraccion.atraccion}">
-    <tr>
-      <td><img src="images/ImagenesAtracciones/${atraccion.path}.jpg" width="80" height="70"></td>
-    </tr>
-    <tr>
-    </tr>
+    <img src="images/ImagenesAtracciones/${atraccion.path}.jpg" width="280" height="270">
     <input type="hidden" id="nombreAtraccion" value="${atraccion.nombreAtraccion}">
     <input type="hidden" id="descripcionData" value="${atraccion.descripcion}">
     <input type="hidden" id="direccionData" value="${atraccion.direccion}">
   </c:forEach>
-</table>  
-<h3>Descripción del lugar</h3>
-<p id="descripcion"></p>
-<h3>Dirección</h3>
-<p id="direccion"></p>
+
+  <h3>Descripcion del lugar</h3>
+  <h4 id="descripcion"></h4>
+  <h3>Direccion</h3>
+  <h4 id="direccion"></h4>
+  
 <script>
   	document.getElementById("titulo").innerHTML= document.getElementById("nombreAtraccion").value;
   	document.getElementById("descripcion").innerHTML = document.getElementById("descripcionData").value;

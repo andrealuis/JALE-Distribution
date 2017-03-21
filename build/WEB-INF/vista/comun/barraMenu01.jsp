@@ -14,10 +14,10 @@
 
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-            <li class="clsMenuBarItem" ><a href="irInicio.do">Home</a></li>
-            <li class="clsMenuBarItem"><a href="irAyuda.do">Help</a></li>
+           <!-- <li class="clsMenuBarItem" ><a href="irInicio.do">Home</a></li>
+            <li class="clsMenuBarItem"><a href="irAyuda.do">Help</a></li>-->
             <li class="clsMenuBarItem"><a href="solicitarListarLugares.do">Lugares</a></li>
-            <li class="clsMenuBarItem"><a href="irAtracciones.do">Atracciones</a></li>
+            <!--<li class="clsMenuBarItem"><a href="irAtracciones.do">Atracciones</a></li>-->
             <li class="clsMenuBarItem"><a href="solicitarListarRecomendaciones.do">Recomendaciones</a></li>
         </ul>
 

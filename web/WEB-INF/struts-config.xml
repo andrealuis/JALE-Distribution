@@ -104,7 +104,17 @@
 
     <!-- Definición de acciones -->
     <action-mappings>
+        <!-- Recomendaciones -->
+        <action path="/solicitarRecomendaciones"
+                type="edu.uag.iidis.scec.control.MCURecomendacion"
+                parameter="solicitarRecomendaciones"
+                name="formaRecomendaciones"
+                scope="request"
+                validate="false">
+                <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaRecomendaciones.jsp"/>
+        </action>
         <!-- Lugares --> 
+
         <action path="/solicitarListarLugares"
                 type="edu.uag.iidis.scec.control.MCUListarLugares"
                 parameter="solicitarListarLugares"

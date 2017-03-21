@@ -16,8 +16,11 @@
   Object obj = request.getParameter("atractionName");
 %>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> 67878dae31592286d882589f40e6e8914b5fcc2d
 <html>
 <head>
   <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
@@ -27,7 +30,10 @@
 </head>
 <body>
   <h1 id="titulo"></h1>
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/master
+=======
+>>>>>>> 67878dae31592286d882589f40e6e8914b5fcc2d
   <c:forEach var="atraccion" items="${formaAtraccion.atraccion}">
   <center>
     <c:if test="${atraccion.id==1}">
@@ -104,5 +110,8 @@
         } 
     }); 
 </script>
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/master
+=======
+>>>>>>> 67878dae31592286d882589f40e6e8914b5fcc2d
 </html>

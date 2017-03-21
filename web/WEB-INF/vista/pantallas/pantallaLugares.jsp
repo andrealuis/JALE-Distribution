@@ -15,9 +15,9 @@
     <body>
         <form id="form" method="post">
             <select id="selectPais" class="selectpicker" data-style="btn-info" name = "pais">
+                <option> Selecciona un Pais </option>
                 <c:forEach var="pais" items="${formaListadoPaises.paises}">
-                    <option><c:out value="${pais.nombrePais}"/></option>
-                    <input type="hidden" id="${pais.nombrePais}" value="${pais.idPais}"/>
+                    <option value="${pais.idPais}"><c:out value="${pais.nombrePais}"/></option>
                 </c:forEach>
             </select>
 
@@ -57,8 +57,7 @@
 
             //funcion ajax para obteer los estados
             function getEstados(){
-                var sValue = document.getElementById("selectPais").value; //Obtiene el valor del select
-                var val = document.getElementById(sValue).value;
+                var val = document.getElementById("selectPais").value;
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
                     if(xhttp.status == 400){}
@@ -80,7 +79,7 @@
 
             function callAction(){
                 var idMunicipio = document.getElementById("selectMunicipio").value;
-                document.getElementById("form").action = "/solicitarListarAtracciones.do?idMunicipio="+idMunicipio;
+                document.getElementById("form").action = "solicitarListarAtracciones.do?idMunicipio="+idMunicipio;
             }
         </script>
     </body>

@@ -24,14 +24,8 @@
     </script>
 </head>
 <body>
-<<<<<<< HEAD
- 
-
-=======
-  <h1 id="titulo"></h1>
 
   
->>>>>>> aa34ff7888faf2f41711d4058c97a46b304612aa
   <c:forEach var="atraccion" items="${formaAtraccion.atraccion}">
   <center>
     <c:if test="${(atraccion.id%2)==0}">
@@ -43,45 +37,50 @@
     </div>
   </c:if>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> aa34ff7888faf2f41711d4058c97a46b304612aa
       <input type="hidden" id="nombreAtraccion" value="${atraccion.nombreAtraccion}">
       <input type="hidden" id="descripcionData" value="${atraccion.descripcion}">
       <input type="hidden" id="direccionData" value="${atraccion.direccion}">
-   
-   
+    
   </center>
     
   </c:forEach>  
   <div class="col-xs-12 col-md-6 contenido">
+    <h1 id="titulo"></h1>
      <h1 id="titulo"></h1>
     <h1 id="titulo"></h1>
     <h3>Descripcion del lugar</h3>
     <h4 id="descripcion"></h4>
     <h3>Direccion</h3>
     <h4 id="direccion"></h4>
-<<<<<<< HEAD
-
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Ver Mapa</button>
     <a href="solicitarCalificacion.do?atractionName=<%=obj.toString()%>">Califica esta atraccion</a>
   </div>
+
   
   
-<script>
-    document.getElementById("titulo").innerHTML= document.getElementById("nombreAtraccion").value;
-    document.getElementById("descripcion").innerHTML = document.getElementById("descripcionData").value;
-    document.getElementById("direccion").innerHTML = document.getElementById("direccionData").value;
-</script>
+   <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <div id="map" style="height: 300px; width:400px;"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
 
-</body>
 
-=======
-    <div id="map" style="height: 300px; width:400px;"></div>
-
-  <a href="solicitarCalificacion.do?atractionName=<%=obj.toString()%>">Califica esta atraccion</a>
-
-</body>
   
 <script>
   	document.getElementById("titulo").innerHTML= document.getElementById("nombreAtraccion").value;
@@ -110,5 +109,5 @@
         } 
     }); 
 </script>
->>>>>>> aa34ff7888faf2f41711d4058c97a46b304612aa
+</body>
 </html>

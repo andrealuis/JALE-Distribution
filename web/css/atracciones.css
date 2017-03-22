@@ -1,0 +1,27 @@
+.imgAtrac{
+	background: #de623c;
+	width: 600px;
+	height: 227px;
+	border-radius: 6%;
+}
+
+.contenido{
+	width: 344px;
+    height: 276px;
+    /* background: #91a6b1; */
+    margin-left: 64%;
+   
+}
+
+.fondo{
+	 height: 514px;
+}
+
+img{
+	margin-top: 2%;
+	border-radius: 7%;
+}
+
+.abajo{
+	display: inline-block;
+}

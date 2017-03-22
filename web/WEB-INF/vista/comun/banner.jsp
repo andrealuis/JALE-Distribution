@@ -1,11 +1,17 @@
 
 	<!-- IS: Encabezado de Pagina (Banner) -->
-	<table class="barraBanner">
-		<tr>	<td><img   src="images/logo-upch.png"></td>
-				<td align="center" width="100%">Recomendaciones Turisticas</td>
-		</tr>
-
-	</table>
+	<div class="barraBanner">
+		<div class="col-xs-12 col-md-3 imagenTit">
+			<img   src="images/logo-upch.png">
+		</div>
+		<div class="col-xs-12 col-md-9 titulo">
+			<center>
+				<p >Recomendaciones Turisticas</p>
+			</center>
+			
+		</div>
+		
+	</div>
 	<!-- FS: Encabezado de Pagina (Banner) -->					
 
 					

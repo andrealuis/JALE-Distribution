@@ -6,51 +6,36 @@
     <head>
       <meta charset="UTF-8">
       <title>Document</title>
+      <link rel="stylesheet" type="text/css" href="css/login2.css">
     <body>
       <br>
-    <font size='5'><fmt:message key="formaLogin.titulo" /></font>
+    
 
-    <form id="forma" action="procesarLogin.dd" method="post">
-        <table>
-            <tr>
-                <td colspan="2">
-                   <html:errors />
-                </td>
-            </tr>
-            <tr>
-                <td align="right">
-                    <fmt:message key="formaLogin.etiqueta.Usuario" />
-                </td>
-                <td align="left">
-                    <input type="text" 
+    <div class="col-xs-12 contLogin"> </div>
+
+      <form id="forma" action="procesarLogin.dd" method="post">
+       
+    <div class="header">
+      <div>ayuda<span>Turistica</span></div>
+    </div>
+    <br>
+    <div class="login">
+        <input type="text" 
                            name="user" 
                            size="50" 
                            maxlength="100" 
-                           value="${formaLogin.user}" />
-                </td>
-            </tr>
-            <tr>
-                <td align="right">
-                    <fmt:message key="formaLogin.etiqueta.Contrasena" />
-                </td>
-                <td align="left">
-                    <input type="password" 
+                           value="${formaLogin.user}" /><br>
+        <input type="password" 
                            name="password" 
                            size="50" 
                            maxlength="100" 
-                           value="${formaLogin.password}" />
-                </td>
-            </tr>
-            
-            <tr>
-                <td colspan="2" align="center">
-                    <input type="submit" 
+                           value="${formaLogin.password}" /><br>
+        <input type="submit" 
                            name="submit"
                            value="Login"/>
-                     
-                </td>
-            </tr>
-        </table>
+    </div>
     </form>
+    
+    
     </body>
     </html>

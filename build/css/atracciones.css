@@ -1,20 +1,38 @@
 .imgAtrac{
-	background: #de623c;
-	width: 600px;
-	height: 227px;
-	border-radius: 6%;
+	background: #8da795;
+    width: 390px;
+    height: 270px;
+    border-radius: 6%;
+    z-index: 2;
+    position: absolute;
+    display: block;
+    border: 4px solid gainsboro;
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px;
+    margin-left: 11%;
+    margin-top: 6%;
 }
 
 .contenido{
-	width: 344px;
-    height: 276px;
-    /* background: #91a6b1; */
-    margin-left: 64%;
+	width: 453px;
+    height: 374px;
+    margin-top: 4%;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65)));
+    margin-left: 53%;
+    z-index: 1;
+    position: absolute;
+	color: #c5f5c6;
    
 }
 
 .fondo{
-	 height: 514px;
+	height: 514px;
+    background-size: cover;
+    -webkit-filter: blur(5px);
+    z-index: 0;
+    height: 514px;
+    position: relative;
+    margin-top: -20px;
 }
 
 img{
@@ -22,6 +40,4 @@ img{
 	border-radius: 7%;
 }
 
-.abajo{
-	display: inline-block;
-}
+

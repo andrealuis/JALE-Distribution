@@ -40,7 +40,7 @@ form{
 }
 
 .header div span{
-	color: #5379fa !important;
+	color:#4af979 !important;
 }
 
 .login{
@@ -124,12 +124,4 @@ form{
 
 ::-moz-input-placeholder{
    color: rgba(255,255,255,0.6);
-}
-
-/*plantilla*/
-p{
-	margin: 0 0 10px;
-    font-size: 170%;
-    font-family: fantasy;
-    margin-top: 28px;
 }

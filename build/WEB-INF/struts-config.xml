@@ -93,6 +93,10 @@
         <form-bean name="formaAtraccion"
                     type="edu.uag.iidis.scec.vista.FormaAtraccion">
         </form-bean>
+        <form-bean name="formaRecomendaciones"
+                    type="edu.uag.iidis.scec.vista.FormaRecomendaciones">
+        </form-bean>
+
     </form-beans>
 
 
@@ -378,7 +382,7 @@
 	   
 	           <!-- RECOMENDACIONES -->
 
-        <action path="/solicitarListarRecomendaciones"
+        <!--<action path="/solicitarListarRecomendaciones"
                 type="edu.uag.iidis.scec.control.MCUListarRecomendaciones"
                 parameter="solicitarListarRecomendaciones"
                 name="formaListadoRecomendaciones"
@@ -395,7 +399,7 @@
                 scope="request"
                 validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoRecomendacion.jsp"/>
-        </action>
+        </action> -->
 
         <!--<action path="/ListarEstado"
                 type="edu.uag.iidis.scec.control.MCUListarLugares"

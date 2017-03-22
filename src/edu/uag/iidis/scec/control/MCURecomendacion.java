@@ -16,14 +16,14 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
-
+import java.util.*;
 
 
 public final class MCURecomendacion extends MappingDispatchAction {
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
 
-    public ActionForward solicitarRecomendacion(
+    public ActionForward solicitarRecomendaciones(
                 ActionMapping mapping,
                 ActionForm form,
                 HttpServletRequest request,
@@ -33,8 +33,29 @@ public final class MCURecomendacion extends MappingDispatchAction {
         if (log.isDebugEnabled()) {
             log.debug(">solicitarRecomendacion");
         }
+        FormaRecomendaciones   forma = (FormaRecomendaciones)form;
 
-        return (mapping.findForward("exito"));
+        ManejadorRecomendaciones mr = new ManejadorRecomendaciones();
+        Object obj = request.getParameter("atractionName");
+        Collection resultado = mr.listarRecomendaciones();
+
+        ActionMessages errores = new ActionMessages();
+        if (resultado != null) {
+            if ( resultado.isEmpty() ) {
+                errores.add(ActionMessages.GLOBAL_MESSAGE,
+                    new ActionMessage("errors.registroVacio"));
+                saveErrors(request, errores);
+            } else {
+                forma.setRecomendaciones( resultado );
+            }
+            return (mapping.findForward("exito"));
+        } else {
+            log.error("Ocurrió un error de infraestructura");
+            errores.add(ActionMessages.GLOBAL_MESSAGE,
+                        new ActionMessage("errors.infraestructura"));                
+            saveErrors(request, errores);
+            return ( mapping.findForward("fracaso") );
+        }
+
     }
-
 }

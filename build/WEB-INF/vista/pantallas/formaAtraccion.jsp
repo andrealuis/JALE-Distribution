@@ -15,12 +15,14 @@
   <%
   Object obj = request.getParameter("atractionName");
 %>
+<!--
 <<<<<<< HEAD
 <<<<<<< HEAD
 
 =======
 =======
 >>>>>>> 67878dae31592286d882589f40e6e8914b5fcc2d
+-->
 <html>
 <head>
   <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
@@ -30,10 +32,12 @@
 </head>
 <body>
   <h1 id="titulo"></h1>
+  <!--
 <<<<<<< HEAD
 >>>>>>> refs/remotes/origin/master
 =======
 >>>>>>> 67878dae31592286d882589f40e6e8914b5fcc2d
+  -->
   <c:forEach var="atraccion" items="${formaAtraccion.atraccion}">
   <center>
     <c:if test="${atraccion.id==1}">
@@ -44,8 +48,8 @@
       <img  width="300px;"  height="200px;"  src="images/ImagenesAtracciones/${atraccion.path}.jpg" ><br>
     </div>
   </c:if>
-
-<<<<<<< HEAD
+<!--
+<<<<<<< HEAD-->
       <input type="hidden" id="nombreAtraccion" value="${atraccion.nombreAtraccion}">
       <input type="hidden" id="descripcionData" value="${atraccion.descripcion}">
       <input type="hidden" id="direccionData" value="${atraccion.direccion}">
@@ -60,24 +64,7 @@
     <h4 id="descripcion"></h4>
     <h3>Direccion</h3>
     <h4 id="direccion"></h4>
-
-    <a href="solicitarCalificacion.do?atractionName=<%=obj.toString()%>">Califica esta atraccion</a>
-  </div>
-  
-  
-<script>
-    document.getElementById("titulo").innerHTML= document.getElementById("nombreAtraccion").value;
-    document.getElementById("descripcion").innerHTML = document.getElementById("descripcionData").value;
-    document.getElementById("direccion").innerHTML = document.getElementById("direccionData").value;
-</script>
-
-</body>
-=======
-  <h3>Descripcion del lugar</h3>
-  <h4 id="descripcion"></h4>
-  <h3>Direccion</h3>
-  <h4 id="direccion"></h4>
-  <div id="map" style="height: 300px; width:400px;"></div>
+    <div id="map" style="height: 300px; width:400px;"></div>
 
   <a href="solicitarCalificacion.do?atractionName=<%=obj.toString()%>">Califica esta atraccion</a>
 
@@ -110,8 +97,4 @@
         } 
     }); 
 </script>
-<<<<<<< HEAD
->>>>>>> refs/remotes/origin/master
-=======
->>>>>>> 67878dae31592286d882589f40e6e8914b5fcc2d
 </html>

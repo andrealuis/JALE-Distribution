@@ -52,8 +52,8 @@
     <h4 id="descripcion"></h4>
     <h3>Direccion</h3>
     <h4 id="direccion"></h4>
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Ver Mapa</button>
-    <a href="solicitarCalificacion.do?atractionName=<%=obj.toString()%>">Califica esta atraccion</a>
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Ver Mapa</button> <br>
+    <a class="button"  href="solicitarCalificacion.do?atractionName=<%=obj.toString()%>">Califica esta atraccion</a>
   </div>
 
   

@@ -21,7 +21,7 @@
     margin-left: 53%;
     z-index: 1;
     position: absolute;
-	color: #c5f5c6;
+	color: #7ef380;
    
 }
 
@@ -41,3 +41,55 @@ img{
 }
 
 
+.button {
+  display: inline-block;
+  background-color: tomato;
+  color: white;
+  font-family: sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  border-radius: 22px;
+  box-shadow: inset 0px 0px 0px 5px tomato, inset 0px 0px 0px 6.5px white;
+  padding: 10px 30px;
+  margin: 0 10px 0px;
+  position: relative;
+  line-height: 1.2;
+}
+.button:after, .button:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  background-color: white;
+  border: 6px solid tomato;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: all .15s ease;
+  transition: all .15s ease;
+  color: #337ab7;
+    text-decoration: none;
+}
+.button:after {
+  right: -13px;
+}
+.button:before {
+  left: -13px;
+}
+.button:hover:after {
+  right: -17px;
+   
+
+}
+.button:hover:before {
+  left: -17px;
+}
+.button:active {
+  -webkit-transform: translate(0, 1px);
+  transform: translate(0, 1px);
+}

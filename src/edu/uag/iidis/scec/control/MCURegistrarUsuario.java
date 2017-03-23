@@ -37,33 +37,6 @@ public final class MCURegistrarUsuario
             log.debug(">solicitarRegistro");
         }
 		
-		
-		/* incluir ciudades      */
-		FormaNuevaPersona forma = (FormaNuevaPersona)form;
-		ManejadorCiudades mr = new ManejadorCiudades();
-        Collection resultado = mr.listarCiudades();
-
-        ActionMessages errores = new ActionMessages();
-        if (resultado != null) {
-            if ( resultado.isEmpty() ) {
-                errores.add(ActionMessages.GLOBAL_MESSAGE,
-                    new ActionMessage("errors.registroVacio"));
-                saveErrors(request, errores);
-            } else {
-				log.error(">>>>> asignando ciudades a formanuevapersona");
-                forma.setCiudades ( resultado );
-            }
-        } else {
-            log.error("Ocurrió un error de infraestructura");
-            errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.infraestructura"));                
-            saveErrors(request, errores);
-        }		
-		
-		
-	/* incluir ciudades      */	
-		
-
         return (mapping.findForward("exito"));
     }
 

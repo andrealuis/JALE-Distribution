@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/registro.css">
   </head>
   <body>
-    <div class="col-xs-12 contLogin"> </div>
+    <div class="col-xs-12 contRegistrar"> </div>
     <form id="forma" action="procesarRegistro.dd" method="post">
       <div class="header">
         <div>hey<span>Regristrate</span></div>

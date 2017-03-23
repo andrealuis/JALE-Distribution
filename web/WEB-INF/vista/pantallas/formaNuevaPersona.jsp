@@ -8,10 +8,10 @@
     <link rel="stylesheet" type="text/css" href="css/registro.css">
   </head>
   <body>
-    <div class="col-xs-12 contRegistrar"> </div>
+    <div class="col-xs-12 contLogin"> </div>
     <form id="forma" action="procesarRegistro.dd" method="post">
       <div class="header">
-        <div>ayuda<span>Turistica</span></div>
+        <div>hey<span>Regristrate</span></div>
       </div>
       <br>
       <div class="login">

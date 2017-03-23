@@ -54,13 +54,13 @@
       <h4 id="descripcion"></h4>
       <h3>Direccion</h3>
       <h4 id="direccion"></h4>
-      <button  id="verMapa" class="btn btn-warning" >Ver Mapa</button><br><br>
+      <button  id="verMapa" class="btn btn-warning" onClick="mostrarMap()">Ver Mapa</button><br><br>
       <a class="button"  href="solicitarCalificacion.do?atractionName=<%=obj.toString()%>">Califica esta atraccion</a>
     </center>
   </div>
 
   
-  <div id="map" style="height: 300px; width:400px;"></div>
+  <div id="map" style="height: 300px; width:400px; display:none" ></div>
    
   
 

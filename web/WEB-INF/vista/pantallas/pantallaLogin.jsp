@@ -10,12 +10,9 @@
   </head>
   <body>
     <br>
-        
-
     <div class="col-xs-12 contLogin"> </div>
 
     <form id="forma" action="procesarLogin.dd" method="post">
-
       <div class="header">
         <div>ayuda<span>Turistica</span></div>
       </div>

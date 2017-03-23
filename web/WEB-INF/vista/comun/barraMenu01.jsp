@@ -19,6 +19,7 @@
             <li class="clsMenuBarItem"><a href="solicitarListarLugares.do">Lugares</a></li>
             <!--<li class="clsMenuBarItem"><a href="irAtracciones.do">Atracciones</a></li>-->
             <li class="clsMenuBarItem"><a href="solicitarRecomendaciones.do">Recomendaciones</a></li>
+            <li class="clsMenuBarItem"><a href="cerrarSesion.do">Cerrar Sesion</a></li>
         </ul>
 
         </div>

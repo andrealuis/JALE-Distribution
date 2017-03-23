@@ -10,7 +10,9 @@
 	
     <body>
     	<div class = "col-xs-12 contenedor">
-			<h1>Bienvenido dddd</h1>
+			<h1>Error de login</h1>
+            <h2>Es posible que el usuario y/o la contrasena son incorrectos</h2>
+            <h2><a href="irLogin.dd">Intentar de nuevo</a></h2>
     	</div>
     </body>
 </html>

@@ -64,5 +64,18 @@ public final class MCULogin
   
     }
 
-    
+    public ActionForward cerrarSesion(
+                ActionMapping mapping,
+                ActionForm form,
+                HttpServletRequest request,
+                HttpServletResponse response)
+            throws Exception {
+        ActionMessages errores = new ActionMessages();
+        //String username = loginForm.getUsername();
+        if (log.isDebugEnabled()) {
+            log.debug(">cerrarSesion");
+        }
+
+        return (mapping.findForward("exito"));  
+    } 
 }

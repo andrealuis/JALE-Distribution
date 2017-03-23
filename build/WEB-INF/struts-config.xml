@@ -108,6 +108,15 @@
 
     <!-- Definición de acciones -->
     <action-mappings>
+        <!-- Cerrar sesion -->
+        <action path="/cerrarSesion"
+                type="edu.uag.iidis.scec.control.MCULogin"
+                parameter="cerrarSesion"
+                name="formaLogin"
+                scope="request"
+                validate="false">
+                <forward name="exito" path="/WEB-INF/vista/pantallas/cerrarSesion.jsp"/>
+        </action>
         <!-- Recomendaciones -->
         <action path="/solicitarRecomendaciones"
                 type="edu.uag.iidis.scec.control.MCURecomendacion"
@@ -319,10 +328,9 @@
                 scope="request"
                 validate="true"
                 input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPersona.jsp" >
-            <forward name="cancelar" path="procesarLogin.dd" redirect="true"/>
-            <forward name="exito" path="procesarLogin.dd" redirect="true"/><forward name="cancelar" path="procesarLogin.dd" redirect="true"/>
-            <forward name="exito" path="procesarLogin.dd" redirect="true"/>
-            <forward name="volver" path="solicitarRegistro.dd" redirect="true"/>
+            <forward name="cancelar" path="irLogin.dd" redirect="true"/>
+            <forward name="exito" path="irLogin.dd" redirect="true"/>
+            <forward name="fracaso" path="solicitarRegistro.dd" redirect="true"/>
        </action>
        <!--<action path="/procesarRegistroPais"
                 type="edu.uag.iidis.scec.control.MCURegistrarPais"

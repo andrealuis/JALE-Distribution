@@ -68,6 +68,8 @@
         <url-pattern>/procesarLogin.dd</url-pattern>
         <url-pattern>/irLugares.dd</url-pattern>
         <url-pattern>/servicios.dd</url-pattern>
+        <url-pattern>/solicitarRegistro.dd</url-pattern>
+        <url-pattern>/procesarRegistro.dd</url-pattern>
     </servlet-mapping>
 
   

@@ -25,12 +25,14 @@
                name="user" 
                size="50" 
                maxlength="100" 
-               value="${formaLogin.user}" /><br>
+               value="${formaLogin.user}" 
+               placeholder="Usuario"/><br>
         <input type="password" 
                name="password" 
                size="50" 
                maxlength="100" 
-               value="${formaLogin.password}" /><br>
+               value="${formaLogin.password}" 
+               placeholder="Contrasena"/><br>
         <input type="submit" 
                name="submit"
                value="Login"/>

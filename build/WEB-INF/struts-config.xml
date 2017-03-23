@@ -319,9 +319,10 @@
                 scope="request"
                 validate="true"
                 input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaPersona.jsp" >
-            <forward name="cancelar" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
-            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
-            <forward name="volver" path="solicitarRegistro.do" redirect="true"/>
+            <forward name="cancelar" path="procesarLogin.dd" redirect="true"/>
+            <forward name="exito" path="procesarLogin.dd" redirect="true"/><forward name="cancelar" path="procesarLogin.dd" redirect="true"/>
+            <forward name="exito" path="procesarLogin.dd" redirect="true"/>
+            <forward name="volver" path="solicitarRegistro.dd" redirect="true"/>
        </action>
        <!--<action path="/procesarRegistroPais"
                 type="edu.uag.iidis.scec.control.MCURegistrarPais"

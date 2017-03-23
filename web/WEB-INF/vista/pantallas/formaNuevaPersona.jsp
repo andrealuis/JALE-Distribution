@@ -5,11 +5,15 @@
 
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="css/login2.css">
+    <link rel="stylesheet" type="text/css" href="css/registro.css">
   </head>
   <body>
     <div class="col-xs-12 contLogin"> </div>
     <form id="forma" action="procesarRegistro.dd" method="post">
+      <div class="header">
+        <div>ayuda<span>Turistica</span></div>
+      </div>
+      <br>
       <div class="login">
         <input type="text" 
                name="prefijo" 
@@ -56,10 +60,7 @@
 
         <input type="submit" 
                name="submit"
-               value="Registrarse y acceder"/>                   
-        <input type="submit"
-               value="Reset"
-               onclick="location.href='solicitarRegistro.dd'" />
+               value="Registrarse"/>                
         <input type="submit" 
                name="org.apache.struts.taglib.html.CANCEL" 
                value="Cancelar" 

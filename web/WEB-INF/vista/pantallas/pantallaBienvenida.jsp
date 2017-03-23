@@ -10,7 +10,7 @@
 	
     <body>
     	<div class = "col-xs-12 contenedor">
-			<h1>Bienvenido</h1>
+			<h1>Bienvenido dddd</h1>
     	</div>
     </body>
 </html>

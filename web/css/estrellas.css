@@ -65,7 +65,7 @@ input[type="radio"]:checked ~ label {
     z-index: 0;
     height: 514px;
     position: relative;
-    margin-top: -20px;
+   
 }
 
 .button {

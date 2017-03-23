@@ -5,34 +5,42 @@
 <%@ page import ="java.util.List" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
     <head>
         <title>USJ</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/lugares.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>	
     <body>
+        <div class="col-xs-12 contLugares"> </div>
         <form id="form" method="post">
-            <select id="selectPais" class="selectpicker" data-style="btn-info" name = "pais">
-                <option> Selecciona un Pais </option>
-                <c:forEach var="pais" items="${formaListadoPaises.paises}">
-                    <option value="${pais.idPais}"><c:out value="${pais.nombrePais}"/></option>
-                </c:forEach>
-            </select>
+            <div class = "lugares">
+                    <select id="selectPais" data-selectprod-id="153" class="form-control selectprodmaterials show-menu-arrow" name = "pais" data-width="auto">
+                        <option disabled selected> Selecciona un Pais </option>
+                        <c:forEach var="pais" items="${formaListadoPaises.paises}">
+                            <option value="${pais.idPais}"><c:out value="${pais.nombrePais}"/></option>
+                        </c:forEach>
+                    </select>
+                    <select id="selectEstado" data-selectprod-id="153" class="form-control selectprodmaterials show-menu-arrow" data-width="auto">
+                        <option disabled selected>Selecciona un Estado</option>
+                    </select>
+                    <select id="selectMunicipio" data-selectprod-id="153" class="form-control selectprodmaterials show-menu-arrow" data-width="auto">
+                        <option disabled selected>Selecciona un Municipio</option>
+                    </select>
 
-            <select id="selectEstado" class="selectpicker" data-style="btn-info">
-                <option>Selecciona un Estado</option>
-            </select>
-
-            <select id="selectMunicipio" class="selectpicker" data-style="btn-info">
-                <option>Selecciona un Municipio</option>
-            </select>       
+                    <button onclick="callAction()" id="btn_NomAtrac">Buscar</button>
                  
-            <button onclick="callAction()" id="btn_NomAtrac">Buscar</button>
-            
+                
+            </div>            
         </form>
+
         <script>
+
             var selectPais = document.getElementById("selectPais"); //Instancia de selects
             var selectEstado = document.getElementById("selectEstado");
             if(selectPais.length == 1) //Si solo existe un pais manda a listar los estados inmediatamente
@@ -45,7 +53,7 @@
                     xhttp.onreadystatechange = function() {
                         if(xhttp.status == 400){}
                         if (xhttp.readyState == 4 && xhttp.status == 200) {
-                            document.getElementById("selectMunicipio").innerHTML = "<option>Selecciona un Municipio</option>"+ xhttp.responseText;
+                            document.getElementById("selectMunicipio").innerHTML = "<option disabled selected>Selecciona un Municipio</option>"+ xhttp.responseText;
                         }
                     };
                     xhttp.open("GET", "solicitarListarMunicipios.do?idEstado="+val, true);
@@ -62,7 +70,7 @@
                 xhttp.onreadystatechange = function() {
                     if(xhttp.status == 400){}
                     if (xhttp.readyState == 4 && xhttp.status == 200) {
-                        document.getElementById("selectEstado").innerHTML = "<option>Selecciona un Estado</option>"+xhttp.responseText;
+                        document.getElementById("selectEstado").innerHTML = "<option disabled selected>Selecciona un Estado</option>"+xhttp.responseText;
                     }
                 };
                 xhttp.open("GET", "solicitarListarEstados.do?idPais="+val, true);

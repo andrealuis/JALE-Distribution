@@ -25,22 +25,14 @@
                name="user" 
                size="50" 
                maxlength="100" 
-<<<<<<< HEAD
-               value="${formaLogin.user}" /><br>
-=======
                value="${formaLogin.user}" 
                placeholder="Usuario"/><br>
->>>>>>> 409dbcf2de867aa1186e43ead17c4149d2681132
         <input type="password" 
                name="password" 
                size="50" 
                maxlength="100" 
-<<<<<<< HEAD
-               value="${formaLogin.password}" /><br>
-=======
                value="${formaLogin.password}" 
                placeholder="Contrasena"/><br>
->>>>>>> 409dbcf2de867aa1186e43ead17c4149d2681132
         <input type="submit" 
                name="submit"
                value="Login"/>

@@ -15,20 +15,20 @@
 	<!--	<div class="col-xs-12 col-md-6 abajo imgAtrac">-->
 	    <img  width="300px;"  height="200px;"  src="images/ImagenesAtracciones/${recomendacion.path}.jpg" ><br>
 	    <!--</div>-->
-		<input id="radio<%= var%>1" type="radio" name="puntaje<%= var%>" value="1">
-    	<label for="radio<%= var%>1">&#9733;</label>
+		<input id="radio<%= var%>5" type="radio" name="puntaje<%= var%>" value="5">
+    	<label for="radio<%= var%>5">&#9733;</label>
 
-     	<input id="radio<%= var%>2" type="radio" name="puntaje<%= var%>" value="2">
-    	<label for="radio<%= var%>2">&#9733;</label>
+     	<input id="radio<%= var%>4" type="radio" name="puntaje<%= var%>" value="4">
+    	<label for="radio<%= var%>4">&#9733;</label>
 
     	<input id="radio<%= var%>3" type="radio" name="puntaje<%= var%>" value="3">
      	<label for="radio<%= var%>3">&#9733;</label>
 
-    	<input id="radio<%= var%>4" type="radio" name="puntaje<%= var%>" value="4">
-     	<label for="radio<%= var%>4">&#9733;</label>
+    	<input id="radio<%= var%>2" type="radio" name="puntaje<%= var%>" value="2">
+     	<label for="radio<%= var%>2">&#9733;</label>
 
-   		<input id="radio<%= var%>5" type="radio" name="puntaje<%= var%>" value="5">
-     	<label for="radio<%= var%>5">&#9733;</label><br>
+   		<input id="radio<%= var%>1" type="radio" name="puntaje<%= var%>" value="1">
+     	<label for="radio<%= var%>1">&#9733;</label><br>
      	
     	<input type="hidden" id="puntajeValue" value="${recomendacion.puntaje}">
     	<input type="hidden" id="loopValue" value="<%= var%>">

@@ -1,3 +1,13 @@
+#titNom{
+  font-size: 43px;
+  font-family: cursive;
+}
+
+textarea{
+  border-radius: 5%;
+  border-color: darkred;
+}
+
 #form {
   width: 250px;
   margin: 0 auto;
@@ -9,7 +19,7 @@
 }
 
 #form label {
-  font-size: 20px;
+  font-size: 37px;
 }
 
 input[type="radio"] {
@@ -38,9 +48,116 @@ input[type="radio"]:checked ~ label {
   display: inline-block;
   width: 100%;
   height: 100px;
+  z-index: 1;
+  position:absolute;
+  margin-left: -98%;
 }
 
 #textComent{
   width: 100px;
   height: 20px;
 }
+
+.fondo{
+  height: 514px;
+    background-size: cover;
+    -webkit-filter: blur(3px);
+    z-index: 0;
+    height: 514px;
+    position: relative;
+    margin-top: -20px;
+}
+
+.button {
+  display: inline-block;
+  background-color: #de9b7c;
+  color: white;
+  font-family: sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  border-radius: 22px;
+  box-shadow: inset 0px 0px 0px 5px #de9b7c, inset 0px 0px 0px 6.5px white;
+  padding: 10px 30px;
+  margin: 0 10px 0px;
+  position: relative;
+  line-height: 1.2;
+}
+.button:after, .button:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  background-color: white;
+  border: 6px solid #de9b7c;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: all .15s ease;
+  transition: all .15s ease;
+  color: #337ab7;
+    text-decoration: none;
+}
+.button:after {
+  right: -13px;
+}
+.button:before {
+  left: -13px;
+}
+.button:hover:after {
+  right: -17px;
+   
+
+}
+.button:hover:before {
+  left: -17px;
+}
+.button:active {
+  -webkit-transform: translate(0, 1px);
+  transform: translate(0, 1px);
+}
+
+
+/*boton calificar*/
+
+.btnCal {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 22px;
+  width: 152px;
+  height:60px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.btnCal span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btnCal span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btnCal:hover span {
+  padding-right: 25px;
+}
+
+.btnCal:hover span:after {
+  opacity: 1;
+  right: 0;

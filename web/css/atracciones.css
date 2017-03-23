@@ -16,9 +16,9 @@
 .contenido{
 	width: 453px;
     height: 374px;
-    margin-top: 4%;
+    margin-top: 5%;
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65)));
-    margin-left: 53%;
+    margin-left: 49%;
     z-index: 1;
     position: absolute;
 	color: #7ef380;
@@ -43,14 +43,14 @@ img{
 
 .button {
   display: inline-block;
-  background-color: tomato;
+  background-color: #8da795;
   color: white;
   font-family: sans-serif;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1.125rem;
   border-radius: 22px;
-  box-shadow: inset 0px 0px 0px 5px tomato, inset 0px 0px 0px 6.5px white;
+  box-shadow: inset 0px 0px 0px 5px #8da795, inset 0px 0px 0px 6.5px white;
   padding: 10px 30px;
   margin: 0 10px 0px;
   position: relative;
@@ -67,7 +67,7 @@ img{
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
   background-color: white;
-  border: 6px solid tomato;
+  border: 6px solid #8da795;
   text-align: center;
   text-decoration: none;
   -webkit-transition: all .15s ease;
@@ -92,4 +92,14 @@ img{
 .button:active {
   -webkit-transform: translate(0, 1px);
   transform: translate(0, 1px);
+}
+
+#map{
+    height: 300px;
+    width: 400px;
+    position: absolute;
+    margin-left: 67%;
+    margin-top: -1%;
+    z-index: 1;
+  
 }

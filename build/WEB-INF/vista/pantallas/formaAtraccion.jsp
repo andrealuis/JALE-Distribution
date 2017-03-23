@@ -10,6 +10,7 @@
   <meta charset="UTF-8">
   <title>Document</title>
  <link rel="stylesheet" type="text/css" href="css/atracciones.css">
+ <script type="text/javascript" src="js/mapa.js"></script>
 </head>
 <body>
   <%
@@ -45,39 +46,22 @@
     
   </c:forEach>  
   <div class="col-xs-12 col-md-6 contenido">
-    <h1 id="titulo"></h1>
-     <h1 id="titulo"></h1>
-    <h1 id="titulo"></h1>
-    <h3>Descripcion del lugar</h3>
-    <h4 id="descripcion"></h4>
-    <h3>Direccion</h3>
-    <h4 id="direccion"></h4>
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Ver Mapa</button> <br>
-    <a class="button"  href="solicitarCalificacion.do?atractionName=<%=obj.toString()%>">Califica esta atraccion</a>
+    <center>
+      <h1 id="titulo"></h1>
+       <h1 id="titulo"></h1>
+      <h1 id="titulo"></h1>
+      <h3>Descripcion del lugar</h3>
+      <h4 id="descripcion"></h4>
+      <h3>Direccion</h3>
+      <h4 id="direccion"></h4>
+      <button  id="verMapa" class="btn btn-warning" >Ver Mapa</button><br><br>
+      <a class="button"  href="solicitarCalificacion.do?atractionName=<%=obj.toString()%>">Califica esta atraccion</a>
+    </center>
   </div>
 
   
-  
-   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <div id="map" style="height: 300px; width:400px;"></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
+  <div id="map" style="height: 300px; width:400px;"></div>
+   
   
 
 

@@ -20,8 +20,9 @@
   margin: 0 10px 0px;
   position: relative;
   line-height: 1.2;
+  margin-top: 8%;
 }
-.button:after, .button:before {
+/*.button:after, .button:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -57,4 +58,4 @@
 .button:active {
   -webkit-transform: translate(0, 1px);
   transform: translate(0, 1px);
-}
+}*/

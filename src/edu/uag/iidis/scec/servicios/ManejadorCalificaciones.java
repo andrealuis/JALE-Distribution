@@ -10,6 +10,12 @@ import edu.uag.iidis.scec.excepciones.*;
 import edu.uag.iidis.scec.persistencia.CalificacionDAO;
 import edu.uag.iidis.scec.persistencia.hibernate.*;
 
+/**
+ * Esta clase contiene metodos que ayudan al manejo de las calificaciones
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
+ */
+
 public class ManejadorCalificaciones {
     private Log log = LogFactory.getLog(ManejadorCalificaciones.class);
     private CalificacionDAO dao;
@@ -18,6 +24,13 @@ public class ManejadorCalificaciones {
         dao = new CalificacionDAO();
     }
 
+    /**
+     * Metodo que lista las calificaciones de una atracción por su nombre
+     * y manda a llamar los métodos con acceso a la base de datos
+     * @param: nombreAtraccion String
+     * @return: Collection
+     * @see: listarAtraccionesPorAtraccion
+     */
     public Collection listarCalificacionesPorAtraccion(String nombreAtraccion) {
         Collection resultado;
 
@@ -38,6 +51,12 @@ public class ManejadorCalificaciones {
         }
     }
 
+    /**
+     * Metodo que lista todas las calificaciones de todos las atracciones
+     * y manda a llamar los métodos con acceso a la base de datos
+     * @return: Collection
+     * @see: listarCalificaciones
+     */
     public Collection listarCalificaciones() {
         Collection resultado;
 
@@ -58,6 +77,12 @@ public class ManejadorCalificaciones {
         }
     }
 
+    /**
+     * Metodo que elimina la calificacion por su id
+     * y manda a llamar los métodos con acceso a la base de datos
+     * @param: id Long
+     * @see: eliminarCalificacion
+     */
     public void eliminarCalificacion(Long id) {
         if (log.isDebugEnabled()) {
             log.debug(">eliminarCalificacion(calificacion)");
@@ -80,6 +105,13 @@ public class ManejadorCalificaciones {
 
     }
 
+    /**
+     * Metodo que añade una nueva calificacion a la atraccion
+     * y manda a llamar los métodos con acceso a la base de datos
+     * @param: calificacion Calificacion
+     * @return: int
+     * @see: crearCalificacion
+     */
     public int crearCalificacion(Calificacion calificacion) {
 
         int resultado;

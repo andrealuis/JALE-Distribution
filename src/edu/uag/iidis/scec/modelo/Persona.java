@@ -14,6 +14,7 @@ import java.util.List;
  * @author <a href="mailto:vramos@uag.mx">Victor Ramos</a>
  * @version 1.0
  */
+
 public class Persona {
     
     protected Long id;

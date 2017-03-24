@@ -14,6 +14,11 @@ import org.apache.commons.logging.LogFactory;
 
 import java.util.*;
 
+/**
+ * Esta clase contiene metodos con acceso a la base de datos de usuario
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
+ */
 
 public class UsuarioDAO {
 
@@ -23,7 +28,13 @@ public class UsuarioDAO {
     public UsuarioDAO() {
     }
 
-
+     /**
+     * Metodo que busca a un usuario por un id
+     * @param: idUsuario Long
+     * @param: bloquear boolean
+     * @return: Usuario
+     * @see: buscarPorId
+     */
     public Usuario buscarPorId(Long idUsuario, boolean bloquear)
             throws ExcepcionInfraestructura {
 
@@ -55,7 +66,12 @@ public class UsuarioDAO {
         return usuario;
     }
 
-
+    /**
+     * Metodo que busca a un usuario por su nombre
+     * @param: nombreUsuario String
+     * @return: Usuario
+     * @see: buscarPorNombreUsuario
+     */
     public Usuario buscarPorNombreUsuario(String nombreUsuario)
             throws ExcepcionInfraestructura {
 
@@ -90,7 +106,11 @@ public class UsuarioDAO {
     }
 
 
-
+    /**
+     * Metodo que busca todos los usuarios
+     * @return: Collection
+     * @see: buscarTodos
+     */
     public Collection buscarTodos()
             throws ExcepcionInfraestructura {
 
@@ -113,31 +133,12 @@ public class UsuarioDAO {
         return usuarios;
     }
 
-
-
-    public List buscarPorEjemplo(Usuario usuarioEjemplo)
-            throws ExcepcionInfraestructura {
-
-        if (log.isDebugEnabled()) {
-            log.debug(">buscarPorEjemplo()");
-        }
-
-        List usuarios;
-        try {
-            usuarios = HibernateUtil.getSession()
-                                    .createCriteria(Usuario.class)
-                                    .add(Example.create(usuarioEjemplo))
-                                    .list();
-        } catch (HibernateException ex) {
-            if (log.isWarnEnabled()) {
-                log.warn("<HibernateException");
-            }
-            throw new ExcepcionInfraestructura(ex);
-        }
-        return usuarios;
-    }
-
-
+    /**
+     * Metodo que verifica si un usuario está existente por medio de su nombre
+     * @param: nombreUsuario String
+     * @return: boolean
+     * @see: existeUsuario
+     */
     public boolean existeUsuario(String nombreUsuario)
             throws ExcepcionInfraestructura {
 
@@ -178,7 +179,6 @@ public class UsuarioDAO {
         }
     }
 
-
     public void hazPersistente(Usuario usuario)
             throws ExcepcionInfraestructura {
 
@@ -216,5 +216,4 @@ public class UsuarioDAO {
             throw new ExcepcionInfraestructura(ex);
         }
     }
-
 }

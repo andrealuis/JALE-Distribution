@@ -8,12 +8,12 @@ import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.validator.ValidatorForm;
 
-
 /**
- * Form bean para el registro de una nueva persona.
- *
- * @author Victor Ramos
+ * Esta clase contiene getter y setter de los atributos de municipios
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
  */
+
 public final class FormaListadoMunicipios
         extends ValidatorForm {
 

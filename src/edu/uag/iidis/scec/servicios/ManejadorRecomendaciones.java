@@ -10,6 +10,12 @@ import edu.uag.iidis.scec.excepciones.*;
 import edu.uag.iidis.scec.persistencia.RecomendacionDAO;
 import edu.uag.iidis.scec.persistencia.hibernate.*;
 
+/**
+ * Esta clase contiene metodos que ayudan al manejo de recomendaciones
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
+ */
+
 public class ManejadorRecomendaciones {
     private Log log = LogFactory.getLog(ManejadorRecomendaciones.class);
     private RecomendacionDAO dao;
@@ -18,7 +24,12 @@ public class ManejadorRecomendaciones {
         dao = new RecomendacionDAO();
     }
 
-
+    /**
+     * Metodo que lista todas las recomendaciones
+     * y manda a llamar los métodos con acceso a la base de datos
+     * @return: Collection
+     * @see: listarRecomendaciones
+     */
     public Collection listarRecomendaciones() {
         Collection resultado;
 

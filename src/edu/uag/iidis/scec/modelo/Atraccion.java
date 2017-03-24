@@ -3,6 +3,12 @@ package edu.uag.iidis.scec.modelo;
 import java.io.Serializable;
 import java.util.*;
 
+/**
+ * Esta clase contiene los atributos y metodos de getter y setter de una atraccion
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
+ */
+
 public class Atraccion extends ClaseBase 
         implements Serializable {
 	

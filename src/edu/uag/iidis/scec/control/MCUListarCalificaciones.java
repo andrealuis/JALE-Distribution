@@ -18,14 +18,26 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
 
-
+/**
+ * Esta clase contiene las acciones para listar las calificaciones de las atracciones
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
+ */
 
 public final class MCUListarCalificaciones
         extends MappingDispatchAction {
 
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
-
+    /**
+     * Accion que permite solicitar listar las calificaciones de las atracciones
+     * @param: mapping ActionMapping
+     * @param: form ActionForm
+     * @param: request HttpServletRequest
+     * @param: response HttpServletResponse
+     * @return: ActionForward
+     * @see: solicitarListarCalificaciones
+     */
     public ActionForward solicitarListarCalificaciones(
                 ActionMapping mapping,
                 ActionForm form,

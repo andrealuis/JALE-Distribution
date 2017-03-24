@@ -10,10 +10,11 @@ import org.apache.struts.validator.ValidatorForm;
 
 
 /**
- * Form bean para el registro de una nueva persona.
- *
- * @author Julio
+ * Esta clase contiene getter y setter de los atributos de calificaciones
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
  */
+
 public final class FormaListadoCalificaciones
         extends ValidatorForm {
 

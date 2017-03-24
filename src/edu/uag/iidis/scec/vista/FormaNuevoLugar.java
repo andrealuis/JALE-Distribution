@@ -11,10 +11,11 @@ import org.apache.struts.validator.ValidatorForm;
 import org.apache.struts.upload.FormFile;
 
 /**
- * Form bean para el registro de una nueva persona.
- *
- * @author Victor Ramos
+ * Esta clase contiene getter y setter de los atributos de un nuevo lugar
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
  */
+
 public final class FormaNuevoLugar
         extends ValidatorForm {
 

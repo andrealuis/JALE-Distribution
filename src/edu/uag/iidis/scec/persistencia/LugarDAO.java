@@ -15,6 +15,11 @@ import org.apache.commons.logging.LogFactory;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * Esta clase contiene metodos con acceso a la base de datos de lugares
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
+ */
 
 public class LugarDAO {
 
@@ -23,7 +28,13 @@ public class LugarDAO {
     public LugarDAO() {
     }
 
-
+    /**
+     * Metodo que busca lugar por id
+     * @param: idLugar Long
+     * @param: bloquear boolean
+     * @return: Lugar
+     * @see: buscarPorId
+     */
     public Lugar buscarPorId(Long idLugar, boolean bloquear)
             throws ExcepcionInfraestructura {
 
@@ -54,7 +65,11 @@ public class LugarDAO {
         return lugar;
     }
 
-
+    /**
+     * Metodo que busca todos los lugares y devuelve una coleccion
+     * @return: Collection
+     * @see: buscarTodos
+     */
     public Collection buscarTodos()
             throws ExcepcionInfraestructura {
 
@@ -80,63 +95,13 @@ public class LugarDAO {
         return lugares;
     }
 
-    public Collection buscarPorEjemplo(Lugar lugar)
-            throws ExcepcionInfraestructura {
-        Collection lugares;
- 
-        if (log.isDebugEnabled()) {
-            log.debug(">buscarPorEjemplo()");
-        }
 
-        try {
-            Criteria criteria = HibernateUtil.getSession()
-                                             .createCriteria(Lugar.class);
-            lugares = criteria.add(Example.create(lugar)).list();
-        } catch (HibernateException e) {
-            if (log.isWarnEnabled()) {
-                log.warn("<HibernateException");
-            }
-            throw new ExcepcionInfraestructura(e);
-        }
-        return lugares;
-    }
-
-
-    public void hazPersistente(Lugar lugar)
-            throws ExcepcionInfraestructura {
-
-        if (log.isDebugEnabled()) {
-            log.debug(">hazPersistente(lugar)");
-        }
-
-        try {
-            HibernateUtil.getSession().saveOrUpdate(lugar);
-        } catch (HibernateException e) {
-            if (log.isWarnEnabled()) {
-                log.warn("<HibernateException");
-            }
-            throw new ExcepcionInfraestructura(e);
-        }
-    }
-
-
-    public void hazTransitorio(Lugar lugar)
-            throws ExcepcionInfraestructura {
-
-        if (log.isDebugEnabled()) {
-            log.debug(">hazTransitorio(lugar)");
-        }
-
-        try {
-            HibernateUtil.getSession().delete(lugar);
-        } catch (HibernateException e) {
-            if (log.isWarnEnabled()) {
-                log.warn("<HibernateException");
-            }
-            throw new ExcepcionInfraestructura(e);
-        }
-    }
-
+    /**
+     * Metodo que devuelve un boleano si existe el lugar
+     * @param: nombreLugar String
+     * @return: boolean
+     * @see: existeLugar
+     */
     public boolean existeLugar(String nombreLugar)
             throws ExcepcionInfraestructura {
 
@@ -224,6 +189,12 @@ public class LugarDAO {
         }
     }
 
+    /**
+     * Metodo que busca lugar por el nombre del municipio
+     * @param: nombreLugar String
+     * @return: Collection
+     * @see: buscarLugar
+     */
 	public Collection buscarLugar(String nombreLugar)
             throws ExcepcionInfraestructura {
 
@@ -266,6 +237,11 @@ public class LugarDAO {
         }
     }
 
+    /**
+     * Metodo que busca paises y devuelve una coleccion de paises
+     * @return: Collection
+     * @see: buscarPaises
+     */    
      public Collection buscarPaises()
             throws ExcepcionInfraestructura {
 
@@ -291,6 +267,12 @@ public class LugarDAO {
         return paises;
     }
 
+    /**
+     * Metodo que busca estado por el id de estado
+     * @param: id String
+     * @return: Collection
+     * @see: buscarEstado
+     */
     public Collection buscarEstado(String id)
             throws ExcepcionInfraestructura {
 
@@ -332,6 +314,12 @@ public class LugarDAO {
         }
     }
 
+    /**
+     * Metodo que busca municipio por el id de municipio
+     * @param: id String
+     * @return: Collection
+     * @see: buscarMunicipio
+     */
     public Collection buscarMunicipio(String id)
             throws ExcepcionInfraestructura {
 
@@ -371,6 +359,41 @@ public class LugarDAO {
                 log.warn("<HibernateException *******************");
             }
             throw new ExcepcionInfraestructura(ex);
+        }
+    }
+
+    public void hazPersistente(Lugar lugar)
+            throws ExcepcionInfraestructura {
+
+        if (log.isDebugEnabled()) {
+            log.debug(">hazPersistente(lugar)");
+        }
+
+        try {
+            HibernateUtil.getSession().saveOrUpdate(lugar);
+        } catch (HibernateException e) {
+            if (log.isWarnEnabled()) {
+                log.warn("<HibernateException");
+            }
+            throw new ExcepcionInfraestructura(e);
+        }
+    }
+
+
+    public void hazTransitorio(Lugar lugar)
+            throws ExcepcionInfraestructura {
+
+        if (log.isDebugEnabled()) {
+            log.debug(">hazTransitorio(lugar)");
+        }
+
+        try {
+            HibernateUtil.getSession().delete(lugar);
+        } catch (HibernateException e) {
+            if (log.isWarnEnabled()) {
+                log.warn("<HibernateException");
+            }
+            throw new ExcepcionInfraestructura(e);
         }
     }
 }

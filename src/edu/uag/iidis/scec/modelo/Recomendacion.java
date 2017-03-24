@@ -5,14 +5,11 @@ import java.util.*;
 import java.util.Date;
 
 /**
- * 
- *  
- *
- * <p><a href="calificacion.java.html"><i>Ver código fuente</i></a></p>
- *
- * @author <a href="mailto:vramos@uag.mx">Victor Ramos</a>
- * @version 1.0
+ * Esta clase contiene los atributos y metodos de getter y setter de una recomendacion
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
  */
+
 public class Recomendacion extends ClaseBase 
         implements Serializable {
 

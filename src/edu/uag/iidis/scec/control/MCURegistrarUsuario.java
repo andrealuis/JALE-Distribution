@@ -18,14 +18,26 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
 
-
+/**
+ * Esta clase contiene las acciones para registrar un usuario
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
+ */
 
 public final class MCURegistrarUsuario 
         extends MappingDispatchAction {
 
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
-
+    /**
+     * Accion que permite solicitar el registro
+     * @param: mapping ActionMapping
+     * @param: form ActionForm
+     * @param: request HttpServletRequest
+     * @param: response HttpServletResponse
+     * @return: ActionForward
+     * @see: solicitarRegistro
+     */
     public ActionForward solicitarRegistro(
                 ActionMapping mapping,
                 ActionForm form,
@@ -41,7 +53,15 @@ public final class MCURegistrarUsuario
     }
 
 
-
+    /**
+     * Accion que permite llevar a cabo el registro del usuario
+     * @param: mapping ActionMapping
+     * @param: form ActionForm
+     * @param: request HttpServletRequest
+     * @param: response HttpServletResponse
+     * @return: ActionForward
+     * @see: procesarRegistro
+     */
     public ActionForward procesarRegistro(
                 ActionMapping mapping,
                 ActionForm form,

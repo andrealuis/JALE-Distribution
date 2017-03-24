@@ -3,8 +3,6 @@ package edu.uag.iidis.scec.persistencia;
 import org.hibernate.*;
 import org.hibernate.type.*;
 import org.hibernate.criterion.Example;
-//import org.hibernate.classic.*;
-
 
 import edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura;
 import edu.uag.iidis.scec.modelo.Atraccion;
@@ -15,6 +13,11 @@ import org.apache.commons.logging.LogFactory;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * Esta clase contiene metodos con acceso a la base de datos de atraccion
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
+ */
 
 public class AtraccionDAO {
 
@@ -23,7 +26,12 @@ public class AtraccionDAO {
     public AtraccionDAO() {
     }
 
-
+    /**
+     * Metodo que busca una atraccion por medio del nombre y devuelve sus atributos
+     * @param: nombreAtraccion String
+     * @return: Collection
+     * @see: buscarAtraccion
+     */
     public Collection buscarAtraccion(String nombreAtraccion)
             throws ExcepcionInfraestructura {
 
@@ -66,6 +74,13 @@ public class AtraccionDAO {
         }
     }
 
+    /**
+     * Metodo que busca atraccion por su id y devuelve una atraccion
+     * @param: idAtraccion Long
+     * @param: bloquear boolean
+     * @return: Atraccion
+     * @see: buscarPorId
+     */
     public Atraccion buscarPorId(Long idAtraccion, boolean bloquear)
             throws ExcepcionInfraestructura {
 
@@ -96,6 +111,11 @@ public class AtraccionDAO {
         return atraccion;
     }
 
+    /**
+     * Metodo que busca todas las atracciones y devuelve una coleccion
+     * @return: Collection
+     * @see: buscarTodos
+     */
     public Collection buscarTodos()
             throws ExcepcionInfraestructura {
 
@@ -121,6 +141,12 @@ public class AtraccionDAO {
         return atracciones;
     }
 
+    /**
+     * Metodo que busca atraccion por id del municipio
+     * @param: id String
+     * @return: Collection
+     * @see: buscarAtraccionPorMunicipio
+     */
     public Collection buscarAtraccionPorMunicipio(String id)
             throws ExcepcionInfraestructura {
 

@@ -18,14 +18,26 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
 
-
+/**
+ * Esta clase contiene las acciones para poder loguearse y desloguearse
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
+ */
 
 public final class MCULogin 
         extends MappingDispatchAction {
 
     private Log log = LogFactory.getLog(MCULogin.class);
 
-
+    /**
+     * Accion que permite solicitar el login
+     * @param: mapping ActionMapping
+     * @param: form ActionForm
+     * @param: request HttpServletRequest
+     * @param: response HttpServletResponse
+     * @return: ActionForward
+     * @see: solicitarLogin
+     */
     public ActionForward solicitarLogin(
                 ActionMapping mapping,
                 ActionForm form,
@@ -64,6 +76,15 @@ public final class MCULogin
   
     }
 
+    /**
+     * Accion que permite cerrar sesion
+     * @param: mapping ActionMapping
+     * @param: form ActionForm
+     * @param: request HttpServletRequest
+     * @param: response HttpServletResponse
+     * @return: ActionForward
+     * @see: cerrarSesion
+     */
     public ActionForward cerrarSesion(
                 ActionMapping mapping,
                 ActionForm form,

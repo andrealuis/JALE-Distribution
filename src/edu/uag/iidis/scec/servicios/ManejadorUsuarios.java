@@ -10,6 +10,12 @@ import edu.uag.iidis.scec.excepciones.*;
 import edu.uag.iidis.scec.persistencia.UsuarioDAO;
 import edu.uag.iidis.scec.persistencia.hibernate.*;
 
+/**
+ * Esta clase contiene metodos que ayudan al manejo de los datos del usuario
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
+ */
+
 public class ManejadorUsuarios {
     private Log log = LogFactory.getLog(ManejadorUsuarios.class);
     private UsuarioDAO dao;
@@ -18,7 +24,13 @@ public class ManejadorUsuarios {
         dao = new UsuarioDAO();
     }
 
-
+    /**
+     * Metodo que obtiene un Usuario por medio de su nombre
+     * y manda a llamar los métodos con acceso a la base de datos
+     * @param: nombreUsuario String
+     * @return: Usuario
+     * @see: obtenerUsuario
+     */
     public Usuario obtenerUsuario(String nombreUsuario) 
             throws ExcepcionServicio {
 
@@ -34,17 +46,13 @@ public class ManejadorUsuarios {
         }
     }
 
-
-    public Collection obtenerUsuarios(Usuario usuario) {
-
-        if (log.isDebugEnabled()) {
-            log.debug(">obtenerUsuarios(usuario)");
-        }
-
-        return dao.buscarTodos();
-    }
-
-
+    /**
+     * Metodo que crea un nuevo usuario
+     * y manda a llamar los métodos con acceso a la base de datos
+     * @param: usuario Usuario
+     * @return: int
+     * @see: crearUsuario
+     */
     public int crearUsuario(Usuario usuario) {
 
         int resultado;
@@ -79,26 +87,5 @@ public class ManejadorUsuarios {
             HibernateUtil.closeSession();
         }
         return resultado;
-    }
-
-
-/*
-    public void eliminarUsuario(String nombreUsuario) 
-            throws ExcepcionServicio {
-
-        if (log.isDebugEnabled()) {
-            log.debug(">eliminarUsuario(" + nombreUsuario + ")");
-        }
-
-        try {
-            dao.hazTransitorio(nombreUsuario);
-        } catch (ExcepcionInfraestructura e) {
-            if (log.isWarnEnabled()) {
-                log.warn("<ExcepcionInfraestructura");
-            }
-            throw new ExcepcionServicio(e.getMessage(), e);
-        }
-    }
-*/
-    
+    }    
 }

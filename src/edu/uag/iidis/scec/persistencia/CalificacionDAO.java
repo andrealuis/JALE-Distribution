@@ -3,8 +3,6 @@ package edu.uag.iidis.scec.persistencia;
 import org.hibernate.*;
 import org.hibernate.type.*;
 import org.hibernate.criterion.Example;
-//import org.hibernate.classic.*;
-
 
 import edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura;
 import edu.uag.iidis.scec.modelo.Calificacion;
@@ -15,6 +13,11 @@ import org.apache.commons.logging.LogFactory;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * Esta clase contiene metodos con acceso a la base de datos de calificacion
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
+ */
 
 public class CalificacionDAO {
 
@@ -23,7 +26,13 @@ public class CalificacionDAO {
     public CalificacionDAO() {
     }
 
-
+    /**
+     * Metodo que busca una calificacion por id
+     * @param: id Long
+     * @param: bloquear boolean
+     * @return: Calificacion
+     * @see: buscarPorId
+     */
     public Calificacion buscarPorId(Long id, boolean bloquear)
             throws ExcepcionInfraestructura {
 
@@ -54,6 +63,12 @@ public class CalificacionDAO {
         return calificacion;
     }
 
+    /**
+     * Metodo que busca calificacion por el nombre de la atraccion
+     * @param: nombreAtraccion String
+     * @return: Collection
+     * @see: buscarPorAtraccion
+     */
     public Collection buscarPorAtraccion(String nombreAtraccion) throws ExcepcionInfraestructura {
 
         if (log.isDebugEnabled()) {
@@ -95,6 +110,11 @@ public class CalificacionDAO {
         }
     }
 
+    /**
+     * Metodo que busca todas las calificaciones y devuelve una coleccion
+     * @return: Collection
+     * @see: buscarTodos
+     */
     public Collection buscarTodos()
             throws ExcepcionInfraestructura {
 
@@ -116,31 +136,6 @@ public class CalificacionDAO {
         }
         return calificacion;
     }
-
-
-    public Collection buscarPorEjemplo(Calificacion calificacion)
-            throws ExcepcionInfraestructura {
-
-
-        Collection calificaciones;
- 
-        if (log.isDebugEnabled()) {
-            log.debug(">buscarPorEjemplo()");
-        }
-
-        try {
-            Criteria criteria = HibernateUtil.getSession()
-                                             .createCriteria(Calificacion.class);
-            calificaciones = criteria.add(Example.create(calificacion)).list();
-        } catch (HibernateException e) {
-            if (log.isWarnEnabled()) {
-                log.warn("<HibernateException");
-            }
-            throw new ExcepcionInfraestructura(e);
-        }
-        return calificaciones;
-    }
-
 
     public void hazPersistente(Calificacion calificacion)
             throws ExcepcionInfraestructura {
@@ -176,5 +171,4 @@ public class CalificacionDAO {
             throw new ExcepcionInfraestructura(e);
         }
     }
-
 }

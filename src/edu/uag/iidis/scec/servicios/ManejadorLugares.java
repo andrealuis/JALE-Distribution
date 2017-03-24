@@ -27,6 +27,13 @@ import org.dom4j.io.SAXReader;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.NodeList;
+
+/**
+ * Esta clase contiene metodos que ayudan al manejo de lugares
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
+ */
+
 public class ManejadorLugares {
     private Log log = LogFactory.getLog(ManejadorLugares.class);
     private LugarDAO dao;
@@ -35,7 +42,12 @@ public class ManejadorLugares {
         dao = new LugarDAO();
     }
 
-
+    /**
+     * Metodo que lista todos los lugares
+     * y manda a llamar los métodos con acceso a la base de datos
+     * @return: Collection
+     * @see: listarLugares
+     */
     public Collection listarLugares() {
         Collection resultado;
 
@@ -56,6 +68,13 @@ public class ManejadorLugares {
         }
     }
 
+    /**
+     * Metodo que lista los lugares de acuerdo a su nombre
+     * y manda a llamar los métodos con acceso a la base de datos
+     * @param: nombre String
+     * @return: Collection
+     * @see: listarLugaresPorNombre
+     */
 	public Collection listarLugaresPorNombre(String nombre) {
         Collection resultado;
 
@@ -76,6 +95,12 @@ public class ManejadorLugares {
         }
     }
 
+    /**
+     * Metodo que busca todos los paises
+     * y manda a llamar los métodos con acceso a la base de datos
+     * @return: Collection
+     * @see: buscaPaises
+     */
     public Collection buscaPaises() {
         Collection resultado;
 
@@ -96,6 +121,13 @@ public class ManejadorLugares {
         }
     }
 
+    /**
+     * Metodo que busca el estado de acuerdo a su id
+     * y manda a llamar los métodos con acceso a la base de datos
+     * @param: id String
+     * @return: Collection
+     * @see: buscaEstado
+     */
     public Collection buscaEstado(String id) {
         Collection resultado;
 
@@ -116,6 +148,13 @@ public class ManejadorLugares {
         }
     }
 
+    /**
+     * Metodo que busca el municipio por su nombre
+     * y manda a llamar los métodos con acceso a la base de datos
+     * @param: nombre String
+     * @return: Collection
+     * @see: buscaMunicipio
+     */
     public Collection buscaMunicipio(String nombre) {
         Collection resultado;
 
@@ -136,6 +175,12 @@ public class ManejadorLugares {
         }
     }
 	
+    /**
+     * Metodo que elimina un lugar de acuerdo a su id
+     * y manda a llamar los métodos con acceso a la base de datos
+     * @param: id Long
+     * @see: eliminarLugar
+     */
     public void eliminarLugar(Long id) {
         if (log.isDebugEnabled()) {
             log.debug(">eliminarLugar(lugar)");
@@ -156,111 +201,6 @@ public class ManejadorLugares {
             HibernateUtil.closeSession();
         }
 
-    }
-
-    //cambios
-    public Collection buscaImagen(String nombre) {
-        Collection resultado;
-
-        if (log.isDebugEnabled()) {
-            log.debug(">guardarUsuario(usuario)");
-        }
-
-        try {
-            HibernateUtil.beginTransaction();
-            resultado = dao.buscarImagen(nombre);
-            HibernateUtil.commitTransaction();
-            return resultado;         
-        } catch (ExcepcionInfraestructura e) {
-            HibernateUtil.rollbackTransaction();
-            return null;
-        } finally {
-            HibernateUtil.closeSession();
-        }
-    }
-
-    public Collection getService(String pais,String path) {
-        Collection<DataService> resultado=null;
-        ArrayList<DataService> b =  new ArrayList<>();
-        if (log.isDebugEnabled()) {
-            log.debug(">guardarUsuario(usuario)");
-        }
-        String a = getCurrencyByCountry("Mexico");
-        log.error(path);
-        
-        DataService d = new DataService(getData(a,path));
-        b.add(d);
-        resultado = b;
-        return resultado;
-    }
-
-    public int crearLugar(Lugar lugar) {
-
-        int resultado;
-
-        if (log.isDebugEnabled()) {
-            log.debug(">guardarLugar(lugar)");
-        }
-
-        try {
-            HibernateUtil.beginTransaction();           
-            
-            if (dao.existeLugar(lugar.getMunicipio())) {
-               resultado = 1; // Excepción. El nombre de ciudad ya existe
-            } else {
-
-               dao.hazPersistente(lugar);
-
-               resultado = 0; // Exito. El ciudad se creo satisfactoriamente.
-            }
-
-            HibernateUtil.commitTransaction();
-
-        } catch (ExcepcionInfraestructura e) {
-            HibernateUtil.rollbackTransaction();
-
-            if (log.isWarnEnabled()) {
-                log.warn("<ExcepcionInfraestructura");
-            }
-            resultado = 2;    // Excepción. Falla en la infraestructura
-        } finally {
-            HibernateUtil.closeSession();
-        }
-        return resultado;
-    }
-    private static String getCurrencyByCountry(java.lang.String countryName) {
-        Country service = new net.webservicex.Country();
-        CountrySoap port = service.getCountrySoap();
-        return port.getCurrencyByCountry(countryName);
-    }
-
-    public String getData(String cities,String path){
-        String service ="";
-        try {
-            
-
-            File fXmlFile = new File(path+"input.xml");
-            FileWriter w = new FileWriter(fXmlFile);
-            BufferedWriter bw = new BufferedWriter(w);
-            PrintWriter wr = new PrintWriter(bw);
-            wr.write(cities);
-            wr.close();
-            bw.close();
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory
-                    .newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            org.w3c.dom.Document doc = dBuilder.parse(fXmlFile);
-            NodeList nList = doc.getElementsByTagName("Table");
-            
-            int temp = 0;
-            org.w3c.dom.Node nNode = nList.item(temp);
-            service += nNode.getTextContent();
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return service;
     }
     
 }

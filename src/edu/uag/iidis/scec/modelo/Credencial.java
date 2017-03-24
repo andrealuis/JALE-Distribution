@@ -5,6 +5,7 @@ import java.io.Serializable;
 /**
  * @author Victor Ramos
  */
+
 public class Credencial
         implements Serializable {
 

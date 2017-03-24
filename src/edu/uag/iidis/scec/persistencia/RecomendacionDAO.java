@@ -15,6 +15,11 @@ import org.apache.commons.logging.LogFactory;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * Esta clase contiene metodos con acceso a la base de datos de atracciones
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
+ */
 
 public class RecomendacionDAO {
 
@@ -24,7 +29,11 @@ public class RecomendacionDAO {
     }
 
 
-
+     /**
+     * Metodo que busca todos los lugares con buena calificacion para darlos como recomendacion
+     * @return: Collection
+     * @see: buscarTodos
+     */
     public Collection buscarTodos()
             throws ExcepcionInfraestructura {
 
@@ -51,6 +60,12 @@ public class RecomendacionDAO {
     }
 
 
+    /**
+     * Metodo que busca las recomendaciones de acuerdo al nombre de la atraccion
+     * @param: nombreLugar String
+     * @return: Collection
+     * @see: buscaRecomendacion
+     */
     public Collection buscaRecomendacion(String nombreLugar)
             throws ExcepcionInfraestructura {
                 

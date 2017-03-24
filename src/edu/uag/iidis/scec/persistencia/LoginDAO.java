@@ -3,8 +3,6 @@ package edu.uag.iidis.scec.persistencia;
 import org.hibernate.*;
 import org.hibernate.type.*;
 import org.hibernate.criterion.Example;
-//import org.hibernate.classic.*;
-
 
 import edu.uag.iidis.scec.excepciones.ExcepcionInfraestructura;
 
@@ -15,6 +13,11 @@ import org.apache.commons.logging.LogFactory;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * Esta clase contiene metodos con acceso a la base de datos de los usuarios para poder loguearse
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
+ */
 
 public class LoginDAO {
 
@@ -23,7 +26,13 @@ public class LoginDAO {
     public LoginDAO() {
     }
 
-
+    /**
+     * Metodo que busca usuario a través del nombre del usuario y de la contraseña
+     * @param: nombreLogin String
+     * @param: password String
+     * @return: Collection
+     * @see: buscarLogin
+     */
     public Collection buscarLogin(String nombreLogin, String password)
             throws ExcepcionInfraestructura {
 

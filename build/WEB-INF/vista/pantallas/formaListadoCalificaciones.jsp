@@ -14,7 +14,7 @@
     <c:forEach var="cal" items="${formaListadoCalificaciones.calificaciones}">
     
         <h1 id="nombreAtraccion"></h1>
-            <h5><c:out value="${cal.comentario}"/></h5>
+            <h2><c:out value="${cal.comentario}"/></h2>
 
                 <p class="clasificacion">                   
                     <input id="radio<%= var%>5" type="radio" name="puntaje<%= var%>" value="5">

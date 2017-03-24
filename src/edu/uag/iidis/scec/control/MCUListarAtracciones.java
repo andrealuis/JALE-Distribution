@@ -20,13 +20,26 @@ import org.apache.struts.actions.MappingDispatchAction;
 
 import net.webservicex.*;
 
+/**
+ * Esta clase contiene las acciones para listar las atracciones de los lugares
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
+ */
 
 public final class MCUListarAtracciones
         extends MappingDispatchAction {
 
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
-
+    /**
+     * Accion que permite solicitar listar las atracciones
+     * @param: mapping ActionMapping
+     * @param: form ActionForm
+     * @param: request HttpServletRequest
+     * @param: response HttpServletResponse
+     * @return: ActionForward
+     * @see: solicitarListarAtracciones
+     */
     public ActionForward solicitarListarAtracciones(
                 ActionMapping mapping,
                 ActionForm form,

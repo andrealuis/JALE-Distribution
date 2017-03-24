@@ -20,6 +20,11 @@ import org.apache.struts.actions.MappingDispatchAction;
 
 import net.webservicex.*;
 
+/**
+ * Esta clase contiene las acciones para listar lugares
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
+ */
 
 public final class MCUListarLugares
         extends MappingDispatchAction {
@@ -27,7 +32,15 @@ public final class MCUListarLugares
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
 
 
-
+    /**
+     * Accion que permite solicitar estados
+     * @param: mapping ActionMapping
+     * @param: form ActionForm
+     * @param: request HttpServletRequest
+     * @param: response HttpServletResponse
+     * @return: ActionForward
+     * @see: solicitarListarEstados
+     */
     public ActionForward solicitarListarEstados(
                 ActionMapping mapping,
                 ActionForm form,
@@ -65,6 +78,15 @@ public final class MCUListarLugares
 
     }
 
+    /**
+     * Accion que permite solicitar municipios
+     * @param: mapping ActionMapping
+     * @param: form ActionForm
+     * @param: request HttpServletRequest
+     * @param: response HttpServletResponse
+     * @return: ActionForward
+     * @see: solicitarListarMunicipios
+     */
     public ActionForward solicitarListarMunicipios(
                 ActionMapping mapping,
                 ActionForm form,
@@ -102,6 +124,16 @@ public final class MCUListarLugares
 
     }
 
+
+    /**
+     * Accion que permite solicitar paises
+     * @param: mapping ActionMapping
+     * @param: form ActionForm
+     * @param: request HttpServletRequest
+     * @param: response HttpServletResponse
+     * @return: ActionForward
+     * @see: solicitarListarLugares
+     */
     public ActionForward solicitarListarLugares(
                 ActionMapping mapping,
                 ActionForm form,
@@ -145,6 +177,16 @@ public final class MCUListarLugares
         }
 
     }
+
+    /**
+     * Accion que permite buscar un lugar
+     * @param: mapping ActionMapping
+     * @param: form ActionForm
+     * @param: request HttpServletRequest
+     * @param: response HttpServletResponse
+     * @return: ActionForward
+     * @see: buscarLugar
+     */
 	 public ActionForward buscarLugar(
                 ActionMapping mapping,
                 ActionForm form,

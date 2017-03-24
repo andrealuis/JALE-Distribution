@@ -9,6 +9,12 @@ import edu.uag.iidis.scec.excepciones.*;
 import edu.uag.iidis.scec.persistencia.AtraccionDAO;
 import edu.uag.iidis.scec.persistencia.hibernate.*;
 
+/**
+ * Esta clase contiene metodos que ayudan al manejo de las atracciones
+ * @author: Julio De Buen, Andrea Luis, Lesli Olvera y Enrique Espinosa
+ * @version: 23/03/2017
+ */
+
 public class ManejadorAtraccion {
     private Log log = LogFactory.getLog(ManejadorAtraccion.class);
     private AtraccionDAO dao;
@@ -17,6 +23,13 @@ public class ManejadorAtraccion {
         dao = new AtraccionDAO();
     }
 
+    /**
+     * Metodo que busca una atraccion a través del nombre
+     * y manda a llamar los métodos con acceso a la base de datos
+     * @param: buscarAtracciones String
+     * @return: Collection
+     * @see: buscarAtraccion
+     */
     public Collection buscarAtraccion(String nombreAtraccion) {
         Collection resultado;
 
@@ -37,6 +50,13 @@ public class ManejadorAtraccion {
         }
     }
 
+    /**
+     * Metodo que lista atracciones de un lugar por medio del id del municipio
+     * y manda a llamar los métodos con acceso a la base de datos
+     * @param: id String
+     * @return: Collection
+     * @see: listarAtraccionesporMunicipio
+     */
     public Collection listarAtraccionesporMunicipio(String id) {
         Collection resultado;
 

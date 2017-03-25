@@ -1,9 +1,9 @@
-  -- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-03-2017 a las 21:53:26
+-- Tiempo de generación: 25-03-2017 a las 06:18:01
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 7.1.1
 
@@ -39,8 +39,8 @@ CREATE TABLE `atraccion` (
 --
 
 INSERT INTO `atraccion` (`idMunicipio`, `idAtraccion`, `nombreAtraccion`, `descripcion`, `direccion`) VALUES
-(1, 1, 'Parque de la Marimba', 'great place', 'evergreen terrace'),
-(2, 2, 'Agua Azul', 'great place', 'evergreen terrace');
+(1, 1, 'Parque de la Marimba', 'El lugar indicado para escuchar musica interpretada en marimba, para pasarla bien con la familia y ¿por que no? Bailar un poco', 'Av. Central Pte. S/N, Centro, Guadalupe, 29000 Tuxtla Gutiérrez, CHIS'),
+(2, 2, 'Agua Azul', 'En la actualidad cuenta con una superficie de 168.500 metros cuadrados, con amplios y cuidados jardines; dentro de éstos se distribuyen 1.465 árboles de diferentes especies, brindando un paisaje acogedor, invitando a pasar un día de campo bajo la sombra de alguno de ellos.', 'Calzada Independencia Sur 973, Centro, La Aurora, 44100 Guadalajara, JAL');
 
 -- --------------------------------------------------------
 
@@ -60,29 +60,14 @@ CREATE TABLE `calificacion` (
 --
 
 INSERT INTO `calificacion` (`id`, `puntaje`, `comentario`, `nombreAtraccion`) VALUES
-(5, 4, 'hola men', 'cafecafe'),
-(6, 4, 'assdasd', 'cafecafe'),
-(7, 4, 'sdasdasd', 'cafecafe'),
-(8, 4, 'asdasd', 'cafecafe'),
-(9, 4, 'asasd', 'Cafecafe'),
-(10, 4, 'asd', 'cafecafe'),
-(11, 5, 'Ahora si krnal', 'cafecafe'),
-(12, 5, 'Cantidad infinita de veces', 'cafecafe'),
-(13, 5, 'Al menos una vez', 'cafecafe'),
-(14, 4, 'Hola hola', 'cafecafe'),
-(15, 4, 'Hola amigos sean bienvenidos a una aventura mas', 'cafecafe'),
-(16, 4, 'Hola amigos sean bienvenidos a una aventura mas', 'cafecafe'),
-(17, 3, 'gg izi', 'cafecafe'),
-(18, 3, 'asd', 'cafecafe'),
-(19, 4, 'Es un cafe muy rico, pero riquisimooooooooo', 'cafecafe'),
-(20, 4, 'Es un cafe muy rico, pero riquisimooooooooo', 'cafecafe'),
-(21, 3, 'assdasd', 'cafecafe'),
-(22, 5, '', 'cafecafe'),
-(23, 5, 'Señor, Erick esta bien chida su secre le pongo 5 estrellitas :*', 'cafecafe'),
-(24, 0, '', 'cafecafe'),
-(25, 4, '', 'cafecafe'),
-(26, 3, 'Muy buenas', 'cafecafe'),
-(27, 5, 'calificando ando', 'cafecafe');
+(1, 4, 'Un buen lugar para pasar el rato con la familia', 'Parque de la Marimba'),
+(2, 5, 'Que buen lugar en la capital chiapaneca', 'Parque de la Marimba'),
+(3, 5, 'Puedes pasar un rato agradable escuchando marimba', 'Parque de la Marimba'),
+(4, 4, 'Muy bueno, aunque pasa mucha gente pidiendo dinero, es molesto!', 'Parque de la Marimba'),
+(5, 4, 'Hay muchos cafes por la zona, que buen lugar!', 'Parque de la Marimba'),
+(6, 3, 'Un lindo parque, aunque sería mejor si no cobraran por entrar', 'Agua Azul'),
+(7, 4, 'La pase bien ', 'Agua Azul'),
+(8, 4, 'Buen lugar para pasar con la familia', 'Agua Azul');
 
 -- --------------------------------------------------------
 
@@ -102,7 +87,9 @@ CREATE TABLE `estado` (
 
 INSERT INTO `estado` (`idPais`, `idEstado`, `nombreEstado`) VALUES
 (1, 1, 'Chiapas'),
-(1, 2, 'Jalisco');
+(1, 2, 'Jalisco'),
+(1, 3, 'Oaxaca'),
+(1, 4, 'Veracruz');
 
 -- --------------------------------------------------------
 
@@ -162,7 +149,8 @@ CREATE TABLE `pais` (
 --
 
 INSERT INTO `pais` (`idPais`, `nombrePais`) VALUES
-(1, 'México');
+(1, 'México'),
+(2, 'España');
 
 -- --------------------------------------------------------
 
@@ -226,13 +214,22 @@ CREATE TABLE `vista_atraccion` (
 ,`path` varchar(500)
 );
 
---
--- Volcado de datos para la tabla `vista_atraccion`
---
+-- --------------------------------------------------------
 
-INSERT INTO `vista_atraccion`(`id`, `nombreAtraccion`, `descripcion`, `direccion`, `path`) VALUES (1,'Parque de la Marimba
-','great place','evergreen terrace','parque-de-la-marimba-1'),
-(2,'Agua Azul','great place','evergreen terrace','agua-azul-2');
+--
+-- Estructura Stand-in para la vista `vista_recomendacion`
+-- (Véase abajo para la vista actual)
+--
+CREATE TABLE `vista_recomendacion` (
+`id` int(11)
+,`nombrePais` varchar(50)
+,`nombreEstado` varchar(50)
+,`nombreMunicipio` varchar(50)
+,`idAtraccion` int(11)
+,`nombreAtraccion` varchar(50)
+,`path` varchar(500)
+,`puntaje` decimal(53,4)
+);
 
 -- --------------------------------------------------------
 
@@ -242,6 +239,15 @@ INSERT INTO `vista_atraccion`(`id`, `nombreAtraccion`, `descripcion`, `direccion
 DROP TABLE IF EXISTS `vista_atraccion`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_atraccion`  AS  select `imagen`.`id` AS `id`,`atraccion`.`nombreAtraccion` AS `nombreAtraccion`,`atraccion`.`descripcion` AS `descripcion`,`atraccion`.`direccion` AS `direccion`,`imagen`.`path` AS `path` from ((`municipio` join `atraccion` on((`municipio`.`idMunicipio` = `atraccion`.`idMunicipio`))) join `imagen` on((`imagen`.`idAtraccion` = `atraccion`.`idAtraccion`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `vista_recomendacion`
+--
+DROP TABLE IF EXISTS `vista_recomendacion`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_recomendacion`  AS  select `imagen`.`id` AS `id`,`pais`.`nombrePais` AS `nombrePais`,`estado`.`nombreEstado` AS `nombreEstado`,`municipio`.`nombreMunicipio` AS `nombreMunicipio`,`atraccion`.`idAtraccion` AS `idAtraccion`,`atraccion`.`nombreAtraccion` AS `nombreAtraccion`,`imagen`.`path` AS `path`,avg(`calificacion`.`puntaje`) AS `puntaje` from (((((`atraccion` join `imagen` on((`atraccion`.`idAtraccion` = `imagen`.`idAtraccion`))) join `calificacion` on((`calificacion`.`nombreAtraccion` = `atraccion`.`nombreAtraccion`))) join `municipio` on((`atraccion`.`idMunicipio` = `municipio`.`idMunicipio`))) join `estado` on((`estado`.`idEstado` = `municipio`.`idEstado`))) join `pais` on((`estado`.`idPais` = `pais`.`idPais`))) group by `atraccion`.`nombreAtraccion` having (avg(`calificacion`.`puntaje`) > 3) ;
 
 --
 -- Índices para tablas volcadas
@@ -305,12 +311,12 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `calificacion`
 --
 ALTER TABLE `calificacion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT de la tabla `estado`
 --
 ALTER TABLE `estado`
-  MODIFY `idEstado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idEstado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `imagen`
 --
@@ -325,7 +331,7 @@ ALTER TABLE `municipio`
 -- AUTO_INCREMENT de la tabla `pais`
 --
 ALTER TABLE `pais`
-  MODIFY `idPais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idPais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

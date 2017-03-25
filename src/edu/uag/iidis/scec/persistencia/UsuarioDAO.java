@@ -216,4 +216,26 @@ public class UsuarioDAO {
             throw new ExcepcionInfraestructura(ex);
         }
     }
+
+    public List buscarPorEjemplo(Usuario usuarioEjemplo)
+            throws ExcepcionInfraestructura {
+
+        if (log.isDebugEnabled()) {
+            log.debug(">buscarPorEjemplo()");
+        }
+
+        List usuarios;
+        try {
+            usuarios = HibernateUtil.getSession()
+                                    .createCriteria(Usuario.class)
+                                    .add(Example.create(usuarioEjemplo))
+                                    .list();
+        } catch (HibernateException ex) {
+            if (log.isWarnEnabled()) {
+                log.warn("<HibernateException");
+            }
+            throw new ExcepcionInfraestructura(ex);
+        }
+        return usuarios;
+    }
 }

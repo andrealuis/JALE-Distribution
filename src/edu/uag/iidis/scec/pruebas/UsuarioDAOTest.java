@@ -91,8 +91,7 @@ public class UsuarioDAOTest extends TestCase {
             HibernateUtil.closeSession();
         }
     }
-
-
+/*
     public void testBuscarPorEjemplo() throws Exception {
         Usuario usuario = new Usuario();
         Collection usuarios;
@@ -107,7 +106,7 @@ public class UsuarioDAOTest extends TestCase {
             HibernateUtil.closeSession();
         }
     }
-
+*/
 
     public void testBuscarTodos() throws Exception {
         Collection usuarios;

@@ -9,6 +9,7 @@ import junit.textui.TestRunner;
 import org.hibernate.cfg.Environment;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 
+import edu.uag.iidis.scec.vista.*;
 import edu.uag.iidis.scec.modelo.*;
 import edu.uag.iidis.scec.persistencia.*;
 import edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil;
@@ -16,29 +17,28 @@ import edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil;
 import java.util.*;
 
 
-public class RolDAOTest extends TestCase {
+public class LoginDAOTest extends TestCase {
 
-    private static RolDAO dao = null;
+    private static LoginDAO dao = null;
 
 
     protected void setUp() throws Exception {
-        dao = new RolDAO();
+        dao = new LoginDAO();
     }
 
     protected void tearDown() {
         dao = null;
     }
 
-    public void testCrearRol() throws Exception {
-        Rol rol = new Rol("rol1","descripcion rol1");
 
+    public void testBuscarLogin() throws Exception {
         HibernateUtil.beginTransaction();
         try {
-            dao.hazPersistente(rol);
+            Collection result = dao.buscarLogin("root","root");
             HibernateUtil.commitTransaction();
 
-            assertTrue(rol.getId() != null);
-            assertTrue(rol.getNombre().equals("rol1"));
+            assertTrue(result.size() > 0); //acierta
+
         } catch (Exception e) {
             HibernateUtil.rollbackTransaction();
             throw e;
@@ -47,9 +47,27 @@ public class RolDAOTest extends TestCase {
         }
     }
 
+    public void testBuscarLoginInvalido() throws Exception {
+        HibernateUtil.beginTransaction();
+        try {
+            Collection result = dao.buscarLogin("root","");
+            HibernateUtil.commitTransaction();
+
+            assertTrue(result.size() == 0);
+
+        } catch (Exception e) {
+            HibernateUtil.rollbackTransaction();
+            throw e;
+        } finally{
+            HibernateUtil.closeSession();
+        }
+    }
+
+
+
     public static Test suite() {
 
-       TestSetup suite = new TestSetup(new TestSuite(RolDAOTest.class)) {
+       TestSetup suite = new TestSetup(new TestSuite(LoginDAOTest.class)) {
 
             protected void setUp(  ) throws Exception {
                 // Se ejecuta al inicio de la suite de pruebas
@@ -57,7 +75,7 @@ public class RolDAOTest extends TestCase {
                 SchemaExport ddlExport = new SchemaExport(HibernateUtil.getConfiguration());
                 ddlExport.create(false, true);
 
-                dao = new RolDAO();
+                dao = new LoginDAO();
             }
 
             protected void tearDown(  ) throws Exception {

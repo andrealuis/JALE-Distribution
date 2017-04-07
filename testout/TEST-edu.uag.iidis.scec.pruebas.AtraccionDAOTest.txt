@@ -1,0 +1,70 @@
+Testsuite: edu.uag.iidis.scec.pruebas.AtraccionDAOTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.978 sec
+------------- Standard Output ---------------
+[SCEC] 2017-04-06 20:25:47,718 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.<clinit>(69) : >creando sessionFactory
+[SCEC] 2017-04-06 20:25:49,144 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-06 20:25:49,144 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-06 20:25:49,145 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 20:25:49,145 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-06 20:25:49,195 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccion(39) : >ExisteAtraccion(nombreAtraccion)
+[SCEC] 2017-04-06 20:25:49,195 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccion(47) : from VistaAtraccion where nombreAtraccion= 'Parque de la marimba'Parque de la marimba
+[SCEC] 2017-04-06 20:25:49,195 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 20:25:49,337 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccion(53) : <<<<<<<<< create query ok 
+[SCEC] 2017-04-06 20:25:49,337 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccion(56) : <<<<<<<<< set Parameter ok antes del query list >>>>>
+Hibernate: select vistaatrac0_.id as id10_, vistaatrac0_.nombreAtraccion as nombreAt2_10_, vistaatrac0_.descripcion as descripc3_10_, vistaatrac0_.direccion as direccion10_, vistaatrac0_.path as path10_ from vista_atraccion vistaatrac0_ where vistaatrac0_.nombreAtraccion='Parque de la marimba'
+[SCEC] 2017-04-06 20:25:49,476 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccion(61) : <<<<<<<<< Result size 2
+[SCEC] 2017-04-06 20:25:49,477 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-06 20:25:49,477 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-06 20:25:49,532 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 20:25:49,533 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-06 20:25:49,537 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-06 20:25:49,539 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-06 20:25:49,539 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 20:25:49,539 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-06 20:25:49,540 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccion(39) : >ExisteAtraccion(nombreAtraccion)
+[SCEC] 2017-04-06 20:25:49,540 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccion(47) : from VistaAtraccion where nombreAtraccion= 'Parque Central'Parque Central
+[SCEC] 2017-04-06 20:25:49,540 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 20:25:49,544 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccion(53) : <<<<<<<<< create query ok 
+[SCEC] 2017-04-06 20:25:49,544 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccion(56) : <<<<<<<<< set Parameter ok antes del query list >>>>>
+Hibernate: select vistaatrac0_.id as id10_, vistaatrac0_.nombreAtraccion as nombreAt2_10_, vistaatrac0_.descripcion as descripc3_10_, vistaatrac0_.direccion as direccion10_, vistaatrac0_.path as path10_ from vista_atraccion vistaatrac0_ where vistaatrac0_.nombreAtraccion='Parque Central'
+[SCEC] 2017-04-06 20:25:49,546 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccion(61) : <<<<<<<<< Result size 0
+[SCEC] 2017-04-06 20:25:49,546 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-06 20:25:49,546 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-06 20:25:49,547 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 20:25:49,547 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-06 20:25:49,548 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-06 20:25:49,548 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-06 20:25:49,548 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 20:25:49,548 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-06 20:25:49,549 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccionPorMunicipio(154) : >buscarAtraccion(id)
+[SCEC] 2017-04-06 20:25:49,549 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccionPorMunicipio(161) : from Atraccion where idMunicipio= 500
+[SCEC] 2017-04-06 20:25:49,549 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 20:25:49,553 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccionPorMunicipio(167) : <<<<<<<<< create query ok 
+[SCEC] 2017-04-06 20:25:49,553 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccionPorMunicipio(170) : <<<<<<<<< set Parameter ok antes del query list >>>>>
+Hibernate: select atraccion0_.idAtraccion as idAtracc1_9_, atraccion0_.idMunicipio as idMunici2_9_, atraccion0_.nombreAtraccion as nombreAt3_9_ from Atraccion atraccion0_ where atraccion0_.idMunicipio=500
+[SCEC] 2017-04-06 20:25:49,554 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccionPorMunicipio(175) : <<<<<<<<< Result size 0
+[SCEC] 2017-04-06 20:25:49,555 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-06 20:25:49,555 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-06 20:25:49,555 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 20:25:49,556 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-06 20:25:49,556 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-06 20:25:49,556 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-06 20:25:49,557 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 20:25:49,557 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-06 20:25:49,557 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccionPorMunicipio(154) : >buscarAtraccion(id)
+[SCEC] 2017-04-06 20:25:49,558 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccionPorMunicipio(161) : from Atraccion where idMunicipio= 1
+[SCEC] 2017-04-06 20:25:49,558 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 20:25:49,562 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccionPorMunicipio(167) : <<<<<<<<< create query ok 
+[SCEC] 2017-04-06 20:25:49,562 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccionPorMunicipio(170) : <<<<<<<<< set Parameter ok antes del query list >>>>>
+Hibernate: select atraccion0_.idAtraccion as idAtracc1_9_, atraccion0_.idMunicipio as idMunici2_9_, atraccion0_.nombreAtraccion as nombreAt3_9_ from Atraccion atraccion0_ where atraccion0_.idMunicipio=1
+[SCEC] 2017-04-06 20:25:49,563 DEBUG edu.uag.iidis.scec.persistencia.AtraccionDAO.buscarAtraccionPorMunicipio(175) : <<<<<<<<< Result size 1
+[SCEC] 2017-04-06 20:25:49,564 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-06 20:25:49,564 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-06 20:25:49,564 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 20:25:49,564 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+------------- ---------------- ---------------
+
+Testcase: testBuscarAtraccion took 1.824 sec
+Testcase: testBuscarAtraccionInvalido took 0.01 sec
+Testcase: testbuscarAtraccionPorMunicipioInvalido took 0.008 sec
+Testcase: testbuscarAtraccionPorMunicipio took 0.008 sec

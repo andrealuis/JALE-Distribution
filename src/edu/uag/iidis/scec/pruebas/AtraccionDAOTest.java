@@ -6,6 +6,10 @@ import junit.framework.TestSuite;
 import junit.extensions.TestSetup;
 import junit.textui.TestRunner;
 
+import org.junit.*;
+import org.junit.FixMethodOrder;
+import org.junit.runners.MethodSorters;
+import static org.junit.Assert.*;
 import org.hibernate.cfg.Environment;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 
@@ -32,50 +36,9 @@ public class AtraccionDAOTest extends TestCase {
 
     public void testBuscarAtraccion() throws Exception {
         Atraccion atraccion = new Atraccion(1,1,"Parque de la marimba");
-        FormaAtraccion forma = new FormaAtraccion();
-
         HibernateUtil.beginTransaction();
         try {
             Collection result = dao.buscarAtraccion(atraccion.getNombreAtraccion());
-            HibernateUtil.commitTransaction();
-
-            assertTrue(result.size() > 0); //acierta
-
-        } catch (Exception e) {
-            HibernateUtil.rollbackTransaction();
-            throw e;
-        } finally{
-            HibernateUtil.closeSession();
-        }
-    }
-
-    public void testBuscarAtraccionInvalido() throws Exception {
-        Atraccion atraccionError = new Atraccion(1,1,"Parque Central");
-        FormaAtraccion forma = new FormaAtraccion();
-
-        HibernateUtil.beginTransaction();
-        try {
-            Collection result = dao.buscarAtraccion(atraccionError.getNombreAtraccion());
-
-            HibernateUtil.commitTransaction();
-
-            assertTrue(result.size() == 0); //falla
-
-        } catch (Exception e) {
-            HibernateUtil.rollbackTransaction();
-            throw e;
-        } finally{
-            HibernateUtil.closeSession();
-        }
-    }
-
-    public void testbuscarAtraccionPorMunicipio() throws Exception {
-        
-
-        HibernateUtil.beginTransaction();
-        try {
-            Collection result = dao.buscarAtraccionPorMunicipio("1");
-
             HibernateUtil.commitTransaction();
 
             assertTrue(result.size() > 0);
@@ -88,12 +51,14 @@ public class AtraccionDAOTest extends TestCase {
         }
     }
 
-    public void testbuscarAtraccionPorMunicipio() throws Exception {
-        
+
+    public void testBuscarAtraccionInvalido() throws Exception {
+        Atraccion atraccionError = new Atraccion(1,1,"Parque Central");
+        FormaAtraccion forma = new FormaAtraccion();
 
         HibernateUtil.beginTransaction();
         try {
-            Collection result = dao.buscarAtraccionPorMunicipio("invalido");
+            Collection result = dao.buscarAtraccion(atraccionError.getNombreAtraccion());
 
             HibernateUtil.commitTransaction();
 
@@ -107,7 +72,73 @@ public class AtraccionDAOTest extends TestCase {
         }
     }
 
+    public void testbuscarAtraccionPorMunicipio() throws Exception {
 
+        HibernateUtil.beginTransaction();
+        try {
+            Collection result = dao.buscarAtraccionPorMunicipio("1"); //Id existente
+
+            HibernateUtil.commitTransaction();
+
+            assertTrue(result.size() > 0);
+
+        } catch (Exception e) {
+            HibernateUtil.rollbackTransaction();
+            throw e;
+        } finally{
+            HibernateUtil.closeSession();
+        }
+    }
+
+
+    public void testbuscarAtraccionPorMunicipioInvalido() throws Exception {
+        HibernateUtil.beginTransaction();
+        try {
+            Collection result = dao.buscarAtraccionPorMunicipio("500");
+
+            HibernateUtil.commitTransaction();
+
+            assertTrue(result.size() == 0);
+
+        } catch (Exception e) {
+            HibernateUtil.rollbackTransaction();
+            throw e;
+        } finally{
+            HibernateUtil.closeSession();
+        }
+    }
+
+    public void testBuscarTodos() throws Exception {
+        
+        HibernateUtil.beginTransaction();
+        try {
+            Collection resultado = dao.buscarTodos();
+            HibernateUtil.commitTransaction();
+
+            assertTrue(resultado.size() > 0);
+        } catch (Exception e) {
+            HibernateUtil.rollbackTransaction();
+            throw e;
+        } finally{
+            HibernateUtil.closeSession();
+        }
+    }
+
+    public void testBuscarTodosInvalido() throws Exception {
+
+        HibernateUtil.beginTransaction();
+        try {
+            Collection resultado = dao.buscarTodos();
+            HibernateUtil.commitTransaction();
+
+            assertTrue("la busqueda fallo",resultado.size() == 0);
+        } catch (Exception e) {
+            HibernateUtil.rollbackTransaction();
+            throw e;
+        } finally{
+            HibernateUtil.closeSession();
+        }
+    }
 
 
     public static Test suite() {
@@ -116,10 +147,6 @@ public class AtraccionDAOTest extends TestCase {
 
             protected void setUp(  ) throws Exception {
                 // Se ejecuta al inicio de la suite de pruebas
-
-                SchemaExport ddlExport = new SchemaExport(HibernateUtil.getConfiguration());
-                ddlExport.create(false, true);
-
                 dao = new AtraccionDAO();
             }
 
@@ -133,7 +160,7 @@ public class AtraccionDAOTest extends TestCase {
     }
 
     public static void main(String[] args) throws Exception {
-        TestRunner.run( suite() );
+        TestRunner.run(suite());
     }
 
 }

@@ -27,43 +27,6 @@ public class CalificacionDAO {
     }
 
     /**
-     * Metodo que busca una calificacion por id
-     * @param: id Long
-     * @param: bloquear boolean
-     * @return: Calificacion
-     * @see: buscarPorId
-     */
-    public Calificacion buscarPorId(Long id, boolean bloquear)
-            throws ExcepcionInfraestructura {
-
-        Calificacion calificacion = null;
-
-        if (log.isDebugEnabled()) {
-            log.debug(">buscarPorID(" + id + ", " + bloquear + ")");
-        }
-
-        try {
-            if (bloquear) {
-                calificacion = (Calificacion)HibernateUtil.getSession()
-                                                .load(Calificacion.class, 
-                                                      id, 
-                                                      LockMode.UPGRADE);
-            } else {
-                calificacion = (Calificacion)HibernateUtil.getSession()
-                                                .load(Calificacion.class,
-                                                      id);
-            }
-        } catch (HibernateException ex) {
-            if (log.isWarnEnabled()) {
-                log.warn("<HibernateException");
-            }
-
-            throw new ExcepcionInfraestructura(ex);
-        }
-        return calificacion;
-    }
-
-    /**
      * Metodo que busca calificacion por el nombre de la atraccion
      * @param: nombreAtraccion String
      * @return: Collection
@@ -146,24 +109,6 @@ public class CalificacionDAO {
 
         try {
             HibernateUtil.getSession().saveOrUpdate(calificacion);
-        } catch (HibernateException e) {
-            if (log.isWarnEnabled()) {
-                log.warn("<HibernateException");
-            }
-            throw new ExcepcionInfraestructura(e);
-        }
-    }
-
-
-    public void hazTransitorio(Calificacion calificacion)
-            throws ExcepcionInfraestructura {
-
-        if (log.isDebugEnabled()) {
-            log.debug(">hazTransitorio(calificacion)");
-        }
-
-        try {
-            HibernateUtil.getSession().delete(calificacion);
         } catch (HibernateException e) {
             if (log.isWarnEnabled()) {
                 log.warn("<HibernateException");

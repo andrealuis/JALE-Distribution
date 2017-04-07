@@ -17,13 +17,13 @@ public class AllTests extends TestCase {
 
         TestSuite suite = new TestSuite();
 
-        suite.addTest(RolDAOTest.suite());
+    /*    suite.addTest(RolDAOTest.suite());
         suite.addTest(UsuarioDAOTest.suite());
         suite.addTest(AtraccionDAOTest.suite());
         suite.addTest(CalificacionDAOTest.suite());
         suite.addTest(LoginDAOTest.suite());
         suite.addTest(LugarDAOTest.suite());
-        suite.addTest(RecomendacionDAOTest.suite());
+        suite.addTest(RecomendacionDAOTest.suite());*/
         return suite;
     }
 

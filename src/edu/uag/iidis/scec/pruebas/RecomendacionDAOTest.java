@@ -31,14 +31,14 @@ public class RecomendacionDAOTest extends TestCase {
     }
 
 
-    public void testBuscaRecomendacion() throws Exception {
+    public void testBuscarTodos() throws Exception {
+        
         HibernateUtil.beginTransaction();
         try {
-            Collection result = dao.buscaRecomendacion("Parque de la marimba");
+            Collection resultado = dao.buscarTodos();
             HibernateUtil.commitTransaction();
 
-            assertTrue(result.size() > 0); //acierta
-
+            assertTrue(resultado.size() > 0);
         } catch (Exception e) {
             HibernateUtil.rollbackTransaction();
             throw e;
@@ -47,14 +47,14 @@ public class RecomendacionDAOTest extends TestCase {
         }
     }
 
-    public void testBuscaRecomendacionInvalido() throws Exception {
+    public void testBuscarTodosInvalido() throws Exception {
+
         HibernateUtil.beginTransaction();
         try {
-            Collection result = dao.buscaRecomendacion("inexistente");
+            Collection resultado = dao.buscarTodos();
             HibernateUtil.commitTransaction();
 
-            assertTrue(result.size() == 0);
-
+            assertTrue("Si no hay datos en la tabla success",resultado.size() == 0);
         } catch (Exception e) {
             HibernateUtil.rollbackTransaction();
             throw e;
@@ -71,9 +71,6 @@ public class RecomendacionDAOTest extends TestCase {
 
             protected void setUp(  ) throws Exception {
                 // Se ejecuta al inicio de la suite de pruebas
-
-                SchemaExport ddlExport = new SchemaExport(HibernateUtil.getConfiguration());
-                ddlExport.create(false, true);
 
                 dao = new RecomendacionDAO();
             }

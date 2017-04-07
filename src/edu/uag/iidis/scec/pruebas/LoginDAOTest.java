@@ -71,10 +71,6 @@ public class LoginDAOTest extends TestCase {
 
             protected void setUp(  ) throws Exception {
                 // Se ejecuta al inicio de la suite de pruebas
-
-                SchemaExport ddlExport = new SchemaExport(HibernateUtil.getConfiguration());
-                ddlExport.create(false, true);
-
                 dao = new LoginDAO();
             }
 

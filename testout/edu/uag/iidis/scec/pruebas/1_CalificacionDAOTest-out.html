@@ -1,0 +1,85 @@
+<html xmlns:string="xalan://java.lang.String" xmlns:lxslt="http://xml.apache.org/xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Standard Output from CalificacionDAOTest</title>
+</head>
+<body>
+<pre>[SCEC] 2017-04-06 21:34:51,651 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.&lt;clinit&gt;(69) : &gt;creando sessionFactory
+[SCEC] 2017-04-06 21:34:53,119 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : &gt;beginTransaction()
+[SCEC] 2017-04-06 21:34:53,119 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacci&oacute;n de base de datos en este thread.
+[SCEC] 2017-04-06 21:34:53,119 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-06 21:34:53,120 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+[SCEC] 2017-04-06 21:34:53,166 DEBUG edu.uag.iidis.scec.persistencia.CalificacionDAO.hazPersistente(107) : &gt;hazPersistente(calificacion)
+[SCEC] 2017-04-06 21:34:53,166 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+Hibernate: select max(id) from Calificacion
+[SCEC] 2017-04-06 21:34:53,320 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : &gt;commitTransaction()
+[SCEC] 2017-04-06 21:34:53,321 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacci&oacute;n de este thread.
+Hibernate: insert into Calificacion (puntaje, nombreAtraccion, comentario, id) values (?, ?, ?, ?)
+[SCEC] 2017-04-06 21:34:53,394 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-06 21:34:53,395 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+[SCEC] 2017-04-06 21:34:53,407 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : &gt;beginTransaction()
+[SCEC] 2017-04-06 21:34:53,408 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacci&oacute;n de base de datos en este thread.
+[SCEC] 2017-04-06 21:34:53,408 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-06 21:34:53,409 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+[SCEC] 2017-04-06 21:34:53,410 DEBUG edu.uag.iidis.scec.persistencia.CalificacionDAO.hazPersistente(107) : &gt;hazPersistente(calificacion)
+[SCEC] 2017-04-06 21:34:53,413 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-06 21:34:53,413 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : &gt;commitTransaction()
+[SCEC] 2017-04-06 21:34:53,414 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacci&oacute;n de este thread.
+Hibernate: insert into Calificacion (puntaje, nombreAtraccion, comentario, id) values (?, ?, ?, ?)
+[SCEC] 2017-04-06 21:34:53,436 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-06 21:34:53,437 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+[SCEC] 2017-04-06 21:34:53,445 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : &gt;beginTransaction()
+[SCEC] 2017-04-06 21:34:53,445 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacci&oacute;n de base de datos en este thread.
+[SCEC] 2017-04-06 21:34:53,446 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-06 21:34:53,447 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+[SCEC] 2017-04-06 21:34:53,447 DEBUG edu.uag.iidis.scec.persistencia.CalificacionDAO.buscarTodos(87) : &gt;buscarTodos()
+[SCEC] 2017-04-06 21:34:53,448 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+Hibernate: select this_.id as id8_0_, this_.puntaje as puntaje8_0_, this_.nombreAtraccion as nombreAt3_8_0_, this_.comentario as comentario8_0_ from Calificacion this_
+[SCEC] 2017-04-06 21:34:53,506 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : &gt;commitTransaction()
+[SCEC] 2017-04-06 21:34:53,506 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacci&oacute;n de este thread.
+[SCEC] 2017-04-06 21:34:53,507 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-06 21:34:53,508 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+[SCEC] 2017-04-06 21:34:53,510 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : &gt;beginTransaction()
+[SCEC] 2017-04-06 21:34:53,510 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacci&oacute;n de base de datos en este thread.
+[SCEC] 2017-04-06 21:34:53,511 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-06 21:34:53,511 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+[SCEC] 2017-04-06 21:34:53,511 DEBUG edu.uag.iidis.scec.persistencia.CalificacionDAO.buscarPorAtraccion(38) : &gt;existeAtraccion(nombreAtraccion)
+[SCEC] 2017-04-06 21:34:53,511 DEBUG edu.uag.iidis.scec.persistencia.CalificacionDAO.buscarPorAtraccion(46) : from Calificacion where nombreAtraccion='Cerro hueco'Cerro hueco
+[SCEC] 2017-04-06 21:34:53,512 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-06 21:34:53,764 DEBUG edu.uag.iidis.scec.persistencia.CalificacionDAO.buscarPorAtraccion(52) : &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; create query ok 
+[SCEC] 2017-04-06 21:34:53,764 DEBUG edu.uag.iidis.scec.persistencia.CalificacionDAO.buscarPorAtraccion(55) : &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; set Parameter ok antes del query list &gt;&gt;&gt;&gt;&gt;
+Hibernate: select calificaci0_.id as id8_, calificaci0_.puntaje as puntaje8_, calificaci0_.nombreAtraccion as nombreAt3_8_, calificaci0_.comentario as comentario8_ from Calificacion calificaci0_ where calificaci0_.nombreAtraccion='Cerro hueco'
+[SCEC] 2017-04-06 21:34:53,768 DEBUG edu.uag.iidis.scec.persistencia.CalificacionDAO.buscarPorAtraccion(60) : &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Result size 0
+[SCEC] 2017-04-06 21:34:53,768 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : &gt;commitTransaction()
+[SCEC] 2017-04-06 21:34:53,768 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacci&oacute;n de este thread.
+[SCEC] 2017-04-06 21:34:53,769 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-06 21:34:53,769 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+[SCEC] 2017-04-06 21:34:53,770 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : &gt;beginTransaction()
+[SCEC] 2017-04-06 21:34:53,770 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacci&oacute;n de base de datos en este thread.
+[SCEC] 2017-04-06 21:34:53,770 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-06 21:34:53,770 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+[SCEC] 2017-04-06 21:34:53,770 DEBUG edu.uag.iidis.scec.persistencia.CalificacionDAO.buscarPorAtraccion(38) : &gt;existeAtraccion(nombreAtraccion)
+[SCEC] 2017-04-06 21:34:53,770 DEBUG edu.uag.iidis.scec.persistencia.CalificacionDAO.buscarPorAtraccion(46) : from Calificacion where nombreAtraccion='Parque de la marimba'Parque de la marimba
+[SCEC] 2017-04-06 21:34:53,771 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-06 21:34:53,775 DEBUG edu.uag.iidis.scec.persistencia.CalificacionDAO.buscarPorAtraccion(52) : &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; create query ok 
+[SCEC] 2017-04-06 21:34:53,775 DEBUG edu.uag.iidis.scec.persistencia.CalificacionDAO.buscarPorAtraccion(55) : &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; set Parameter ok antes del query list &gt;&gt;&gt;&gt;&gt;
+Hibernate: select calificaci0_.id as id8_, calificaci0_.puntaje as puntaje8_, calificaci0_.nombreAtraccion as nombreAt3_8_, calificaci0_.comentario as comentario8_ from Calificacion calificaci0_ where calificaci0_.nombreAtraccion='Parque de la marimba'
+[SCEC] 2017-04-06 21:34:53,783 DEBUG edu.uag.iidis.scec.persistencia.CalificacionDAO.buscarPorAtraccion(60) : &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Result size 7
+[SCEC] 2017-04-06 21:34:53,783 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : &gt;commitTransaction()
+[SCEC] 2017-04-06 21:34:53,783 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacci&oacute;n de este thread.
+[SCEC] 2017-04-06 21:34:53,785 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-06 21:34:53,785 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+[SCEC] 2017-04-06 21:34:53,786 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : &gt;beginTransaction()
+[SCEC] 2017-04-06 21:34:53,786 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacci&oacute;n de base de datos en este thread.
+[SCEC] 2017-04-06 21:34:53,786 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+[SCEC] 2017-04-06 21:34:53,786 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesi&oacute;n para el thread.
+[SCEC] 2017-04-06 21:34:53,786 DEBUG edu.uag.iidis.scec.persistencia.CalificacionDAO.buscarTodos(87) : &gt;buscarTodos()
+[SCEC] 2017-04-06 21:34:53,786 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : &gt;getSession()
+Hibernate: select this_.id as id8_0_, this_.puntaje as puntaje8_0_, this_.nombreAtraccion as nombreAt3_8_0_, this_.comentario as comentario8_0_ from Calificacion this_
+[SCEC] 2017-04-06 21:34:53,789 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : &gt;commitTransaction()
+[SCEC] 2017-04-06 21:34:53,789 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacci&oacute;n de este thread.
+[SCEC] 2017-04-06 21:34:53,790 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : &gt;closeSession()
+[SCEC] 2017-04-06 21:34:53,790 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesi&oacute;n local al thread.
+</pre>
+</body>
+</html>

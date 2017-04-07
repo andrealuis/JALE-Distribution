@@ -75,43 +75,6 @@ public class AtraccionDAO {
     }
 
     /**
-     * Metodo que busca atraccion por su id y devuelve una atraccion
-     * @param: idAtraccion Long
-     * @param: bloquear boolean
-     * @return: Atraccion
-     * @see: buscarPorId
-     */
-    public Atraccion buscarPorId(Long idAtraccion, boolean bloquear)
-            throws ExcepcionInfraestructura {
-
-        Atraccion atraccion = null;
-
-        if (log.isDebugEnabled()) {
-            log.debug(">buscarPorID(" + idAtraccion + ", " + bloquear + ")");
-        }
-
-        try {
-            if (bloquear) {
-                atraccion = (Atraccion)HibernateUtil.getSession()
-                                                .load(Atraccion.class, 
-                                                      idAtraccion, 
-                                                      LockMode.UPGRADE);
-            } else {
-                atraccion = (Atraccion)HibernateUtil.getSession()
-                                                .load(Atraccion.class,
-                                                      idAtraccion);
-            }
-        } catch (HibernateException ex) {
-            if (log.isWarnEnabled()) {
-                log.warn("<HibernateException");
-            }
-
-            throw new ExcepcionInfraestructura(ex);
-        }
-        return atraccion;
-    }
-
-    /**
      * Metodo que busca todas las atracciones y devuelve una coleccion
      * @return: Collection
      * @see: buscarTodos

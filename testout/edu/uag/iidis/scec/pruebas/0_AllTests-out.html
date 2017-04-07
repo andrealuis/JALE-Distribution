@@ -1,7 +1,10 @@
-Testsuite: edu.uag.iidis.scec.pruebas.AllTests
-Tests run: 9, Failures: 0, Errors: 0, Time elapsed: 7.21 sec
-------------- Standard Output ---------------
-00:43:18,457  INFO SchemaExport:98 - Running hbm2ddl schema export
+<html xmlns:string="xalan://java.lang.String" xmlns:lxslt="http://xml.apache.org/xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Standard Output from AllTests</title>
+</head>
+<body>
+<pre>00:43:18,457  INFO SchemaExport:98 - Running hbm2ddl schema export
 00:43:18,487  INFO SchemaExport:117 - exporting generated schema to database
 00:43:18,507  INFO SchemaExport:160 - schema export complete
 Hibernate: insert into Roles (nombre, descripcion, idRol) values (?, ?, ?)
@@ -125,14 +128,6 @@ Hibernate: select roles0_.idUsuario as idUsuario__, roles0_.idRol as idRol__, ro
 Hibernate: select usuarios0_.idRol as idRol__, usuarios0_.idUsuario as idUsuario__, usuario1_.idUsuario as idUsuario0_, usuario1_.nombrePrefijo as nombrePr2_0_, usuario1_.nombreNombre as nombreNo3_0_, usuario1_.nombreApellidoPaterno as nombreAp4_0_, usuario1_.nombreApellidoMaterno as nombreAp5_0_, usuario1_.nombrePosfijo as nombrePo6_0_, usuario1_.nombreIniciales as nombreIn7_0_, usuario1_.nombreUsuario as nombreUs8_0_, usuario1_.claveAcceso as claveAcc9_0_ from UsuarioRol usuarios0_ inner join Usuarios usuario1_ on usuarios0_.idUsuario=usuario1_.idUsuario where usuarios0_.idRol=?
 Hibernate: delete from UsuarioRol where idUsuario=?
 Hibernate: insert into UsuarioRol (idUsuario, idRol) values (?, ?)
-------------- ---------------- ---------------
-
-Testcase: testCrearRol took 0.58 sec
-Testcase: testCrearUsuario took 0.01 sec
-Testcase: testCrearUsuarioInvalido took 0.101 sec
-Testcase: testBuscarUsuarioPorId took 0.03 sec
-Testcase: testBuscarPorEjemplo took 0.1 sec
-Testcase: testBuscarTodos took 0.01 sec
-Testcase: testAgregarRol took 0.03 sec
-Testcase: testVerificarRol took 0.02 sec
-Testcase: testEliminarRol took 0.02 sec
+</pre>
+</body>
+</html>

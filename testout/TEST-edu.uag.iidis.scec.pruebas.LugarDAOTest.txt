@@ -1,0 +1,118 @@
+Testsuite: edu.uag.iidis.scec.pruebas.LugarDAOTest
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.385 sec
+------------- Standard Output ---------------
+[SCEC] 2017-04-06 21:35:49,544 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.<clinit>(69) : >creando sessionFactory
+[SCEC] 2017-04-06 21:35:51,179 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-06 21:35:51,180 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-06 21:35:51,180 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 21:35:51,181 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-06 21:35:51,262 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarEstado(71) : >buscarEstado(id)
+[SCEC] 2017-04-06 21:35:51,264 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarEstado(78) : from Estado where idPais= 1
+[SCEC] 2017-04-06 21:35:51,264 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 21:35:51,486 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarEstado(84) : <<<<<<<<< create query ok 
+[SCEC] 2017-04-06 21:35:51,486 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarEstado(87) : <<<<<<<<< set Parameter ok antes del query list >>>>>
+Hibernate: select estado0_.idEstado as idEstado4_, estado0_.idPais as idPais4_, estado0_.nombreEstado as nombreEs3_4_ from Estado estado0_ where estado0_.idPais=1
+[SCEC] 2017-04-06 21:35:51,680 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarEstado(92) : <<<<<<<<< Result size 4
+[SCEC] 2017-04-06 21:35:51,680 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-06 21:35:51,680 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-06 21:35:51,690 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 21:35:51,690 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-06 21:35:51,743 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-06 21:35:51,745 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-06 21:35:51,745 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 21:35:51,746 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-06 21:35:51,746 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarPaises(42) : >buscarTodos()
+[SCEC] 2017-04-06 21:35:51,747 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select this_.idPais as idPais5_0_, this_.nombrePais as nombrePais5_0_ from Pais this_
+[SCEC] 2017-04-06 21:35:51,759 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarPaises(50) : >buscarTodos() ---- list   2
+[SCEC] 2017-04-06 21:35:51,766 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarPaises(51) : >buscarTodos() ---- contenido   [edu.uag.iidis.scec.modelo.Pais@5c87bfe2[
+  idPais=1
+  nombrePais=México
+], edu.uag.iidis.scec.modelo.Pais@2fea7088[
+  idPais=2
+  nombrePais=España
+]]
+[SCEC] 2017-04-06 21:35:51,766 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-06 21:35:51,766 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-06 21:35:51,767 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 21:35:51,767 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-06 21:35:51,768 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-06 21:35:51,768 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-06 21:35:51,769 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 21:35:51,769 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-06 21:35:51,770 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarEstado(71) : >buscarEstado(id)
+[SCEC] 2017-04-06 21:35:51,770 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarEstado(78) : from Estado where idPais= 500
+[SCEC] 2017-04-06 21:35:51,770 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 21:35:51,773 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarEstado(84) : <<<<<<<<< create query ok 
+[SCEC] 2017-04-06 21:35:51,773 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarEstado(87) : <<<<<<<<< set Parameter ok antes del query list >>>>>
+Hibernate: select estado0_.idEstado as idEstado4_, estado0_.idPais as idPais4_, estado0_.nombreEstado as nombreEs3_4_ from Estado estado0_ where estado0_.idPais=500
+[SCEC] 2017-04-06 21:35:51,774 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarEstado(92) : <<<<<<<<< Result size 0
+[SCEC] 2017-04-06 21:35:51,774 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-06 21:35:51,775 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-06 21:35:51,775 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 21:35:51,775 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-06 21:35:51,775 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-06 21:35:51,776 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-06 21:35:51,776 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 21:35:51,776 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-06 21:35:51,776 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarMunicipio(118) : >buscarMunicipio(id)
+[SCEC] 2017-04-06 21:35:51,776 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarMunicipio(126) : from Municipio where idEstado= 500
+[SCEC] 2017-04-06 21:35:51,776 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 21:35:51,779 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarMunicipio(132) : <<<<<<<<< create query ok 
+[SCEC] 2017-04-06 21:35:51,780 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarMunicipio(135) : <<<<<<<<< set Parameter ok antes del query list >>>>>
+Hibernate: select municipio0_.idMunicipio as idMunici1_3_, municipio0_.idEstado as idEstado3_, municipio0_.nombreMunicipio as nombreMu3_3_ from Municipio municipio0_ where municipio0_.idEstado=500
+[SCEC] 2017-04-06 21:35:51,780 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarMunicipio(140) : <<<<<<<<< Result size 0
+[SCEC] 2017-04-06 21:35:51,781 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-06 21:35:51,781 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-06 21:35:51,781 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 21:35:51,781 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-06 21:35:51,782 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-06 21:35:51,782 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-06 21:35:51,782 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 21:35:51,782 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-06 21:35:51,782 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarMunicipio(118) : >buscarMunicipio(id)
+[SCEC] 2017-04-06 21:35:51,783 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarMunicipio(126) : from Municipio where idEstado= 1
+[SCEC] 2017-04-06 21:35:51,783 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 21:35:51,786 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarMunicipio(132) : <<<<<<<<< create query ok 
+[SCEC] 2017-04-06 21:35:51,786 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarMunicipio(135) : <<<<<<<<< set Parameter ok antes del query list >>>>>
+Hibernate: select municipio0_.idMunicipio as idMunici1_3_, municipio0_.idEstado as idEstado3_, municipio0_.nombreMunicipio as nombreMu3_3_ from Municipio municipio0_ where municipio0_.idEstado=1
+[SCEC] 2017-04-06 21:35:51,788 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarMunicipio(140) : <<<<<<<<< Result size 1
+[SCEC] 2017-04-06 21:35:51,788 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-06 21:35:51,788 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-06 21:35:51,788 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 21:35:51,789 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-06 21:35:51,789 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-06 21:35:51,789 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-06 21:35:51,789 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 21:35:51,789 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-06 21:35:51,790 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarPaises(42) : >buscarTodos()
+[SCEC] 2017-04-06 21:35:51,790 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select this_.idPais as idPais5_0_, this_.nombrePais as nombrePais5_0_ from Pais this_
+[SCEC] 2017-04-06 21:35:51,791 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarPaises(50) : >buscarTodos() ---- list   2
+[SCEC] 2017-04-06 21:35:51,792 DEBUG edu.uag.iidis.scec.persistencia.LugarDAO.buscarPaises(51) : >buscarTodos() ---- contenido   [edu.uag.iidis.scec.modelo.Pais@295eaa7c[
+  idPais=1
+  nombrePais=México
+], edu.uag.iidis.scec.modelo.Pais@3918c187[
+  idPais=2
+  nombrePais=España
+]]
+[SCEC] 2017-04-06 21:35:51,792 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-06 21:35:51,792 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-06 21:35:51,792 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 21:35:51,793 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+------------- ---------------- ---------------
+
+Testcase: testBuscarEstado took 2.2 sec
+Testcase: testBuscarPaises took 0.024 sec
+Testcase: testBuscarEstadoInvalido took 0.007 sec
+Testcase: testBuscarMunicipioInvalido took 0.007 sec
+Testcase: testBuscarMunicipio took 0.007 sec
+Testcase: testBuscarPaisesInvalido took 0.004 sec
+	FAILED
+Si no hay datos en la tabla success
+junit.framework.AssertionFailedError: Si no hay datos en la tabla success
+	at edu.uag.iidis.scec.pruebas.LugarDAOTest.testBuscarPaisesInvalido(LugarDAOTest.java:55)
+	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:23)
+	at junit.extensions.TestSetup$1.protect(TestSetup.java:23)
+	at junit.extensions.TestSetup.run(TestSetup.java:27)
+

@@ -1,0 +1,39 @@
+Testsuite: edu.uag.iidis.scec.pruebas.LoginDAOTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.021 sec
+------------- Standard Output ---------------
+[SCEC] 2017-04-06 21:32:28,957 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.<clinit>(69) : >creando sessionFactory
+[SCEC] 2017-04-06 21:32:30,403 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-06 21:32:30,403 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-06 21:32:30,404 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 21:32:30,404 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-06 21:32:30,450 DEBUG edu.uag.iidis.scec.persistencia.LoginDAO.buscarLogin(40) : >existeRol(nombreRol)
+[SCEC] 2017-04-06 21:32:30,451 DEBUG edu.uag.iidis.scec.persistencia.LoginDAO.buscarLogin(48) : from Usuario where credencial.nombreUsuario= 'root' and credencial.claveAcceso = 'root'root
+[SCEC] 2017-04-06 21:32:30,451 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 21:32:30,589 DEBUG edu.uag.iidis.scec.persistencia.LoginDAO.buscarLogin(54) : <<<<<<<<< create query ok 
+[SCEC] 2017-04-06 21:32:30,589 DEBUG edu.uag.iidis.scec.persistencia.LoginDAO.buscarLogin(57) : <<<<<<<<< set Parameter ok antes del query list >>>>>
+Hibernate: select usuario0_.idUsuario as idUsuario0_, usuario0_.nombrePrefijo as nombrePr2_0_, usuario0_.nombreNombre as nombreNo3_0_, usuario0_.nombreApellidoPaterno as nombreAp4_0_, usuario0_.nombreApellidoMaterno as nombreAp5_0_, usuario0_.nombrePosfijo as nombrePo6_0_, usuario0_.nombreIniciales as nombreIn7_0_, usuario0_.nombreUsuario as nombreUs8_0_, usuario0_.claveAcceso as claveAcc9_0_ from Usuarios usuario0_ where usuario0_.nombreUsuario='root' and usuario0_.claveAcceso='root'
+Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
+[SCEC] 2017-04-06 21:32:30,822 DEBUG edu.uag.iidis.scec.persistencia.LoginDAO.buscarLogin(62) : <<<<<<<<< Result size 1
+[SCEC] 2017-04-06 21:32:30,822 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-06 21:32:30,823 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-06 21:32:30,834 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 21:32:30,834 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-06 21:32:30,838 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-06 21:32:30,839 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-06 21:32:30,839 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 21:32:30,840 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-06 21:32:30,840 DEBUG edu.uag.iidis.scec.persistencia.LoginDAO.buscarLogin(40) : >existeRol(nombreRol)
+[SCEC] 2017-04-06 21:32:30,840 DEBUG edu.uag.iidis.scec.persistencia.LoginDAO.buscarLogin(48) : from Usuario where credencial.nombreUsuario= 'root' and credencial.claveAcceso = ''root
+[SCEC] 2017-04-06 21:32:30,840 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 21:32:30,846 DEBUG edu.uag.iidis.scec.persistencia.LoginDAO.buscarLogin(54) : <<<<<<<<< create query ok 
+[SCEC] 2017-04-06 21:32:30,846 DEBUG edu.uag.iidis.scec.persistencia.LoginDAO.buscarLogin(57) : <<<<<<<<< set Parameter ok antes del query list >>>>>
+Hibernate: select usuario0_.idUsuario as idUsuario0_, usuario0_.nombrePrefijo as nombrePr2_0_, usuario0_.nombreNombre as nombreNo3_0_, usuario0_.nombreApellidoPaterno as nombreAp4_0_, usuario0_.nombreApellidoMaterno as nombreAp5_0_, usuario0_.nombrePosfijo as nombrePo6_0_, usuario0_.nombreIniciales as nombreIn7_0_, usuario0_.nombreUsuario as nombreUs8_0_, usuario0_.claveAcceso as claveAcc9_0_ from Usuarios usuario0_ where usuario0_.nombreUsuario='root' and usuario0_.claveAcceso=''
+[SCEC] 2017-04-06 21:32:30,848 DEBUG edu.uag.iidis.scec.persistencia.LoginDAO.buscarLogin(62) : <<<<<<<<< Result size 0
+[SCEC] 2017-04-06 21:32:30,848 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-06 21:32:30,848 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+[SCEC] 2017-04-06 21:32:30,849 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 21:32:30,849 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+------------- ---------------- ---------------
+
+Testcase: testBuscarLogin took 1.882 sec
+Testcase: testBuscarLoginInvalido took 0.011 sec

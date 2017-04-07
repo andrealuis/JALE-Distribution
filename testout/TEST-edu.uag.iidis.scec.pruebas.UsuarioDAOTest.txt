@@ -1,0 +1,101 @@
+Testsuite: edu.uag.iidis.scec.pruebas.UsuarioDAOTest
+Tests run: 8, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 2.324 sec
+------------- Standard Output ---------------
+[SCEC] 2017-04-06 22:08:23,162 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.<clinit>(69) : >creando sessionFactory
+[SCEC] 2017-04-06 22:08:24,605 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-06 22:08:24,606 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-06 22:08:24,606 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 22:08:24,606 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-06 22:08:24,653 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.hazPersistente(148) : >hazPersistente(usuario)
+[SCEC] 2017-04-06 22:08:24,653 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+Hibernate: select max(idUsuario) from Usuarios
+[SCEC] 2017-04-06 22:08:24,812 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-06 22:08:24,812 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+Hibernate: insert into Usuarios (nombrePrefijo, nombreNombre, nombreApellidoPaterno, nombreApellidoMaterno, nombrePosfijo, nombreIniciales, nombreUsuario, claveAcceso, idUsuario) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
+[SCEC] 2017-04-06 22:08:24,906 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 22:08:24,907 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-06 22:08:24,925 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorNombreUsuario(41) : >buscarPorNombreUsuario(rooto)
+[SCEC] 2017-04-06 22:08:24,926 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 22:08:24,926 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+Hibernate: select usuario0_.idUsuario as idUsuario0_, usuario0_.nombrePrefijo as nombrePr2_0_, usuario0_.nombreNombre as nombreNo3_0_, usuario0_.nombreApellidoPaterno as nombreAp4_0_, usuario0_.nombreApellidoMaterno as nombreAp5_0_, usuario0_.nombrePosfijo as nombrePo6_0_, usuario0_.nombreIniciales as nombreIn7_0_, usuario0_.nombreUsuario as nombreUs8_0_, usuario0_.claveAcceso as claveAcc9_0_ from Usuarios usuario0_ where usuario0_.nombreUsuario=?
+[SCEC] 2017-04-06 22:08:25,215 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorNombreUsuario(57) : >buscarPorNombreUsuario(rooto)
+[SCEC] 2017-04-06 22:08:25,215 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 22:08:25,217 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-06 22:08:25,218 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(230) : >beginTransaction()
+[SCEC] 2017-04-06 22:08:25,218 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.beginTransaction(237) : -Iniciando una nueva transacción de base de datos en este thread.
+[SCEC] 2017-04-06 22:08:25,218 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 22:08:25,218 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+[SCEC] 2017-04-06 22:08:25,219 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.hazPersistente(148) : >hazPersistente(usuario)
+[SCEC] 2017-04-06 22:08:25,219 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 22:08:25,220 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(256) : >commitTransaction()
+[SCEC] 2017-04-06 22:08:25,220 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.commitTransaction(264) : -Comprometiendo la transacción de este thread.
+Hibernate: insert into Usuarios (nombrePrefijo, nombreNombre, nombreApellidoPaterno, nombreApellidoMaterno, nombrePosfijo, nombreIniciales, nombreUsuario, claveAcceso, idUsuario) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
+[SCEC] 2017-04-06 22:08:25,280 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 22:08:25,281 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-06 22:08:25,281 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarTodos(82) : >buscarTodos()
+[SCEC] 2017-04-06 22:08:25,282 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 22:08:25,282 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+Hibernate: select this_.idUsuario as idUsuario0_0_, this_.nombrePrefijo as nombrePr2_0_0_, this_.nombreNombre as nombreNo3_0_0_, this_.nombreApellidoPaterno as nombreAp4_0_0_, this_.nombreApellidoMaterno as nombreAp5_0_0_, this_.nombrePosfijo as nombrePo6_0_0_, this_.nombreIniciales as nombreIn7_0_0_, this_.nombreUsuario as nombreUs8_0_0_, this_.claveAcceso as claveAcc9_0_0_ from Usuarios this_
+Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
+Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
+Hibernate: select usuarios0_.idRol as idRol2_1_, usuarios0_.idUsuario as idUsuario1_, usuario1_.idUsuario as idUsuario0_0_, usuario1_.nombrePrefijo as nombrePr2_0_0_, usuario1_.nombreNombre as nombreNo3_0_0_, usuario1_.nombreApellidoPaterno as nombreAp4_0_0_, usuario1_.nombreApellidoMaterno as nombreAp5_0_0_, usuario1_.nombrePosfijo as nombrePo6_0_0_, usuario1_.nombreIniciales as nombreIn7_0_0_, usuario1_.nombreUsuario as nombreUs8_0_0_, usuario1_.claveAcceso as claveAcc9_0_0_ from UsuarioRol usuarios0_ inner join Usuarios usuario1_ on usuarios0_.idUsuario=usuario1_.idUsuario where usuarios0_.idRol=?
+Hibernate: select usuarios0_.idRol as idRol2_1_, usuarios0_.idUsuario as idUsuario1_, usuario1_.idUsuario as idUsuario0_0_, usuario1_.nombrePrefijo as nombrePr2_0_0_, usuario1_.nombreNombre as nombreNo3_0_0_, usuario1_.nombreApellidoPaterno as nombreAp4_0_0_, usuario1_.nombreApellidoMaterno as nombreAp5_0_0_, usuario1_.nombrePosfijo as nombrePo6_0_0_, usuario1_.nombreIniciales as nombreIn7_0_0_, usuario1_.nombreUsuario as nombreUs8_0_0_, usuario1_.claveAcceso as claveAcc9_0_0_ from UsuarioRol usuarios0_ inner join Usuarios usuario1_ on usuarios0_.idUsuario=usuario1_.idUsuario where usuarios0_.idRol=?
+Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
+[SCEC] 2017-04-06 22:08:25,320 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 22:08:25,320 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-06 22:08:25,322 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.existeUsuario(108) : >existeUsuario(nombreUsuario)
+[SCEC] 2017-04-06 22:08:25,322 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 22:08:25,323 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+Hibernate: select usuario0_.nombreUsuario as col_0_0_ from Usuarios usuario0_ where usuario0_.nombreUsuario=?
+[SCEC] 2017-04-06 22:08:25,333 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 22:08:25,334 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-06 22:08:25,334 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarTodos(82) : >buscarTodos()
+[SCEC] 2017-04-06 22:08:25,335 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 22:08:25,335 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+Hibernate: select this_.idUsuario as idUsuario0_0_, this_.nombrePrefijo as nombrePr2_0_0_, this_.nombreNombre as nombreNo3_0_0_, this_.nombreApellidoPaterno as nombreAp4_0_0_, this_.nombreApellidoMaterno as nombreAp5_0_0_, this_.nombrePosfijo as nombrePo6_0_0_, this_.nombreIniciales as nombreIn7_0_0_, this_.nombreUsuario as nombreUs8_0_0_, this_.claveAcceso as claveAcc9_0_0_ from Usuarios this_
+Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
+Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
+Hibernate: select usuarios0_.idRol as idRol2_1_, usuarios0_.idUsuario as idUsuario1_, usuario1_.idUsuario as idUsuario0_0_, usuario1_.nombrePrefijo as nombrePr2_0_0_, usuario1_.nombreNombre as nombreNo3_0_0_, usuario1_.nombreApellidoPaterno as nombreAp4_0_0_, usuario1_.nombreApellidoMaterno as nombreAp5_0_0_, usuario1_.nombrePosfijo as nombrePo6_0_0_, usuario1_.nombreIniciales as nombreIn7_0_0_, usuario1_.nombreUsuario as nombreUs8_0_0_, usuario1_.claveAcceso as claveAcc9_0_0_ from UsuarioRol usuarios0_ inner join Usuarios usuario1_ on usuarios0_.idUsuario=usuario1_.idUsuario where usuarios0_.idRol=?
+Hibernate: select usuarios0_.idRol as idRol2_1_, usuarios0_.idUsuario as idUsuario1_, usuario1_.idUsuario as idUsuario0_0_, usuario1_.nombrePrefijo as nombrePr2_0_0_, usuario1_.nombreNombre as nombreNo3_0_0_, usuario1_.nombreApellidoPaterno as nombreAp4_0_0_, usuario1_.nombreApellidoMaterno as nombreAp5_0_0_, usuario1_.nombrePosfijo as nombrePo6_0_0_, usuario1_.nombreIniciales as nombreIn7_0_0_, usuario1_.nombreUsuario as nombreUs8_0_0_, usuario1_.claveAcceso as claveAcc9_0_0_ from UsuarioRol usuarios0_ inner join Usuarios usuario1_ on usuarios0_.idUsuario=usuario1_.idUsuario where usuarios0_.idRol=?
+Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
+[SCEC] 2017-04-06 22:08:25,348 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 22:08:25,348 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-06 22:08:25,348 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.buscarPorNombreUsuario(41) : >buscarPorNombreUsuario(root)
+[SCEC] 2017-04-06 22:08:25,349 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 22:08:25,349 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+Hibernate: select usuario0_.idUsuario as idUsuario0_, usuario0_.nombrePrefijo as nombrePr2_0_, usuario0_.nombreNombre as nombreNo3_0_, usuario0_.nombreApellidoPaterno as nombreAp4_0_, usuario0_.nombreApellidoMaterno as nombreAp5_0_, usuario0_.nombrePosfijo as nombrePo6_0_, usuario0_.nombreIniciales as nombreIn7_0_, usuario0_.nombreUsuario as nombreUs8_0_, usuario0_.claveAcceso as claveAcc9_0_ from Usuarios usuario0_ where usuario0_.nombreUsuario=?
+Hibernate: select roles0_.idUsuario as idUsuario0_1_, roles0_.idRol as idRol1_, rol1_.idRol as idRol2_0_, rol1_.nombre as nombre2_0_, rol1_.descripcion as descripc3_2_0_ from UsuarioRol roles0_ inner join Roles rol1_ on roles0_.idRol=rol1_.idRol where roles0_.idUsuario=?
+[SCEC] 2017-04-06 22:08:25,354 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 22:08:25,355 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+[SCEC] 2017-04-06 22:08:25,355 DEBUG edu.uag.iidis.scec.persistencia.UsuarioDAO.existeUsuario(108) : >existeUsuario(nombreUsuario)
+[SCEC] 2017-04-06 22:08:25,355 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(160) : >getSession()
+[SCEC] 2017-04-06 22:08:25,355 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.getSession(167) : -Abriendo una nueva sesión para el thread.
+Hibernate: select usuario0_.nombreUsuario as col_0_0_ from Usuarios usuario0_ where usuario0_.nombreUsuario=?
+[SCEC] 2017-04-06 22:08:25,357 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(204) : >closeSession()
+[SCEC] 2017-04-06 22:08:25,357 DEBUG edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil.closeSession(212) : -Cerrando la sesión local al thread.
+------------- ---------------- ---------------
+
+Testcase: testCrearUsuarioInvalido took 1.756 sec
+	FAILED
+Falló
+junit.framework.AssertionFailedError: Falló
+	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testCrearUsuarioInvalido(UsuarioDAOTest.java:44)
+	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:23)
+	at junit.extensions.TestSetup$1.protect(TestSetup.java:23)
+	at junit.extensions.TestSetup.run(TestSetup.java:27)
+
+Testcase: testBuscarPorNombreInvalido took 0.293 sec
+Testcase: testCrearUsuario took 0.063 sec
+Testcase: testBuscarTodosInvalido took 0.04 sec
+	FAILED
+Si no hay datos en la tabla success
+junit.framework.AssertionFailedError: Si no hay datos en la tabla success
+	at edu.uag.iidis.scec.pruebas.UsuarioDAOTest.testBuscarTodosInvalido(UsuarioDAOTest.java:98)
+	at junit.extensions.TestDecorator.basicRun(TestDecorator.java:23)
+	at junit.extensions.TestSetup$1.protect(TestSetup.java:23)
+	at junit.extensions.TestSetup.run(TestSetup.java:27)
+
+Testcase: testExisteUsuarioInvalido took 0.012 sec
+Testcase: testBuscarTodos took 0.014 sec
+Testcase: testBuscarPorNombre took 0.007 sec
+Testcase: testExisteUsuario took 0.002 sec

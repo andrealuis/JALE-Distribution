@@ -23,7 +23,7 @@ public class LugarDAOTest extends TestCase {
 
 
     protected void setUp() throws Exception {
-        dao = new LoginDAO();
+        dao = new LugarDAO();
     }
 
     protected void tearDown() {
@@ -31,14 +31,13 @@ public class LugarDAOTest extends TestCase {
     }
 
 
-    public void testBuscarLugar() throws Exception {
+    public void testBuscarPaises() throws Exception{
         HibernateUtil.beginTransaction();
-        try {
-            Collection result = dao.buscarLugar("Parque de la marimba");
+        try{
+            Collection result = dao.buscarPaises();
             HibernateUtil.commitTransaction();
 
-            assertTrue(result.size() > 0); //acierta
-
+            assertTrue(result.size() > 0);
         } catch (Exception e) {
             HibernateUtil.rollbackTransaction();
             throw e;
@@ -47,14 +46,13 @@ public class LugarDAOTest extends TestCase {
         }
     }
 
-    public void testBuscarLugarInvalido() throws Exception {
+    public void testBuscarPaisesInvalido() throws Exception{
         HibernateUtil.beginTransaction();
-        try {
-            Collection result = dao.buscarLugar("inexistente");
+        try{
+            Collection result = dao.buscarPaises();
             HibernateUtil.commitTransaction();
 
-            assertTrue(result.size() == 0);
-
+            assertTrue("Si no hay datos en la tabla success", result.size() == 0);
         } catch (Exception e) {
             HibernateUtil.rollbackTransaction();
             throw e;
@@ -82,7 +80,7 @@ public class LugarDAOTest extends TestCase {
     public void testBuscarEstadoInvalido() throws Exception {
         HibernateUtil.beginTransaction();
         try {
-            Collection result = dao.buscarEstado("estado1");
+            Collection result = dao.buscarEstado("500");
             HibernateUtil.commitTransaction();
 
             assertTrue(result.size() == 0);
@@ -114,7 +112,7 @@ public class LugarDAOTest extends TestCase {
     public void testBuscarMunicipioInvalido() throws Exception {
         HibernateUtil.beginTransaction();
         try {
-            Collection result = dao.buscarMunicipio("municipio1");
+            Collection result = dao.buscarMunicipio("500");
             HibernateUtil.commitTransaction();
 
             assertTrue(result.size() == 0);
@@ -135,10 +133,6 @@ public class LugarDAOTest extends TestCase {
 
             protected void setUp(  ) throws Exception {
                 // Se ejecuta al inicio de la suite de pruebas
-
-                SchemaExport ddlExport = new SchemaExport(HibernateUtil.getConfiguration());
-                ddlExport.create(false, true);
-
                 dao = new LugarDAO();
             }
 

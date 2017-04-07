@@ -595,7 +595,7 @@ location="${catalina.home}/lib/catalina-ant.jar" />
   </target>
 
 
-    <target name="junit" 
+    <target name="atracciontest" 
            description="Ejecuta la suite de pruebas">
 
         <mkdir dir="${test.out.dir}"/>
@@ -609,7 +609,7 @@ location="${catalina.home}/lib/catalina-ant.jar" />
             </classpath>
             <formatter type="plain"/>
             <formatter type="xml"/>
-            <test name="edu.uag.iidis.scec.pruebas.AllTests" 
+            <test name="edu.uag.iidis.scec.pruebas.AtraccionDAOTest" 
                   todir="${test.out.dir}" 
                   haltonfailure="no"/>
         </junit>
@@ -617,8 +617,8 @@ location="${catalina.home}/lib/catalina-ant.jar" />
     </target>
 
 
-    <target name="junitreport" 
-           depends="junit" 
+    <target name="junitreportatraccion" 
+           depends="atracciontest" 
            description="Ejecuta pruebas y crea reporte">
 
         <junitreport todir="${test.out.dir}">
@@ -631,17 +631,184 @@ location="${catalina.home}/lib/catalina-ant.jar" />
 
     </target>
 
-    <target name="alltests" 
-          description="Crea y persiste algunos datos">
+    <target name="calificaciontest" 
+           description="Ejecuta la suite de pruebas">
 
-        <java classname="edu.uag.iidis.scec.pruebas.AllTests" fork="true">
+        <mkdir dir="${test.out.dir}"/>
+ 
+       <junit printsummary="yes" fork="no" haltonfailure="yes">
             <classpath>
                 <fileset dir="${lib.home}">
                     <include name="**/*.jar"/>
                 </fileset>
                 <pathelement path="${classes.home}"/>
             </classpath>
-       </java>
-  </target>
+            <formatter type="plain"/>
+            <formatter type="xml"/>
+            <test name="edu.uag.iidis.scec.pruebas.CalificacionDAOTest" 
+                  todir="${test.out.dir}" 
+                  haltonfailure="no"/>
+        </junit>
+
+    </target>
+
+
+    <target name="junitreportcalificacion" 
+           depends="calificaciontest" 
+           description="Ejecuta pruebas y crea reporte">
+
+        <junitreport todir="${test.out.dir}">
+            <fileset dir="${test.out.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" 
+                    todir="${test.out.dir}"/>
+        </junitreport>
+
+    </target>
+
+    <target name="logintest" 
+           description="Ejecuta la suite de pruebas">
+
+        <mkdir dir="${test.out.dir}"/>
+ 
+       <junit printsummary="yes" fork="no" haltonfailure="yes">
+            <classpath>
+                <fileset dir="${lib.home}">
+                    <include name="**/*.jar"/>
+                </fileset>
+                <pathelement path="${classes.home}"/>
+            </classpath>
+            <formatter type="plain"/>
+            <formatter type="xml"/>
+            <test name="edu.uag.iidis.scec.pruebas.LoginDAOTest" 
+                  todir="${test.out.dir}" 
+                  haltonfailure="no"/>
+        </junit>
+
+    </target>
+
+
+    <target name="junitreportlogin" 
+           depends="logintest" 
+           description="Ejecuta pruebas y crea reporte">
+
+        <junitreport todir="${test.out.dir}">
+            <fileset dir="${test.out.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" 
+                    todir="${test.out.dir}"/>
+        </junitreport>
+
+    </target>
+
+    <target name="lugartest" 
+           description="Ejecuta la suite de pruebas">
+
+        <mkdir dir="${test.out.dir}"/>
+ 
+       <junit printsummary="yes" fork="no" haltonfailure="yes">
+            <classpath>
+                <fileset dir="${lib.home}">
+                    <include name="**/*.jar"/>
+                </fileset>
+                <pathelement path="${classes.home}"/>
+            </classpath>
+            <formatter type="plain"/>
+            <formatter type="xml"/>
+            <test name="edu.uag.iidis.scec.pruebas.LugarDAOTest" 
+                  todir="${test.out.dir}" 
+                  haltonfailure="no"/>
+        </junit>
+
+    </target>
+
+
+    <target name="junitreportlugar" 
+           depends="lugartest" 
+           description="Ejecuta pruebas y crea reporte">
+
+        <junitreport todir="${test.out.dir}">
+            <fileset dir="${test.out.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" 
+                    todir="${test.out.dir}"/>
+        </junitreport>
+
+    </target>
+
+    <target name="recomendaciontest" 
+           description="Ejecuta la suite de pruebas">
+
+        <mkdir dir="${test.out.dir}"/>
+ 
+       <junit printsummary="yes" fork="no" haltonfailure="yes">
+            <classpath>
+                <fileset dir="${lib.home}">
+                    <include name="**/*.jar"/>
+                </fileset>
+                <pathelement path="${classes.home}"/>
+            </classpath>
+            <formatter type="plain"/>
+            <formatter type="xml"/>
+            <test name="edu.uag.iidis.scec.pruebas.RecomendacionDAOTest" 
+                  todir="${test.out.dir}" 
+                  haltonfailure="no"/>
+        </junit>
+
+    </target>
+
+
+    <target name="junitreportrecomendacion" 
+           depends="recomendaciontest" 
+           description="Ejecuta pruebas y crea reporte">
+
+        <junitreport todir="${test.out.dir}">
+            <fileset dir="${test.out.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" 
+                    todir="${test.out.dir}"/>
+        </junitreport>
+
+    </target>
+
+    <target name="usuariotest" 
+           description="Ejecuta la suite de pruebas">
+
+        <mkdir dir="${test.out.dir}"/>
+ 
+       <junit printsummary="yes" fork="no" haltonfailure="yes">
+            <classpath>
+                <fileset dir="${lib.home}">
+                    <include name="**/*.jar"/>
+                </fileset>
+                <pathelement path="${classes.home}"/>
+            </classpath>
+            <formatter type="plain"/>
+            <formatter type="xml"/>
+            <test name="edu.uag.iidis.scec.pruebas.UsuarioDAOTest" 
+                  todir="${test.out.dir}" 
+                  haltonfailure="no"/>
+        </junit>
+
+    </target>
+
+
+    <target name="junitreportusuario" 
+           depends="usuariotest" 
+           description="Ejecuta pruebas y crea reporte">
+
+        <junitreport todir="${test.out.dir}">
+            <fileset dir="${test.out.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" 
+                    todir="${test.out.dir}"/>
+        </junitreport>
+
+    </target>
 
 </project>

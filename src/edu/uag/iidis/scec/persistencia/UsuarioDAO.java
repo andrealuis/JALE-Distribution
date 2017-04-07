@@ -28,44 +28,6 @@ public class UsuarioDAO {
     public UsuarioDAO() {
     }
 
-     /**
-     * Metodo que busca a un usuario por un id
-     * @param: idUsuario Long
-     * @param: bloquear boolean
-     * @return: Usuario
-     * @see: buscarPorId
-     */
-    public Usuario buscarPorId(Long idUsuario, boolean bloquear)
-            throws ExcepcionInfraestructura {
-
-        Usuario usuario = null;
-
-        if (log.isDebugEnabled()) {
-            log.debug(">buscarPorID(" + idUsuario + ", " + bloquear + ")");
-        }
-
-
-        try {
-            if (bloquear) {
-                usuario = (Usuario)HibernateUtil.getSession()
-                                                .load(Usuario.class, 
-                                                      idUsuario, 
-                                                      LockMode.UPGRADE);
-            } else {
-                usuario = (Usuario)HibernateUtil.getSession()
-                                                .load(Usuario.class,
-                                                      idUsuario);
-            }
-        } catch (HibernateException e) {
-            if (log.isWarnEnabled()) {
-                log.warn("<HibernateException");
-            }
-            throw new ExcepcionInfraestructura(e);
-        }
-
-        return usuario;
-    }
-
     /**
      * Metodo que busca a un usuario por su nombre
      * @param: nombreUsuario String
@@ -199,43 +161,4 @@ public class UsuarioDAO {
         }
     }
 
-
-    public void hazTransitorio(Usuario usuario)
-            throws ExcepcionInfraestructura {
-
-        if (log.isDebugEnabled()) {
-            log.debug(">hazTransitorio(usuario)");
-        }
-
-        try {
-            HibernateUtil.getSession().delete(usuario);
-        } catch (HibernateException ex) {
-            if (log.isWarnEnabled()) {
-                log.warn("<HibernateException");
-            }
-            throw new ExcepcionInfraestructura(ex);
-        }
-    }
-
-    public List buscarPorEjemplo(Usuario usuarioEjemplo)
-            throws ExcepcionInfraestructura {
-
-        if (log.isDebugEnabled()) {
-            log.debug(">buscarPorEjemplo()");
-        }
-
-        List usuarios;
-        try {
-            usuarios = HibernateUtil.getSession()
-                                    .createCriteria(Usuario.class)
-                                    .add(Example.create(usuarioEjemplo))
-                                    .list();
-        } catch (HibernateException ex) {
-            if (log.isWarnEnabled()) {
-                log.warn("<HibernateException");
-            }
-            throw new ExcepcionInfraestructura(ex);
-        }
-        return usuarios;
-    }
 }
